@@ -2,205 +2,77 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { ArrowUpRight, Terminal, Globe, ShieldCheck } from "lucide-react";
-import { brandData } from "@/data/brand";
+import { ArrowUpRight } from "lucide-react";
+import PanknoxLogo from "./PanknoxLogo";
+import AtmosphericBackground from "./AtmosphericBackground";
 
 export default function Footer() {
-  const [currentTime, setCurrentTime] = useState("");
   const [currentYear, setCurrentYear] = useState("2026");
 
   useEffect(() => {
     setCurrentYear(new Date().getFullYear().toString());
-    const updateTime = () => {
-      // Format time in Indian Standard Time (Asia/Kolkata)
-      const options: Intl.DateTimeFormatOptions = {
-        timeZone: "Asia/Kolkata",
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit",
-        hour12: false,
-      };
-      const istTime = new Intl.DateTimeFormat("en-GB", options).format(new Date());
-      setCurrentTime(`${istTime} IST`);
-    };
-
-    updateTime();
-    const interval = setInterval(updateTime, 1000);
-    return () => clearInterval(interval);
   }, []);
 
   return (
-    <footer className="bg-brand-navy border-t border-brand-neutral/15 pt-20 pb-12 relative overflow-hidden text-brand-neutral">
-      {/* Subtle Background Grid Line */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Top Hero Statement in Footer */}
-        <div className="pb-16 border-b border-brand-neutral/10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
-          <div className="lg:col-span-8 space-y-4">
-            <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-brand-green/10 border border-brand-green/30 text-brand-green text-xs font-mono tracking-widest uppercase">
-              <span className="w-1.5 h-1.5 rounded-full bg-brand-green animate-pulse" />
-              <span>THE OPERATING SYSTEM</span>
+    <footer className="relative border-t border-white/5 text-brand-neutral overflow-hidden">
+      <AtmosphericBackground className="py-24 sm:py-32">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-20 relative z-10">
+          {/* Main Editorial Block */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end pb-16 border-b border-white/10">
+            <div className="lg:col-span-8 space-y-6">
+              <PanknoxLogo variant="light" height={32} />
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-brand-neutral leading-tight max-w-2xl">
+                YOUR BUSINESS IS ALREADY DOING SOMETHING. <br />
+                <span className="text-brand-green">WE MAKE SURE THE WORLD NOTICES.</span>
+              </h2>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-brand-neutral uppercase leading-tight">
-              WE WORK IN THE GAP BETWEEN WHAT YOUR BUSINESS IS AND HOW YOUR MARKET PERCEIVES IT.
-            </h2>
-          </div>
 
-          <div className="lg:col-span-4 flex flex-col sm:items-end justify-end space-y-4">
-            <Link
-              href="/contact"
-              data-cursor="START"
-              className="inline-flex items-center gap-3 px-6 py-4 rounded bg-brand-green text-brand-navy font-bold text-sm tracking-wider uppercase hover:bg-brand-green/90 transition-all shadow-[0_0_20px_rgba(48,198,130,0.3)]"
-            >
-              <span>START A CONVERSATION</span>
-              <ArrowUpRight className="w-4 h-4" />
-            </Link>
-            <p className="text-xs font-mono text-brand-gray sm:text-right">
-              Direct consultation with our creative operating unit.
-            </p>
-          </div>
-        </div>
-
-        {/* Directory Columns */}
-        <div className="py-16 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-10 border-b border-brand-neutral/10 text-sm">
-          {/* Column 1: Core Navigation */}
-          <div className="space-y-4">
-            <p className="text-xs font-mono uppercase tracking-widest text-brand-gray">01 // EXPLORE</p>
-            <ul className="space-y-2.5">
-              <li>
-                <Link href="/work" className="text-brand-neutral/80 hover:text-brand-green transition-colors">
-                  Work Archive
-                </Link>
-              </li>
-              <li>
-                <Link href="/what-we-do" className="text-brand-neutral/80 hover:text-brand-green transition-colors">
-                  Capabilities & Systems
-                </Link>
-              </li>
-              <li>
-                <Link href="/how-we-work" className="text-brand-neutral/80 hover:text-brand-green transition-colors">
-                  The Panknox Method
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" className="text-brand-neutral/80 hover:text-brand-green transition-colors">
-                  About Panknox
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="text-brand-neutral/80 hover:text-brand-green transition-colors">
-                  Conversational Portal
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Column 2: The 4 Systems */}
-          <div className="space-y-4">
-            <p className="text-xs font-mono uppercase tracking-widest text-brand-gray">02 // SYSTEMS</p>
-            <ul className="space-y-2.5">
-              <li>
-                <Link href="/what-we-do#strategy" className="text-brand-neutral/80 hover:text-brand-green transition-colors">
-                  01 / Strategy
-                </Link>
-              </li>
-              <li>
-                <Link href="/what-we-do#creative-content" className="text-brand-neutral/80 hover:text-brand-green transition-colors">
-                  02 / Creative & Content
-                </Link>
-              </li>
-              <li>
-                <Link href="/what-we-do#digital-presence" className="text-brand-neutral/80 hover:text-brand-green transition-colors">
-                  03 / Digital Presence
-                </Link>
-              </li>
-              <li>
-                <Link href="/what-we-do#growth" className="text-brand-neutral/80 hover:text-brand-green transition-colors">
-                  04 / Growth & Paid Media
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Column 3: Focus Industries */}
-          <div className="space-y-4">
-            <p className="text-xs font-mono uppercase tracking-widest text-brand-gray">03 // INDUSTRIES</p>
-            <ul className="space-y-2.5">
-              <li>
-                <Link href="/industries/manufacturing" className="text-brand-neutral/80 hover:text-brand-green transition-colors">
-                  Manufacturing & OEM
-                </Link>
-              </li>
-              <li>
-                <Link href="/industries/healthcare" className="text-brand-neutral/80 hover:text-brand-green transition-colors">
-                  Healthcare & Medical
-                </Link>
-              </li>
-              <li>
-                <Link href="/industries/real-estate" className="text-brand-neutral/80 hover:text-brand-green transition-colors">
-                  Real Estate & Living
-                </Link>
-              </li>
-              <li>
-                <Link href="/industries/interiors-furniture" className="text-brand-neutral/80 hover:text-brand-green transition-colors">
-                  Interiors & Furniture
-                </Link>
-              </li>
-              <li>
-                <Link href="/industries/hospitality" className="text-brand-neutral/80 hover:text-brand-green transition-colors">
-                  Hospitality & Luxury
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Column 4: Studio Coordinates */}
-          <div className="space-y-4 col-span-2 md:col-span-1 lg:col-span-2">
-            <p className="text-xs font-mono uppercase tracking-widest text-brand-gray">04 // LOCATION & DISPATCH</p>
-            <div className="space-y-2 text-sm text-brand-neutral/80">
-              <p className="font-semibold text-brand-neutral">{brandData.legalName}</p>
-              <p>{brandData.location.address}</p>
-              <p className="font-mono text-xs text-brand-green">{brandData.location.coordinates}</p>
-              <p className="pt-2">
-                <a
-                  href={`mailto:${brandData.contact.email}`}
-                  className="font-mono text-brand-green hover:underline"
-                >
-                  {brandData.contact.email}
-                </a>
+            <div className="lg:col-span-4 flex flex-col sm:items-end space-y-4">
+              <Link
+                href="/contact"
+                data-cursor="START"
+                className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-brand-green text-brand-navy font-bold text-xs tracking-widest uppercase hover:bg-brand-green/90 transition-all shadow-[0_0_25px_rgba(48,198,130,0.3)]"
+              >
+                <span>START A CONVERSATION</span>
+                <ArrowUpRight className="w-4 h-4" />
+              </Link>
+              <p className="text-xs font-mono text-brand-gray sm:text-right">
+                Studio Base: Jaipur, Rajasthan, India
               </p>
             </div>
           </div>
-        </div>
 
-        {/* Bottom Technical Bar */}
-        <div className="pt-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 text-xs font-mono text-brand-gray">
-          <div className="flex flex-wrap items-center gap-4">
-            <span className="text-brand-neutral font-semibold tracking-wider">
-              © {currentYear} PANKNOX MEDIA PVT. LTD.
-            </span>
-            <span>•</span>
-            <span className="flex items-center gap-1.5">
-              <Globe className="w-3.5 h-3.5 text-brand-green" />
-              <span>JAIPUR STUDIO</span>
-            </span>
-            <span>•</span>
-            <span className="flex items-center gap-1.5">
-              <Terminal className="w-3.5 h-3.5 text-brand-green" />
-              <span>CLOCK: {currentTime || "SYNCING..."}</span>
-            </span>
-          </div>
+          {/* Minimal Navigation & Legal Bar */}
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 text-xs font-mono text-brand-gray">
+            <div className="flex flex-wrap items-center gap-8 text-brand-neutral/80">
+              <Link href="/what-we-do" className="hover:text-brand-green transition-colors">
+                WHAT WE DO
+              </Link>
+              <Link href="/industries" className="hover:text-brand-green transition-colors">
+                INDUSTRIES
+              </Link>
+              <Link href="/work" className="hover:text-brand-green transition-colors">
+                WORK
+              </Link>
+              <Link href="/about" className="hover:text-brand-green transition-colors">
+                ABOUT
+              </Link>
+              <Link href="/contact" className="hover:text-brand-green transition-colors">
+                CONTACT
+              </Link>
+            </div>
 
-          <div className="flex items-center gap-6">
-            <span className="flex items-center gap-1.5 text-brand-green">
-              <ShieldCheck className="w-3.5 h-3.5" />
-              <span>SYSTEM OPERATIONAL</span>
-            </span>
-            <span className="text-brand-neutral/50">BUILT BY PEOPLE. POWERED BY SYSTEMS.</span>
+            <div className="flex items-center gap-6">
+              <span>© {currentYear} PANKNOX MEDIA PVT. LTD.</span>
+              {/* The final fading signal */}
+              <span className="flex items-center gap-2 text-brand-green">
+                <span className="w-1.5 h-1.5 rounded-full bg-brand-green opacity-70 animate-pulse" />
+                <span>SIGNAL // RESTING</span>
+              </span>
+            </div>
           </div>
         </div>
-      </div>
+      </AtmosphericBackground>
     </footer>
   );
 }

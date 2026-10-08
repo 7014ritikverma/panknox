@@ -11,12 +11,13 @@ export const metadata: Metadata = {
     "Panknox Media Pvt. Ltd. is a Creative & Performance Marketing Partner based in Jaipur, Rajasthan, India. Built by people, powered by systems.",
 };
 
+import AtmosphericBackground from "@/components/common/AtmosphericBackground";
+
 export default function AboutPage() {
   return (
-    <div className="pt-28 pb-24 bg-brand-navy min-h-screen text-brand-neutral relative overflow-hidden">
-      <div className="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-24">
+    <div className="min-h-screen text-brand-neutral relative overflow-hidden">
+      <AtmosphericBackground className="pt-36 pb-24 min-h-screen">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10 space-y-24">
         {/* Page Hero */}
         <div className="space-y-6 max-w-4xl">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-brand-green/10 border border-brand-green/30 text-brand-green text-xs font-mono uppercase tracking-widest">
@@ -188,6 +189,7 @@ export default function AboutPage() {
           </Link>
         </div>
       </div>
-    </div>
-  );
+    </AtmosphericBackground>
+  </div>
+);
 }

@@ -1,151 +1,83 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
-import { Users, Terminal, MapPin, ArrowRight, CheckCircle2 } from "lucide-react";
 import { teamData } from "@/data/team";
-import { brandData } from "@/data/brand";
 
 export default function TeamSection() {
-  const [activeUnitIdx, setActiveUnitIdx] = useState(0);
-  const activeUnit = teamData.disciplines[activeUnitIdx];
+  const [activeIdx, setActiveIdx] = useState(0);
 
   return (
     <section
       id="the-team"
-      className="py-28 sm:py-36 bg-brand-white text-brand-navy relative overflow-hidden"
+      className="py-36 sm:py-48 bg-brand-white text-brand-navy relative overflow-hidden"
     >
-      {/* Background Architectural Grid Pattern on White */}
-      <div className="absolute inset-0 bg-light-grid opacity-30 pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-20">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10 space-y-28">
         {/* Section Header */}
-        <div className="space-y-4 max-w-4xl">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded bg-brand-neutral-surface border border-brand-neutral-border text-brand-navy text-xs font-mono uppercase tracking-widest font-semibold">
+        <div className="space-y-6 max-w-4xl">
+          <div className="inline-flex items-center gap-3 text-xs font-mono tracking-widest text-brand-gray uppercase">
             <span className="w-2 h-2 rounded-full bg-brand-green" />
             <span>08 // THE CREATIVE OPERATING UNIT</span>
           </div>
 
-          <h2 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight text-brand-navy leading-[0.95]">
+          <h2 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black uppercase tracking-tight text-brand-navy leading-[0.92]">
             BUILT BY PEOPLE. <br />
             <span className="text-brand-green">POWERED BY SYSTEMS.</span>
           </h2>
 
-          <p className="text-lg sm:text-xl text-brand-gray leading-relaxed max-w-3xl pt-2 font-normal">
-            We do not operate as an inflated corporate bureaucracy with endless account executives
-            playing telephone. Panknox deploys a specialized, tightly integrated creative operating unit
-            working directly with your leadership.
+          <p className="text-xl sm:text-2xl text-brand-gray font-normal max-w-2xl leading-relaxed">
+            Direct access to directors and specialists. Zero account-manager bureaucracy.
           </p>
         </div>
 
-        {/* Operating Disciplines Matrix on White */}
-        <div className="space-y-6">
-          <div className="flex flex-wrap items-center justify-between gap-4 border-b border-brand-navy/10 pb-4">
-            <div className="flex items-center gap-2 text-xs font-mono text-brand-navy font-bold uppercase tracking-wider">
-              <Terminal className="w-4 h-4 text-brand-green" />
-              <span>THE 7 OPERATING DISCIPLINES // DIRECT ACCESS</span>
-            </div>
-            <span className="text-xs font-mono text-brand-gray">
-              STUDIO BASE: JAIPUR, RAJASTHAN, INDIA
-            </span>
-          </div>
+        {/* Spacious Editorial Disciplines Stream */}
+        <div className="divide-y-2 divide-brand-navy/15 border-y-2 border-brand-navy/15">
+          {teamData.disciplines.map((unit, idx) => {
+            const isSelected = idx === activeIdx;
+            return (
+              <div
+                key={unit.code}
+                onMouseEnter={() => setActiveIdx(idx)}
+                onClick={() => setActiveIdx(idx)}
+                data-cursor="UNIT"
+                className={`py-10 sm:py-14 transition-all cursor-pointer group ${
+                  isSelected ? "bg-brand-neutral-surface/60 px-6 sm:px-10 rounded-2xl" : ""
+                }`}
+              >
+                <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+                  <div className="flex items-baseline gap-6">
+                    <span className="text-sm font-mono text-brand-green font-bold">
+                      {unit.code}
+                    </span>
+                    <h3 className="text-3xl sm:text-5xl font-black uppercase tracking-tight text-brand-navy group-hover:text-brand-green transition-colors">
+                      {unit.name}
+                    </h3>
+                  </div>
 
-          {/* Unit Switcher Tabs */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2.5">
-            {teamData.disciplines.map((unit, idx) => {
-              const isSelected = idx === activeUnitIdx;
-              return (
-                <button
-                  key={unit.code}
-                  type="button"
-                  onClick={() => setActiveUnitIdx(idx)}
-                  data-cursor="UNIT"
-                  className={`p-4 rounded-xl border text-left transition-all ${
-                    isSelected
-                      ? "bg-brand-navy text-white border-brand-navy shadow-md"
-                      : "bg-brand-neutral-surface text-brand-navy border-brand-neutral-border hover:border-brand-navy/40"
-                  }`}
-                >
-                  <span
-                    className={`text-[10px] font-mono block mb-1 ${
-                      isSelected ? "text-brand-green" : "text-brand-gray"
-                    }`}
-                  >
-                    {unit.code}
+                  <span className="text-xs sm:text-sm font-mono text-brand-gray uppercase font-semibold">
+                    {unit.role}
                   </span>
-                  <span className="text-xs font-extrabold uppercase block truncate">
-                    {unit.name}
-                  </span>
-                </button>
-              );
-            })}
-          </div>
+                </div>
 
-          {/* Active Unit Editorial Inspection Card */}
-          <div className="bg-white border-2 border-brand-navy p-6 sm:p-10 rounded-2xl shadow-lg grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            <div className="lg:col-span-8 space-y-4">
-              <div className="flex items-center gap-3">
-                <span className="text-xs font-mono px-2.5 py-1 rounded bg-brand-green/20 text-brand-navy font-bold">
-                  DISCIPLINE {activeUnit.code}
-                </span>
-                <span className="text-xs font-mono text-brand-gray uppercase font-semibold">
-                  {activeUnit.role}
-                </span>
+                {isSelected && (
+                  <div className="pt-6 mt-6 border-t border-brand-navy/10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center animate-fadeIn">
+                    <p className="lg:col-span-8 text-base sm:text-lg text-brand-navy leading-relaxed">
+                      {unit.focus}
+                    </p>
+                    <div className="lg:col-span-4 text-xs font-mono text-brand-gray space-y-1">
+                      <span className="font-bold text-brand-green uppercase block">DELIVERABLE:</span>
+                      <p className="text-brand-navy font-bold">{unit.deliverableFocus}</p>
+                    </div>
+                  </div>
+                )}
               </div>
-
-              <h3 className="text-3xl sm:text-4xl font-black uppercase text-brand-navy tracking-tight">
-                {activeUnit.name}
-              </h3>
-
-              <p className="text-base text-brand-gray leading-relaxed max-w-2xl">
-                {activeUnit.focus}
-              </p>
-
-              <div className="pt-2 text-xs font-mono space-y-1">
-                <span className="text-brand-gray uppercase font-bold block">DELIVERABLE VECTOR:</span>
-                <p className="text-brand-green font-bold text-sm">{activeUnit.deliverableFocus}</p>
-              </div>
-            </div>
-
-            <div className="lg:col-span-4 bg-brand-neutral-surface p-6 rounded-xl border border-brand-neutral-border space-y-3 text-xs font-mono">
-              <span className="text-brand-gray uppercase font-bold block">OPERATIONAL STANDARD:</span>
-              <p className="text-sm font-bold text-brand-navy uppercase">{activeUnit.systemRole}</p>
-              <div className="pt-2 border-t border-brand-navy/10 space-y-1.5 text-brand-navy/80">
-                <p className="flex items-center gap-2">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-brand-green" />
-                  <span>Direct client collaboration</span>
-                </p>
-                <p className="flex items-center gap-2">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-brand-green" />
-                  <span>Zero intermediary delay</span>
-                </p>
-                <p className="flex items-center gap-2">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-brand-green" />
-                  <span>Strict commercial ownership</span>
-                </p>
-              </div>
-            </div>
-          </div>
+            );
+          })}
         </div>
 
-        {/* Studio Location & Values Banner on White */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4 border-t border-brand-navy/10">
-          {teamData.operatingValues.map((val, idx) => (
-            <div
-              key={val.title}
-              className="p-6 rounded-2xl bg-brand-neutral-surface border border-brand-neutral-border space-y-2 shadow-sm"
-            >
-              <span className="text-xs font-mono text-brand-green font-bold block">
-                VALUE 0{idx + 1}
-              </span>
-              <h4 className="text-lg font-bold uppercase text-brand-navy">
-                {val.title}
-              </h4>
-              <p className="text-xs text-brand-gray leading-relaxed">
-                {val.description}
-              </p>
-            </div>
-          ))}
+        {/* Studio Provenance Footnote */}
+        <div className="pt-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs font-mono text-brand-gray">
+          <span>STUDIO HQ // JAIPUR, RAJASTHAN, INDIA</span>
+          <span>CREATIVE &amp; PERFORMANCE MARKETING PARTNER</span>
         </div>
       </div>
     </section>

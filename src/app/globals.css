@@ -175,6 +175,42 @@ body {
   }
 }
 
-.animate-signal-pulse {
-  animation: pulseSignal 3s ease-in-out infinite;
+/* Atmospheric Background Keyframes */
+@keyframes ambientGlow1 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(4vw, 3vh) scale(1.08);
+  }
+}
+
+@keyframes ambientGlow2 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-3vw, -4vh) scale(1.06);
+  }
+}
+
+@keyframes ambientGlow3 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(2vw, -2vh) scale(1.04);
+  }
+}
+
+.animate-ambientGlow1 {
+  animation: ambientGlow1 32s ease-in-out infinite;
+}
+
+.animate-ambientGlow2 {
+  animation: ambientGlow2 38s ease-in-out infinite;
+}
+
+.animate-ambientGlow3 {
+  animation: ambientGlow3 28s ease-in-out infinite;
 }

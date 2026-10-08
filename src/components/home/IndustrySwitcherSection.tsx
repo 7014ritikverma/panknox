@@ -2,180 +2,186 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ArrowUpRight, ArrowRight, Building, HeartPulse, Home, Compass, Sparkles, CheckCircle2 } from "lucide-react";
-import { industriesData } from "@/data/industries";
+import { ArrowUpRight, ArrowRight, Building, HeartPulse, Home, Compass, Sparkles } from "lucide-react";
+import AtmosphericBackground from "@/components/common/AtmosphericBackground";
 
-const INDUSTRY_ICONS: Record<string, any> = {
-  manufacturing: Building,
-  healthcare: HeartPulse,
-  "real-estate": Home,
-  "interiors-furniture": Compass,
-  hospitality: Sparkles,
-};
+interface IndustryItem {
+  id: string;
+  number: string;
+  name: string;
+  tagline: string;
+  journey: string[];
+  slug: string;
+  problem: string;
+  solution: string;
+}
+
+const INDUSTRIES: IndustryItem[] = [
+  {
+    id: "manufacturing",
+    number: "01",
+    name: "MANUFACTURING",
+    tagline: "Industrial Capability Demands Concrete Proof, Not Fluff.",
+    journey: ["PRODUCT", "UNDERSTANDING", "TRUST", "ENQUIRY"],
+    slug: "manufacturing",
+    problem: "High engineering reality hidden behind dated PDFs and commodity vendor pricing.",
+    solution: "4K macro plant cinematography, tolerance documentation, and technical RFQ funnels.",
+  },
+  {
+    id: "healthcare",
+    number: "02",
+    name: "HEALTHCARE",
+    tagline: "In Healthcare, Marketing Must Never Look Like Marketing.",
+    journey: ["EDUCATION", "TRUST", "CONFIDENCE", "APPOINTMENT"],
+    slug: "healthcare",
+    problem: "Patient anxiety compounded by aggressive discount ad banners and medical jargon.",
+    solution: "Dignity-first clinical education videos, transparent care pathways, and frictionless triage.",
+  },
+  {
+    id: "real-estate",
+    number: "03",
+    name: "REAL ESTATE",
+    tagline: "Move Beyond Render Galleries to Lifestyle Reality.",
+    journey: ["ATTENTION", "INTEREST", "SITE VISIT", "ENQUIRY"],
+    slug: "real-estate",
+    problem: "Identical 3D renders, broker spam calls, and buyer cynicism over delivery velocity.",
+    solution: "Construction milestone documentation films, spatial POV tours, and pre-qualified investor funnels.",
+  },
+  {
+    id: "interiors-furniture",
+    number: "04",
+    name: "INTERIORS & FURNITURE",
+    tagline: "Turn Aesthetic Inspiration into Material Certainty.",
+    journey: ["INSPIRATION", "DESIRE", "TRUST", "ENQUIRY"],
+    slug: "interiors-furniture",
+    problem: "Artisanal joinery looking indistinguishable from flat-pack brands on generic feeds.",
+    solution: "Tactile timber cinema, joinery durability tests, and architect specification portals.",
+  },
+  {
+    id: "hospitality",
+    number: "05",
+    name: "HOSPITALITY",
+    tagline: "Guests Don't Book Rooms. They Book Moments.",
+    journey: ["EXPERIENCE", "DESIRE", "TRUST", "BOOKING"],
+    slug: "hospitality",
+    problem: "OTA aggregators taking 20%+ commissions while stripping the estate of its soul.",
+    solution: "Sensory dusk cinematography, culinary heritage vignettes, and direct reservation platforms.",
+  },
+];
 
 export default function IndustrySwitcherSection() {
-  const [selectedIndustryId, setSelectedIndustryId] = useState<string>("manufacturing");
-  const activeIndustry = industriesData.find((i) => i.id === selectedIndustryId) || industriesData[0];
-  const Icon = INDUSTRY_ICONS[activeIndustry.id] || Building;
+  const [activeId, setActiveId] = useState<string>("manufacturing");
+  const activeInd = INDUSTRIES.find((i) => i.id === activeId) || INDUSTRIES[0];
 
   return (
-    <section
-      id="industry-switcher"
-      className="py-28 sm:py-36 bg-brand-navy border-t border-brand-neutral/10 relative overflow-hidden text-brand-neutral"
-    >
-      <div className="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-16">
-        {/* Section Header */}
-        <div className="space-y-4 max-w-3xl">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded bg-brand-green/10 border border-brand-green/30 text-brand-green text-xs font-mono uppercase tracking-widest font-semibold">
-            <span className="w-2 h-2 rounded-full bg-brand-green" />
-            <span>04 // SECTOR OPERATING ENVIRONMENTS</span>
-          </div>
-
-          <h2 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight text-brand-neutral leading-[0.95]">
-            INDUSTRIES.
-          </h2>
-
-          <p className="text-lg sm:text-xl text-brand-neutral/80 leading-relaxed font-normal">
-            B2B manufacturing cannot use the marketing playbook of a boutique hotel.
-            Select an industry on the left to see how the customer journey and communication architecture shifts.
-          </p>
-        </div>
-
-        {/* 2-Column Layout: Left Selector + Right Dynamic Visual */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          {/* Left Column: Interactive Industry Buttons */}
-          <div className="lg:col-span-4 space-y-3">
-            <div className="pb-2 border-b border-brand-neutral/10">
-              <span className="text-xs font-mono uppercase tracking-widest text-brand-gray font-bold">
-                SELECT OPERATING ENVIRONMENT:
-              </span>
+    <section id="industry-switcher" className="relative overflow-hidden">
+      <AtmosphericBackground className="py-36 sm:py-48">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10 space-y-24">
+          {/* Section Header */}
+          <div className="space-y-6 max-w-4xl">
+            <div className="inline-flex items-center gap-3 text-xs font-mono tracking-widest text-brand-green/80 uppercase">
+              <span className="w-2 h-2 rounded-full bg-brand-green animate-pulse" />
+              <span>04 // SECTOR OPERATING ENVIRONMENTS</span>
             </div>
 
-            {industriesData.map((ind) => {
-              const isSelected = ind.id === selectedIndustryId;
-              const IndIcon = INDUSTRY_ICONS[ind.id] || Building;
-              return (
-                <button
-                  key={ind.id}
-                  type="button"
-                  onClick={() => setSelectedIndustryId(ind.id)}
-                  data-cursor="SWITCH"
-                  className={`w-full p-5 rounded-xl border text-left transition-all flex items-center justify-between ${
-                    isSelected
-                      ? "bg-brand-green/15 border-brand-green text-brand-neutral shadow-[0_0_20px_rgba(48,198,130,0.25)] scale-[1.01]"
-                      : "bg-brand-navy/60 border-brand-neutral/15 text-brand-neutral/70 hover:border-brand-neutral/40 hover:bg-white/5"
-                  }`}
-                >
-                  <div className="flex items-center gap-3">
-                    <IndIcon
-                      className={`w-4 h-4 ${
-                        isSelected ? "text-brand-green" : "text-brand-gray"
-                      }`}
-                    />
-                    <div>
-                      <span className="text-xs font-mono text-brand-gray block">
-                        VERTICAL {ind.number}
-                      </span>
-                      <span className="text-base font-extrabold uppercase tracking-tight block text-brand-neutral">
-                        {ind.name}
-                      </span>
-                    </div>
-                  </div>
+            <h2 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black uppercase tracking-tight text-brand-neutral leading-[0.92]">
+              INDUSTRIES.
+            </h2>
 
-                  <span
-                    className={`w-2 h-2 rounded-full ${
-                      isSelected ? "bg-brand-green animate-ping" : "bg-brand-neutral/20"
+            <p className="text-xl sm:text-2xl text-brand-neutral/80 font-normal max-w-2xl leading-relaxed pt-2">
+              One visual environment changes as the selected sector changes.
+            </p>
+          </div>
+
+          {/* Morphing Industry Experience */}
+          <div className="p-8 sm:p-14 rounded-3xl bg-black/50 border border-white/10 space-y-12 shadow-2xl">
+            {/* Horizontal Selector Pills */}
+            <div className="flex flex-wrap gap-3 border-b border-white/10 pb-6">
+              {INDUSTRIES.map((ind) => {
+                const isSelected = ind.id === activeId;
+                return (
+                  <button
+                    key={ind.id}
+                    type="button"
+                    onClick={() => setActiveId(ind.id)}
+                    data-cursor="SWITCH"
+                    className={`px-6 py-3 rounded-full text-xs font-mono font-bold uppercase tracking-wider transition-all ${
+                      isSelected
+                        ? "bg-brand-green text-brand-navy shadow-[0_0_20px_rgba(48,198,130,0.3)] scale-105"
+                        : "bg-white/5 text-brand-gray hover:text-brand-neutral hover:bg-white/10"
                     }`}
-                  />
-                </button>
-              );
-            })}
-          </div>
-
-          {/* Right Column: Dynamic Visual & Customer Journey Pipeline */}
-          <div className="lg:col-span-8 bg-black/40 border border-brand-neutral/20 rounded-2xl p-6 sm:p-10 space-y-8 shadow-2xl relative">
-            {/* Top Headline & Icon */}
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-brand-neutral/10">
-              <div className="space-y-1">
-                <span className="text-xs font-mono uppercase tracking-widest text-brand-green font-bold flex items-center gap-2">
-                  <Icon className="w-4 h-4" />
-                  <span>VERTICAL // {activeIndustry.name.toUpperCase()}</span>
-                </span>
-                <h3 className="text-2xl sm:text-3xl font-black uppercase text-brand-neutral tracking-tight">
-                  {activeIndustry.tagline}
-                </h3>
-              </div>
-
-              <Link
-                href={`/industries/${activeIndustry.slug}`}
-                data-cursor="DEEP DIVE"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded bg-brand-green text-brand-navy font-bold text-xs uppercase tracking-wider hover:bg-brand-green/90 transition-all shrink-0"
-              >
-                <span>ENTER SPEC</span>
-                <ArrowUpRight className="w-4 h-4" />
-              </Link>
-            </div>
-
-            {/* Dynamic Customer Journey Pipeline */}
-            <div className="space-y-4">
-              <div className="flex items-center justify-between">
-                <span className="text-xs font-mono uppercase tracking-widest text-brand-gray font-bold">
-                  THE SECTOR BUYER JOURNEY:
-                </span>
-                <span className="text-xs font-mono text-brand-green font-bold">
-                  {activeIndustry.customerJourneySummary}
-                </span>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-                {activeIndustry.journeyStages.map((stage, idx) => (
-                  <div
-                    key={stage.step}
-                    className="p-4 rounded-xl bg-white/[0.03] border border-brand-neutral/15 space-y-2 relative"
                   >
-                    <div className="flex items-center justify-between text-xs font-mono">
-                      <span className="text-brand-green font-bold">STAGE {stage.step}</span>
-                      <span className="text-brand-neutral/40 uppercase">{stage.label}</span>
-                    </div>
-
-                    <h4 className="text-lg font-bold uppercase text-brand-neutral tracking-tight">
-                      {stage.label}
-                    </h4>
-
-                    <div className="space-y-1.5 text-xs">
-                      <p className="text-brand-neutral/80 font-medium">{stage.focus}</p>
-                      <p className="text-[11px] text-brand-green italic pt-1 border-t border-brand-neutral/10">
-                        Panknox: {stage.panknoxIntervention}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
+                    {ind.number} // {ind.name}
+                  </button>
+                );
+              })}
             </div>
 
-            {/* Tactical Focus & Verified Case Reference */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4 border-t border-brand-neutral/10 text-xs">
-              <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/20 space-y-1">
-                <span className="font-mono uppercase text-red-300 font-bold block">
-                  COMMUNICATION PITFALL:
-                </span>
-                <p className="text-brand-neutral/80">{activeIndustry.communicationProblem}</p>
+            {/* Active Sector Canvas */}
+            <div className="p-8 sm:p-12 rounded-2xl bg-brand-navy/90 border border-brand-green/30 space-y-10 shadow-xl animate-fadeIn">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/10 pb-6">
+                <div>
+                  <span className="text-xs font-mono text-brand-green uppercase font-bold tracking-widest block">
+                    SECTOR // {activeInd.name}
+                  </span>
+                  <h3 className="text-3xl sm:text-5xl font-black uppercase text-brand-neutral tracking-tight pt-1">
+                    {activeInd.tagline}
+                  </h3>
+                </div>
+
+                <Link
+                  href={`/industries/${activeInd.slug}`}
+                  data-cursor="ENTER SPEC"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-brand-green text-brand-navy font-bold text-xs uppercase tracking-wider hover:bg-brand-green/90 transition-all shrink-0"
+                >
+                  <span>ENTER {activeInd.name} SPEC</span>
+                  <ArrowUpRight className="w-4 h-4" />
+                </Link>
               </div>
 
-              <div className="p-4 rounded-xl bg-brand-green/10 border border-brand-green/30 space-y-1">
-                <span className="font-mono uppercase text-brand-green font-bold block">
-                  WHAT PANKNOX BUILDS:
+              {/* Morphing Customer Journey Pipeline */}
+              <div className="space-y-4">
+                <span className="text-xs font-mono uppercase tracking-widest text-brand-gray font-bold block">
+                  THE BUYER DECISION PIPELINE:
                 </span>
-                <p className="text-brand-neutral/90 font-medium">
-                  {activeIndustry.tacticalFocus.whatWorks}
-                </p>
+
+                <div className="flex flex-col sm:flex-row flex-wrap items-center gap-3">
+                  {activeInd.journey.map((step, idx) => (
+                    <div key={step} className="flex items-center gap-3 w-full sm:w-auto">
+                      <div className="p-5 rounded-2xl bg-black/50 border border-white/10 text-center flex-1 sm:flex-none min-w-[140px]">
+                        <span className="text-xs font-mono text-brand-green font-bold block">
+                          0{idx + 1}
+                        </span>
+                        <span className="text-base font-extrabold uppercase text-brand-neutral tracking-tight block">
+                          {step}
+                        </span>
+                      </div>
+
+                      {idx < activeInd.journey.length - 1 && (
+                        <div className="hidden sm:flex text-brand-green">
+                          <ArrowRight className="w-4 h-4" />
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Problem vs Solution */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6 border-t border-white/10 text-xs font-mono">
+                <div className="space-y-1">
+                  <span className="text-red-400 font-bold uppercase block">THE PITFALL:</span>
+                  <p className="text-brand-neutral/80">{activeInd.problem}</p>
+                </div>
+                <div className="space-y-1">
+                  <span className="text-brand-green font-bold uppercase block">PANKNOX DEPLOYMENT:</span>
+                  <p className="text-brand-neutral">{activeInd.solution}</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </AtmosphericBackground>
     </section>
   );
 }
