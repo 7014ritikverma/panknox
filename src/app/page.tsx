@@ -20,7 +20,7 @@ export default function HomePage() {
       {/* TRANSITION: DARK -> WHITE */}
       <SectionTransition
         theme="dark-to-light"
-        label="CHAPTER 01 // THE MARKET GAP"
+        label="Chapter 01 · The market gap"
       />
 
       {/* 02 / THE GAP (WHITE: #FFFFFF) */}
@@ -29,7 +29,7 @@ export default function HomePage() {
       {/* TRANSITION: WHITE -> DARK */}
       <SectionTransition
         theme="light-to-dark"
-        label="CHAPTER 02 // THE PHILOSOPHICAL REVERSAL"
+        label="Chapter 02 · The philosophical reversal"
       />
 
       {/* 03 / WE DON'T SELL POSTS (ATMOSPHERIC DARK) */}
@@ -38,7 +38,7 @@ export default function HomePage() {
       {/* TRANSITION: DARK -> WHITE */}
       <SectionTransition
         theme="dark-to-light"
-        label="CHAPTER 03 // CAPABILITY ARCHITECTURE"
+        label="Chapter 03 · Capability architecture"
       />
 
       {/* 04 / WHAT WE BUILD // CAPABILITIES (WHITE: #FFFFFF) */}
@@ -47,7 +47,7 @@ export default function HomePage() {
       {/* TRANSITION: WHITE -> DARK */}
       <SectionTransition
         theme="light-to-dark"
-        label="CHAPTER 04 // THE PANKNOX SYSTEM"
+        label="Chapter 04 · The Panknox system"
       />
 
       {/* 05 / THE PANKNOX SYSTEM (SIGNATURE 02) (ATMOSPHERIC DARK) */}
@@ -59,7 +59,7 @@ export default function HomePage() {
       {/* TRANSITION: DARK -> WHITE */}
       <SectionTransition
         theme="dark-to-light"
-        label="CHAPTER 05 // EDITORIAL WORK ARCHIVE"
+        label="Chapter 05 · Editorial work archive"
       />
 
       {/* 07 / WORK // EDITORIAL ARCHIVE (WHITE: #FFFFFF) */}
@@ -71,7 +71,7 @@ export default function HomePage() {
       {/* TRANSITION: LIGHT -> DARK */}
       <SectionTransition
         theme="light-to-dark"
-        label="CHAPTER 06 // THE AI FILTER"
+        label="Chapter 06 · The AI filter"
       />
 
       {/* 09 / THE AI ERA (SIGNATURE 03) (ATMOSPHERIC DARK) */}
@@ -80,7 +80,7 @@ export default function HomePage() {
       {/* TRANSITION: DARK -> WHITE */}
       <SectionTransition
         theme="dark-to-light"
-        label="CHAPTER 07 // THE CREATIVE OPERATING UNIT"
+        label="Chapter 07 · The creative operating unit"
       />
 
       {/* 10 / THE TEAM (WHITE: #FFFFFF) */}
@@ -89,7 +89,7 @@ export default function HomePage() {
       {/* TRANSITION: WHITE -> DARK */}
       <SectionTransition
         theme="light-to-dark"
-        label="CHAPTER 08 // CONVERSATION"
+        label="Chapter 08 · Conversation"
       />
 
       {/* 11 / CONTACT // "LET'S BUILD SOMETHING WORTH NOTICING" (ATMOSPHERIC DARK) */}

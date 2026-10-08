@@ -1,7 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowUpRight, ArrowRight, Building, HeartPulse, Home, Compass, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { industriesData } from "@/data/industries";
+import {
+  ManufacturingIcon,
+  HealthcareIcon,
+  RealEstateIcon,
+  InteriorsIcon,
+  HospitalityIcon,
+} from "@/components/common/PanknoxIcons";
 
 export const metadata: Metadata = {
   title: "Focus Industries | Tailored Commercial Architectures",
@@ -9,12 +16,12 @@ export const metadata: Metadata = {
     "Explore how Panknox architects marketing systems for Manufacturing, Healthcare, Real Estate, Interiors & Furniture, and Hospitality.",
 };
 
-const INDUSTRY_ICONS: Record<string, any> = {
-  manufacturing: Building,
-  healthcare: HeartPulse,
-  "real-estate": Home,
-  "interiors-furniture": Compass,
-  hospitality: Sparkles,
+const INDUSTRY_ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
+  manufacturing: ManufacturingIcon,
+  healthcare: HealthcareIcon,
+  "real-estate": RealEstateIcon,
+  "interiors-furniture": InteriorsIcon,
+  hospitality: HospitalityIcon,
 };
 
 export default function IndustriesOverviewPage() {
@@ -25,14 +32,14 @@ export default function IndustriesOverviewPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-20">
         {/* Header */}
         <div className="space-y-6 max-w-4xl">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-brand-green/10 border border-brand-green/30 text-brand-green text-xs font-mono uppercase tracking-widest">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-brand-green/10 border border-brand-green/30 text-brand-green text-xs font-mono">
             <span className="w-2 h-2 rounded-full bg-brand-green" />
-            <span>INDUSTRY ARCHITECTURES // 5 CORE VERTICALS</span>
+            <span>Industry architectures · 5 core verticals</span>
           </div>
 
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-black uppercase tracking-tight text-brand-neutral leading-none">
-            COMMERCIAL REALITY <br />
-            <span className="text-brand-green">IS NOT ONE-SIZE-FITS-ALL.</span>
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-brand-neutral leading-tight">
+            Commercial reality <br />
+            <span className="text-brand-green">is not one-size-fits-all.</span>
           </h1>
 
           <p className="text-lg sm:text-xl text-brand-neutral/80 leading-relaxed max-w-3xl">
@@ -45,7 +52,7 @@ export default function IndustriesOverviewPage() {
         {/* 5 Vertical Pillars Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {industriesData.map((ind) => {
-            const Icon = INDUSTRY_ICONS[ind.id] || Building;
+            const Icon = INDUSTRY_ICONS[ind.id] || ManufacturingIcon;
             return (
               <article
                 key={ind.id}
@@ -54,16 +61,18 @@ export default function IndustriesOverviewPage() {
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
                     <span className="text-xs font-mono text-brand-green font-bold">
-                      VERTICAL // {ind.number}
+                      Vertical {ind.number}
                     </span>
-                    <Icon className="w-5 h-5 text-brand-gray" />
+                    <div className="w-9 h-9 rounded-lg bg-brand-green/10 border border-brand-green/20 flex items-center justify-center">
+                      <Icon className="w-5 h-5 text-brand-green" />
+                    </div>
                   </div>
 
-                  <h2 className="text-3xl font-black uppercase text-brand-neutral tracking-tight">
+                  <h2 className="text-3xl font-bold text-brand-neutral tracking-tight">
                     {ind.name}
                   </h2>
 
-                  <p className="text-base font-bold text-brand-green">
+                  <p className="text-base font-semibold text-brand-green">
                     &ldquo;{ind.tagline}&rdquo;
                   </p>
 
@@ -73,18 +82,18 @@ export default function IndustriesOverviewPage() {
 
                   {/* Customer Journey Micro-Pipeline */}
                   <div className="p-4 rounded-xl bg-black/40 border border-brand-neutral/10 space-y-2">
-                    <span className="text-[10px] font-mono uppercase tracking-widest text-brand-gray block">
-                      CUSTOMER DECISION PIPELINE:
+                    <span className="text-[10px] font-mono tracking-wider text-brand-gray block">
+                      Customer decision pipeline:
                     </span>
-                    <p className="text-xs font-mono text-brand-neutral font-semibold">
+                    <p className="text-xs font-mono text-brand-neutral font-medium">
                       {ind.customerJourneySummary}
                     </p>
                   </div>
 
                   {/* The Critical Problem */}
                   <div className="space-y-1 text-xs">
-                    <span className="font-mono uppercase text-red-400 font-bold block">
-                      WHY GENERIC MARKETING FAILS HERE:
+                    <span className="font-mono text-red-400 font-bold block">
+                      Why generic marketing fails here:
                     </span>
                     <p className="text-brand-neutral/70">{ind.communicationProblem}</p>
                   </div>
@@ -92,13 +101,13 @@ export default function IndustriesOverviewPage() {
 
                 <div className="pt-6 border-t border-brand-neutral/10 flex items-center justify-between">
                   <span className="text-xs font-mono text-brand-gray">
-                    CASE: {ind.sampleWorkReference.title}
+                    Case: {ind.sampleWorkReference.title}
                   </span>
                   <Link
                     href={`/industries/${ind.slug}`}
-                    className="inline-flex items-center gap-2 text-xs font-mono font-bold text-brand-green uppercase hover:underline"
+                    className="inline-flex items-center gap-2 text-xs font-mono font-medium text-brand-green hover:underline"
                   >
-                    <span>ENTER {ind.name.toUpperCase()} ARCHITECTURE</span>
+                    <span>Explore {ind.name} architecture</span>
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
@@ -110,11 +119,11 @@ export default function IndustriesOverviewPage() {
         {/* Global Bottom Banner */}
         <div className="p-8 sm:p-12 rounded-2xl bg-white/[0.02] border border-brand-neutral/15 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div className="space-y-2 max-w-2xl">
-            <span className="text-xs font-mono uppercase tracking-widest text-brand-green font-bold">
-              UNLISTED VERTICALS?
+            <span className="text-xs font-mono tracking-wider text-brand-green font-bold">
+              Unlisted verticals
             </span>
-            <h3 className="text-2xl font-bold uppercase text-brand-neutral">
-              OPERATING IN ANOTHER HIGH-STAKES SECTOR?
+            <h3 className="text-2xl font-bold text-brand-neutral">
+              Operating in another high-stakes sector?
             </h3>
             <p className="text-sm text-brand-neutral/70">
               Our diagnostic framework applies to any business where trust, operational complexity, and buyer deliberation are high.
@@ -123,9 +132,9 @@ export default function IndustriesOverviewPage() {
 
           <Link
             href="/contact"
-            className="inline-flex items-center gap-3 px-8 py-4 rounded bg-brand-green text-brand-navy font-bold text-sm tracking-wider uppercase hover:bg-brand-green/90 transition-all shrink-0"
+            className="inline-flex items-center gap-3 px-8 py-4 rounded bg-brand-green text-brand-navy font-bold text-sm tracking-wide hover:bg-brand-green/90 transition-all shrink-0"
           >
-            <span>DISCUSS YOUR SECTOR</span>
+            <span>Discuss your sector</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

@@ -21,12 +21,12 @@ export interface OperatingUnit {
 }
 
 export const teamData: OperatingUnit = {
-  headline: "THE TEAM",
+  headline: "The team",
   subheadline: "A Dedicated Creative Operating Unit",
-  coreStatement: "BUILT BY PEOPLE. POWERED BY SYSTEMS.",
+  coreStatement: "Built by people. Powered by systems.",
   philosophy:
     "We don't operate as a bloated hierarchy with endless account managers playing telephone between clients and creatives. Panknox deploys a specialized, tightly integrated creative operating unit directly linked to your business objectives.",
-  locationDetails: "Studio HQ: Jaipur, Rajasthan, India. Operating across global commercial standards.",
+  locationDetails: "Offices in Mandrella & Jaipur, Rajasthan. Operating across global commercial standards.",
   disciplines: [
     {
       code: "U-01",
@@ -91,7 +91,7 @@ export const teamData: OperatingUnit = {
       description: "You work directly with the thinkers, directors, and builders shaping your market presence.",
     },
     {
-      title: "Rooted in Jaipur, Built for Scale",
+      title: "Grounded in Reality, Built for Scale",
       description: "Ground-level commercial understanding combined with international aesthetic execution.",
     },
     {

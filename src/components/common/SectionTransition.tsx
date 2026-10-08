@@ -4,7 +4,7 @@ interface SectionTransitionProps {
 }
 
 export default function SectionTransition({
-  label = "SYSTEM // PHASE SHIFT",
+  label = "System phase shift",
   theme = "dark-to-light",
 }: SectionTransitionProps) {
   const isDarkToLight = theme === "dark-to-light";
@@ -25,7 +25,7 @@ export default function SectionTransition({
         <div className="flex items-center gap-2">
           <span className="w-1.5 h-1.5 rounded-full bg-brand-green" />
           <span
-            className={`text-[11px] font-mono tracking-widest uppercase ${
+            className={`text-[11px] font-mono tracking-wider ${
               isDarkToLight ? "text-brand-gray" : "text-brand-navy/60"
             }`}
           >
@@ -38,7 +38,7 @@ export default function SectionTransition({
             isDarkToLight ? "text-brand-green/80" : "text-brand-green"
           }`}
         >
-          SIGNAL PROTOCOL // ACTIVE
+          Signal protocol · Active
         </span>
       </div>
     </div>

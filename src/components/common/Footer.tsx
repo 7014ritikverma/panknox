@@ -14,61 +14,140 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className="relative border-t border-white/5 text-brand-neutral overflow-hidden">
-      <AtmosphericBackground className="py-24 sm:py-32">
+    <footer className="relative text-brand-neutral overflow-hidden border-t border-white/8">
+      <AtmosphericBackground className="pt-24 pb-16 sm:pt-32 sm:pb-20">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-20 relative z-10">
-          {/* Main Editorial Block */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end pb-16 border-b border-white/10">
-            <div className="lg:col-span-8 space-y-6">
-              <PanknoxLogo variant="light" height={32} />
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-brand-neutral leading-tight max-w-2xl">
-                YOUR BUSINESS IS ALREADY DOING SOMETHING. <br />
-                <span className="text-brand-green">WE MAKE SURE THE WORLD NOTICES.</span>
-              </h2>
+          {/* 1. Large Memorable Statement — The Final Visual Chapter */}
+          <div className="space-y-6 max-w-4xl">
+            <div className="inline-flex items-center gap-2.5 text-xs font-mono text-brand-green">
+              <span className="w-2 h-2 rounded-full bg-brand-green animate-pulse" />
+              <span>Chapter 10 // The conclusion</span>
             </div>
 
-            <div className="lg:col-span-4 flex flex-col sm:items-end space-y-4">
-              <Link
-                href="/contact"
-                data-cursor="START"
-                className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-brand-green text-brand-navy font-bold text-xs tracking-widest uppercase hover:bg-brand-green/90 transition-all shadow-[0_0_25px_rgba(48,198,130,0.3)]"
-              >
-                <span>START A CONVERSATION</span>
-                <ArrowUpRight className="w-4 h-4" />
+            <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-[64px] font-bold tracking-tight text-brand-neutral leading-[1.08]">
+              Let&apos;s make something <br />
+              <span className="text-brand-green">worth noticing.</span>
+            </h2>
+          </div>
+
+          {/* 2. Signature Visual Element: The Travelling Signal Line Disappearing Into the Atmosphere */}
+          <div className="relative w-full h-[1px] bg-white/10 overflow-hidden my-8">
+            <div
+              className="absolute top-0 h-[2px] w-64 bg-gradient-to-r from-transparent via-[#30C682] to-transparent animate-signal-travel opacity-90 shadow-[0_0_15px_#30C682]"
+              style={{ animationDuration: "6s" }}
+            />
+          </div>
+
+          {/* 3. Core Brand & Directional Columns */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pt-4">
+            {/* Logo & Brand Identity */}
+            <div className="lg:col-span-5 space-y-6">
+              <Link href="/" className="inline-block transition-opacity hover:opacity-85">
+                <PanknoxLogo variant="light" height={30} priority />
               </Link>
-              <p className="text-xs font-mono text-brand-gray sm:text-right">
-                Studio Base: Jaipur, Rajasthan, India
+              <p className="text-sm sm:text-base text-brand-neutral/70 max-w-sm leading-relaxed">
+                Creative &amp; Performance Marketing Partner. Building the systems and perception that turn business reality into growth.
               </p>
+            </div>
+
+            {/* Navigation Links */}
+            <div className="lg:col-span-2 space-y-3.5">
+              <span className="text-xs font-mono text-brand-neutral/50 font-medium block">
+                Navigation
+              </span>
+              <ul className="space-y-2.5 text-sm font-medium text-brand-neutral/80">
+                <li>
+                  <Link href="/what-we-do" className="hover:text-brand-green transition-colors">
+                    What we do
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/industries" className="hover:text-brand-green transition-colors">
+                    Industries
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/work" className="hover:text-brand-green transition-colors">
+                    Work
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/about" className="hover:text-brand-green transition-colors">
+                    About
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Direct Contact */}
+            <div className="lg:col-span-2 space-y-3.5">
+              <span className="text-xs font-mono text-brand-neutral/50 font-medium block">
+                Contact
+              </span>
+              <ul className="space-y-2.5 text-sm font-medium text-brand-neutral/80">
+                <li>
+                  <Link href="/contact" className="hover:text-brand-green transition-colors">
+                    Start a conversation
+                  </Link>
+                </li>
+                <li>
+                  <a
+                    href="mailto:contact@panknox.com"
+                    className="hover:text-brand-green transition-colors"
+                  >
+                    contact@panknox.com
+                  </a>
+                </li>
+              </ul>
+              <div className="pt-2">
+                <span className="text-xs font-mono text-brand-neutral/50 font-medium block mb-2">
+                  Social
+                </span>
+                <div className="flex items-center gap-4 text-xs font-mono text-brand-neutral/70">
+                  <a
+                    href="https://linkedin.com/company/panknox"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-brand-green transition-colors"
+                  >
+                    LinkedIn
+                  </a>
+                  <a
+                    href="https://instagram.com/panknox"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-brand-green transition-colors"
+                  >
+                    Instagram
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Official Dual Locations */}
+            <div className="lg:col-span-3 space-y-3.5">
+              <span className="text-xs font-mono text-brand-neutral/50 font-medium block">
+                Locations
+              </span>
+              <div className="space-y-3 text-xs sm:text-[13px] text-brand-neutral/80 font-mono leading-relaxed">
+                <div>
+                  <span className="text-brand-green block font-semibold">Main Office</span>
+                  <p>Mandrella, Jhunjhunu, Rajasthan</p>
+                </div>
+                <div>
+                  <span className="text-brand-green block font-semibold">Second Location</span>
+                  <p>Chitrakoot, Vaishali Nagar, Jaipur, Rajasthan</p>
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Minimal Navigation & Legal Bar */}
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 text-xs font-mono text-brand-gray">
-            <div className="flex flex-wrap items-center gap-8 text-brand-neutral/80">
-              <Link href="/what-we-do" className="hover:text-brand-green transition-colors">
-                WHAT WE DO
-              </Link>
-              <Link href="/industries" className="hover:text-brand-green transition-colors">
-                INDUSTRIES
-              </Link>
-              <Link href="/work" className="hover:text-brand-green transition-colors">
-                WORK
-              </Link>
-              <Link href="/about" className="hover:text-brand-green transition-colors">
-                ABOUT
-              </Link>
-              <Link href="/contact" className="hover:text-brand-green transition-colors">
-                CONTACT
-              </Link>
-            </div>
-
-            <div className="flex items-center gap-6">
-              <span>© {currentYear} PANKNOX MEDIA PVT. LTD.</span>
-              {/* The final fading signal */}
-              <span className="flex items-center gap-2 text-brand-green">
-                <span className="w-1.5 h-1.5 rounded-full bg-brand-green opacity-70 animate-pulse" />
-                <span>SIGNAL // RESTING</span>
-              </span>
+          {/* 4. Bottom Legal & Fading Signal */}
+          <div className="pt-8 border-t border-white/8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-brand-neutral/50">
+            <p>© {currentYear} Panknox Media Pvt. Ltd. All rights reserved.</p>
+            <div className="flex items-center gap-2 text-brand-green/80">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand-green animate-pulse" />
+              <span>Signal // Dissolving into the atmosphere</span>
             </div>
           </div>
         </div>
@@ -76,3 +155,4 @@ export default function Footer() {
     </footer>
   );
 }
+

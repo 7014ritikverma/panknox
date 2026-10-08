@@ -22,14 +22,14 @@ export const capabilitySystems: CapabilitySystem[] = [
   {
     id: "strategy",
     number: "01",
-    name: "STRATEGY",
+    name: "Strategy",
     subtitle: "Groundwork & Market Positioning",
     headline: "Before a single pixel moves, we dissect the business reality.",
     description:
       "Most agencies jump straight into creative execution without diagnosing what makes the business distinct. Panknox establishes market truth, audience incentives, competitive voids, and distribution leverage first.",
     systemInput: "Raw Business Truth & Operational Capabilities",
     systemOutput: "Market Positioning, Narrative Vector & Channel Blueprints",
-    signalLabel: "SYS-01 // COGNITIVE BLUEPRINT",
+    signalLabel: "System 01 // Cognitive Blueprint",
     corePrinciples: [
       "No communication without a strategic reason to exist",
       "Perception must reflect authentic capability, not manufactured fluff",
@@ -101,14 +101,14 @@ export const capabilitySystems: CapabilitySystem[] = [
   {
     id: "creative-content",
     number: "02",
-    name: "CREATIVE & CONTENT",
+    name: "Creative & content",
     subtitle: "Visual Narrative & Brand Perception",
     headline: "Transforming dry business value into compelling visual communication.",
     description:
       "Content is not an arbitrary daily chore. It is the visible surface area of your company's intelligence. We design visual assets that build instant commercial authority and command market respect.",
     systemInput: "Strategic Positioning & Subject-Matter Expertise",
     systemOutput: "High-Caliber Creative Systems, Film, Motion & Editorial Content",
-    signalLabel: "SYS-02 // PERCEPTION ENGINE",
+    signalLabel: "System 02 // Perception Engine",
     corePrinciples: [
       "Every piece of content must respect the audience's time and intelligence",
       "Editorial precision over generic promotional noise",
@@ -200,14 +200,14 @@ export const capabilitySystems: CapabilitySystem[] = [
   {
     id: "digital-presence",
     number: "03",
-    name: "DIGITAL PRESENCE",
+    name: "Digital presence",
     subtitle: "Brand Touchpoints & Trust Infrastructure",
     headline: "Connecting fragmented online surfaces into one coherent perception.",
     description:
       "When a prospect looks you up, do they encounter disjointed channels or an integrated, world-class organisation? We align your digital infrastructure to eliminate hesitation and build unwavering trust.",
     systemInput: "Customer Consideration & Verification Touchpoints",
     systemOutput: "Unified, High-Conversion Digital Infrastructure",
-    signalLabel: "SYS-03 // TRUST ARCHITECTURE",
+    signalLabel: "System 03 // Trust Architecture",
     corePrinciples: [
       "Friction in digital touchpoints is hidden revenue loss",
       "First impressions happen on third-party channels before your website",
@@ -279,14 +279,14 @@ export const capabilitySystems: CapabilitySystem[] = [
   {
     id: "growth",
     number: "04",
-    name: "GROWTH",
+    name: "Growth",
     subtitle: "Distribution, Conversion & Data Feedback",
     headline: "Turning attention into qualified pipeline and measurable business expansion.",
     description:
       "Creative without distribution is an expensive museum piece. We run paid media systems that put sharp messages in front of precise decision-makers, tracking true commercial metrics over vanity impressions.",
     systemInput: "Validated Creative Assets & Market Offers",
     systemOutput: "Predictable Qualified Enquiries, Pipeline & Measurable Revenue Growth",
-    signalLabel: "SYS-04 // DISTRIBUTION ENGINE",
+    signalLabel: "System 04 // Distribution Engine",
     corePrinciples: [
       "Creative is the greatest lever in modern algorithmic advertising",
       "Focus on qualified enquiries rather than cheap, useless clicks",

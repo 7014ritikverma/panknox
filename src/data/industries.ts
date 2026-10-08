@@ -45,7 +45,7 @@ export const industriesData: IndustryData[] = [
       "Exceptional engineering reality hidden behind generic PDF catalogs, poorly shot factory phone videos, outdated websites, and an inability to articulate proprietary process advantages to non-technical decision-makers.",
     panknoxApproach:
       "We turn complex industrial capability into visual authority. By documenting plant precision, tolerance standards, real-world stress testing, and founder engineering philosophy, we shorten the procurement trust threshold.",
-    customerJourneySummary: "Product → Application → Credibility → Enquiry",
+    customerJourneySummary: "Product → Understanding → Trust → Enquiry",
     journeyStages: [
       {
         step: "01",
@@ -57,7 +57,7 @@ export const industriesData: IndustryData[] = [
       },
       {
         step: "02",
-        label: "Application",
+        label: "Understanding",
         focus: "Seeing how the machine or part solves a specific operational bottleneck",
         frictionPoint: "Uncertainty whether the product fits exact factory or client workflows",
         panknoxIntervention:
@@ -65,7 +65,7 @@ export const industriesData: IndustryData[] = [
       },
       {
         step: "03",
-        label: "Credibility",
+        label: "Trust",
         focus: "Validating vendor reliability, QA compliance, and supply chain strength",
         frictionPoint: "Fear of downtime, bad parts, or dealing with an unvetted supplier",
         panknoxIntervention:
@@ -181,7 +181,7 @@ export const industriesData: IndustryData[] = [
       "Identical 3D renders with generic stock music, spammy tele-calling campaigns, and zero storytelling around construction quality, architectural intent, or livability.",
     panknoxApproach:
       "We build immersive project narratives. We bridge the gap between architectural blueprints and emotional living reality through milestone construction documentation, spatial video, and hyper-targeted qualification funnels.",
-    customerJourneySummary: "Attention → Project Interest → Site Visit → Enquiry",
+    customerJourneySummary: "Attention → Interest → Site Visit → Enquiry",
     journeyStages: [
       {
         step: "01",

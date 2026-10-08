@@ -1,14 +1,19 @@
+export interface BrandLocation {
+  name: string;
+  address: string;
+  city: string;
+  state: string;
+  pin: string;
+}
+
 export interface BrandInfo {
   name: string;
   legalName: string;
   positioning: string;
   tagline: string;
-  location: {
-    city: string;
-    state: string;
-    country: string;
-    coordinates: string;
-    address: string;
+  locations: {
+    main: BrandLocation;
+    secondary: BrandLocation;
   };
   contact: {
     email: string;
@@ -28,34 +33,44 @@ export const brandData: BrandInfo = {
   legalName: "Panknox Media Pvt. Ltd.",
   positioning: "Creative & Performance Marketing Partner",
   tagline: "Your business is already doing something. We make sure the world notices.",
-  location: {
-    city: "Jaipur",
-    state: "Rajasthan",
-    country: "India",
-    coordinates: "26.9124° N, 75.7873° E",
-    address: "Jaipur, Rajasthan, India — 302001",
+  locations: {
+    main: {
+      name: "Main Office",
+      address: "Mandrella, Jhunjhunu, Rajasthan",
+      city: "Mandrella",
+      state: "Rajasthan",
+      pin: "333025",
+    },
+    secondary: {
+      name: "Second Location",
+      address: "Chitrakoot, Vaishali Nagar, Jaipur, Rajasthan",
+      city: "Jaipur",
+      state: "Rajasthan",
+      pin: "302021",
+    },
   },
   contact: {
     email: "contact@panknox.com",
-    phonePlaceholder: "+91 (Jaipur Studio)",
+    phonePlaceholder: "+91 91168 83100",
     whatsappText: "Discussing our marketing system with Panknox",
   },
   coreIdea: {
-    headline: "YOUR BUSINESS IS ALREADY DOING SOMETHING. WE MAKE SURE THE WORLD NOTICES.",
+    headline: "Your business is already doing something. We make sure the world notices.",
     supporting:
-      "Your customer doesn't see your entire business. They see pieces of it: Instagram, Google, Website, Ads, Reels, LinkedIn, Reviews, Packaging, Visual identity, Content, Communication. Panknox connects those pieces into one coherent perception.",
+      "Your customer doesn't see your entire business. They see pieces of it: Instagram, Google, website, ads, reels, LinkedIn, reviews, packaging, visual identity, content, and communication. Panknox connects those pieces into one coherent perception.",
     perceptionGap:
-      "WE WORK IN THE GAP BETWEEN WHAT YOUR BUSINESS IS AND HOW YOUR MARKET PERCEIVES IT.",
+      "We work in the gap between what your business is and how your market perceives it.",
   },
   philosophySteps: [
-    "BUSINESS",
-    "UNDERSTANDING",
-    "STRATEGY",
-    "CREATIVE",
-    "CONTENT",
-    "DISTRIBUTION",
-    "PERFORMANCE",
-    "LEARNING",
-    "GROWTH",
+    "Business",
+    "Understanding",
+    "Strategy",
+    "Creative",
+    "Content",
+    "Distribution",
+    "Performance",
+    "Learning",
+    "Growth",
   ],
 };
+

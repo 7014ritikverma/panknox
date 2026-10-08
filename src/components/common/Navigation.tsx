@@ -13,9 +13,9 @@ export default function Navigation() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 30);
+      setIsScrolled(window.scrollY > 40);
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -24,34 +24,39 @@ export default function Navigation() {
   }, [pathname]);
 
   const navLinks = [
-    { label: "WHAT WE DO", href: "/what-we-do" },
-    { label: "INDUSTRIES", href: "/industries" },
-    { label: "WORK", href: "/work" },
-    { label: "ABOUT", href: "/about" },
+    { label: "What we do", href: "/what-we-do" },
+    { label: "Industries", href: "/industries" },
+    { label: "Work", href: "/work" },
+    { label: "About", href: "/about" },
   ];
 
   return (
     <>
-      <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          isScrolled
-            ? "bg-brand-navy/90 backdrop-blur-md py-4 border-b border-white/5 shadow-2xl"
-            : "bg-transparent py-7"
-        }`}
-      >
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex items-center justify-between">
+      {/* Floating Dynamic Island Container */}
+      <header className="fixed top-4 sm:top-5 left-0 right-0 z-50 flex justify-center pointer-events-none px-4 transition-all duration-500">
+        <div
+          className={`pointer-events-auto inline-flex items-center justify-between rounded-full bg-[#04262F]/90 backdrop-blur-md border border-white/12 shadow-[0_12px_36px_rgba(0,0,0,0.35)] transition-all duration-300 ease-out hover:border-white/20 hover:shadow-[0_16px_44px_rgba(0,0,0,0.45)] ${
+            isScrolled
+              ? "py-2 px-4 sm:px-5 gap-4 sm:gap-6 max-w-[860px]"
+              : "py-2.5 sm:py-3 px-5 sm:px-6 gap-6 sm:gap-8 max-w-[920px]"
+          }`}
+        >
           {/* Official Panknox Brand Logo */}
           <Link
             href="/"
-            className="flex items-center transition-opacity hover:opacity-85"
-            data-cursor="PANKNOX"
+            className="flex items-center transition-opacity hover:opacity-85 pr-1 sm:pr-2"
             aria-label="Panknox Media Home"
           >
-            <PanknoxLogo variant="light" height={26} priority />
+            <PanknoxLogo
+              variant="light"
+              height={isScrolled ? 22 : 24}
+              priority
+              className="transition-all duration-300"
+            />
           </Link>
 
-          {/* Minimal Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-10 text-sm font-medium tracking-wider">
+          {/* Desktop Navigation Links */}
+          <nav className="hidden md:flex items-center gap-7 lg:gap-8 text-[14px] font-medium text-brand-neutral/80">
             {navLinks.map((link) => {
               const isActive =
                 pathname === link.href ||
@@ -60,82 +65,93 @@ export default function Navigation() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  data-cursor={link.label}
-                  className={`relative py-1 transition-colors ${
+                  className={`relative py-1 transition-colors duration-200 ${
                     isActive
                       ? "text-brand-green font-semibold"
-                      : "text-brand-neutral/80 hover:text-brand-neutral"
+                      : "hover:text-brand-neutral"
                   }`}
                 >
                   <span>{link.label}</span>
                   {isActive && (
-                    <span className="absolute -bottom-1 left-0 w-full h-[1px] bg-brand-green" />
+                    <span className="absolute -bottom-0.5 left-0 right-0 h-[1.5px] bg-brand-green rounded-full" />
                   )}
                 </Link>
               );
             })}
           </nav>
 
-          {/* Single Clear Primary CTA */}
-          <div className="hidden sm:flex items-center gap-6">
+          {/* Action CTA */}
+          <div className="hidden sm:flex items-center pl-1">
             <Link
               href="/contact"
-              data-cursor="START"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-brand-green/60 text-brand-green hover:bg-brand-green hover:text-brand-navy transition-all duration-300 text-xs font-semibold tracking-widest uppercase"
+              className={`inline-flex items-center gap-1.5 rounded-full border border-brand-green/70 text-brand-green hover:bg-brand-green hover:text-brand-navy transition-all duration-200 font-medium text-xs sm:text-[13px] ${
+                isScrolled ? "px-3.5 py-1.5" : "px-4 py-1.5"
+              }`}
             >
-              <span>START A CONVERSATION</span>
+              <span>Start a conversation</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
             </Link>
           </div>
 
-          {/* Mobile Toggle Button */}
-          <button
-            type="button"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 text-brand-neutral hover:text-brand-green transition-colors focus:outline-none"
-            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
-          >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          {/* Mobile Menu Trigger */}
+          <div className="flex md:hidden items-center pl-2">
+            <button
+              type="button"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="p-1.5 text-brand-neutral hover:text-brand-green transition-colors focus:outline-none"
+              aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+            >
+              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
+          </div>
         </div>
       </header>
 
-      {/* Full-Screen Minimal Mobile Menu */}
+      {/* Mobile Dynamic Island Expansion Overlay */}
       <div
-        className={`fixed inset-0 z-40 md:hidden bg-brand-navy transition-all duration-500 flex flex-col justify-between p-8 pt-28 ${
+        className={`fixed inset-0 z-40 md:hidden bg-[#04262F]/98 backdrop-blur-xl transition-all duration-400 flex flex-col justify-between p-8 pt-24 ${
           mobileMenuOpen
-            ? "opacity-100 pointer-events-auto"
-            : "opacity-0 pointer-events-none"
+            ? "opacity-100 pointer-events-auto translate-y-0"
+            : "opacity-0 pointer-events-none -translate-y-4"
         }`}
       >
-        <nav className="space-y-6">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              onClick={() => setMobileMenuOpen(false)}
-              className="block text-3xl font-black uppercase text-brand-neutral hover:text-brand-green transition-colors tracking-tight"
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
+        <div className="space-y-8 mt-6">
+          <p className="text-xs font-mono text-brand-green tracking-wide">
+            Navigation
+          </p>
+          <nav className="space-y-5">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className="block text-2xl font-semibold text-brand-neutral hover:text-brand-green transition-colors"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+        </div>
 
-        <div className="space-y-6 pt-8 border-t border-white/10">
+        <div className="space-y-6 pt-6 border-t border-white/10">
           <Link
             href="/contact"
             onClick={() => setMobileMenuOpen(false)}
-            className="w-full flex items-center justify-center gap-2 py-4 rounded-xl bg-brand-green text-brand-navy font-bold text-sm tracking-widest uppercase"
+            className="w-full flex items-center justify-center gap-2 py-3.5 rounded-full bg-brand-green text-brand-navy font-semibold text-sm transition-opacity hover:opacity-95"
           >
-            <span>START A CONVERSATION</span>
+            <span>Start a conversation</span>
             <ArrowUpRight className="w-4 h-4" />
           </Link>
 
-          <p className="text-xs font-mono text-brand-gray text-center">
-            PANKNOX MEDIA PVT. LTD. • JAIPUR, INDIA
-          </p>
+          <div className="space-y-1 text-xs font-mono text-brand-gray text-center">
+            <p>Panknox Media Pvt. Ltd.</p>
+            <p className="text-[11px] text-brand-gray/80">
+              Mandrella, Jhunjhunu • Chitrakoot, Vaishali Nagar, Jaipur
+            </p>
+          </div>
         </div>
       </div>
     </>
   );
 }
+

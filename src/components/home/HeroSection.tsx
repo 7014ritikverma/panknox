@@ -10,52 +10,51 @@ export default function HeroSection() {
       <AtmosphericBackground className="min-h-[92vh] flex flex-col justify-between pt-36 pb-20">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full my-auto space-y-12 relative z-10">
           {/* Subtle Precision Technical Marker */}
-          <div className="inline-flex items-center gap-3 text-xs font-mono tracking-widest text-brand-green/80 uppercase">
+          <div className="inline-flex items-center gap-3 text-xs font-mono text-brand-green/90">
             <span className="w-2 h-2 rounded-full bg-brand-green animate-pulse" />
-            <span>PANKNOX // CREATIVE &amp; PERFORMANCE</span>
+            <span>Panknox // Creative &amp; Performance</span>
             <span className="text-white/20">•</span>
-            <span className="text-brand-gray hidden sm:inline">JAIPUR, INDIA</span>
+            <span className="text-brand-neutral/60 hidden sm:inline">Marketing Partner</span>
           </div>
 
-          {/* Huge Monolithic Typography */}
-          <div className="space-y-8 max-w-5xl">
-            <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black uppercase tracking-tight text-brand-neutral leading-[0.92]">
-              MAKE YOUR BUSINESS <br />
-              <span className="text-brand-green">IMPOSSIBLE</span> <br />
-              TO IGNORE.
+          {/* Calibrated Editorial Hero Typography */}
+          <div className="space-y-6 max-w-4xl">
+            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[80px] font-bold tracking-tight text-brand-neutral leading-[1.05]">
+              Make your business <br />
+              <span className="text-brand-green">impossible</span> <br />
+              to ignore.
             </h1>
 
-            <p className="text-xl sm:text-2xl text-brand-neutral/80 font-normal max-w-2xl leading-relaxed">
+            <p className="text-lg sm:text-xl md:text-2xl text-brand-neutral/80 font-normal max-w-2xl leading-relaxed pt-2">
               Creative, content &amp; marketing built around how your business actually grows.
             </p>
 
             {/* Singular Primary CTA */}
-            <div className="pt-4 flex items-center gap-6">
+            <div className="pt-4 flex flex-wrap items-center gap-6">
               <Link
                 href="/contact"
-                data-cursor="START"
-                className="inline-flex items-center gap-3 px-9 py-4 rounded-full bg-brand-green text-brand-navy font-bold text-xs tracking-widest uppercase hover:bg-brand-green/90 transition-all duration-300 shadow-[0_0_35px_rgba(48,198,130,0.35)] hover:scale-[1.02]"
+                className="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full bg-brand-green text-brand-navy font-semibold text-sm hover:bg-brand-green/90 transition-all duration-300 shadow-[0_0_30px_rgba(48,198,130,0.3)] hover:scale-[1.01]"
               >
-                <span>START A CONVERSATION</span>
+                <span>Start a conversation</span>
                 <ArrowUpRight className="w-4 h-4" />
               </Link>
 
-              <span className="text-xs font-mono text-brand-gray tracking-wider hidden md:inline">
-                JAIPUR STUDIO • GLOBAL REACH
+              <span className="text-xs font-mono text-brand-neutral/60 hidden md:inline">
+                Strategy • Creative • Digital Systems • Growth
               </span>
             </div>
           </div>
         </div>
 
         {/* Bottom Signal Transition Beam to Next Section */}
-        <div className="w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-8 flex items-center justify-between text-xs font-mono text-brand-gray border-t border-white/5 relative z-10">
+        <div className="w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-8 flex items-center justify-between text-xs font-mono text-brand-neutral/60 border-t border-white/8 relative z-10">
           <div className="flex items-center gap-3">
-            <span className="text-brand-green">01</span>
-            <span>SYSTEM INITIALIZED</span>
+            <span className="text-brand-green font-semibold">01</span>
+            <span>System initialized</span>
           </div>
 
           <div className="flex items-center gap-2 text-brand-neutral/60">
-            <span>SCROLL TO ENTER THE GAP</span>
+            <span>Scroll to enter The Gap</span>
             <span className="w-1.5 h-1.5 rounded-full bg-brand-green animate-bounce" />
           </div>
         </div>

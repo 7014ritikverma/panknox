@@ -241,7 +241,7 @@ export default function HeroSignatureInteraction() {
 
             <div className="text-[11px] font-mono text-brand-gray flex justify-between">
               <span>LATENCY: 0.14MS</span>
-              <span className="text-brand-neutral/70">ARCH: JAIPUR-CORE</span>
+              <span className="text-brand-neutral/70">ARCH: SIGNAL-CORE</span>
             </div>
           </div>
         </div>

@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowUpRight, ArrowRight, ChevronRight, ShieldCheck, CheckCircle2, Terminal, Sparkles } from "lucide-react";
-import { projectsData, ProjectCaseStudy } from "@/data/projects";
+import { ArrowRight, ChevronRight } from "lucide-react";
+import AtmosphericBackground from "@/components/common/AtmosphericBackground";
+import { projectsData } from "@/data/projects";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -30,214 +31,184 @@ export default async function CaseStudyPage({ params }: PageProps) {
   const project = projectsData.find((p) => p.slug === slug);
   if (!project) return notFound();
 
-  const nextProject = projectsData.find((p) => p.slug === project.nextProjectSlug) || projectsData[0];
+  const nextProject =
+    projectsData.find((p) => p.slug === project.nextProjectSlug) || projectsData[0];
 
   return (
-    <article className="pt-28 pb-24 bg-brand-navy min-h-screen text-brand-neutral relative overflow-hidden">
-      <div className="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-20">
-        {/* Breadcrumb Navigation */}
-        <div className="flex items-center gap-2 text-xs font-mono text-brand-gray">
-          <Link href="/work" className="hover:text-brand-green transition-colors">
-            WORK ARCHIVE
-          </Link>
-          <ChevronRight className="w-3.5 h-3.5" />
-          <span className="uppercase text-brand-neutral/60">{project.industry}</span>
-          <ChevronRight className="w-3.5 h-3.5" />
-          <span className="text-brand-green font-bold uppercase truncate max-w-xs">{project.title}</span>
-        </div>
-
-        {/* Case Study Hero */}
-        <div className="space-y-6 max-w-5xl">
-          <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-brand-gray">
-            <span className="text-brand-green font-bold text-sm">
-              PROJECT {project.number}
-            </span>
-            <span>•</span>
-            <span className="uppercase text-brand-neutral font-semibold">{project.industry}</span>
-            <span>•</span>
-            <span>{project.location}</span>
-            <span>•</span>
-            <span>YEAR: {project.year}</span>
+    <article className="relative min-h-screen text-brand-neutral overflow-hidden">
+      <AtmosphericBackground className="pt-32 pb-24 sm:pt-40 sm:pb-32">
+        <div className="max-w-5xl mx-auto px-6 sm:px-8 relative z-10 space-y-20">
+          {/* Breadcrumb Navigation */}
+          <div className="flex items-center gap-2 text-xs font-mono text-brand-neutral/60">
+            <Link href="/work" className="hover:text-brand-green transition-colors">
+              Work
+            </Link>
+            <ChevronRight className="w-3.5 h-3.5" />
+            <span>{project.industry}</span>
+            <ChevronRight className="w-3.5 h-3.5" />
+            <span className="text-brand-green font-medium truncate max-w-xs">{project.title}</span>
           </div>
 
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-black uppercase tracking-tight text-brand-neutral leading-tight">
-            {project.title}
-          </h1>
+          {/* 1. Project & 2. Short Context */}
+          <div className="space-y-6 max-w-4xl">
+            <div className="inline-flex items-center gap-3 text-xs font-mono text-brand-green">
+              <span>Project {project.number}</span>
+              <span className="text-white/20">•</span>
+              <span>{project.industry}</span>
+              <span className="text-white/20">•</span>
+              <span>{project.year}</span>
+            </div>
 
-          <p className="text-lg sm:text-xl font-mono text-brand-green">
-            {project.clientDescriptor}
-          </p>
+            <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-brand-neutral leading-[1.08]">
+              {project.title}
+            </h1>
 
-          <p className="text-xl sm:text-2xl text-brand-neutral/85 leading-relaxed font-normal max-w-4xl">
-            {project.summary}
-          </p>
+            <p className="text-xs sm:text-sm font-mono text-brand-green font-semibold">
+              {project.clientDescriptor}
+            </p>
 
-          {/* Scope badges */}
-          <div className="flex flex-wrap gap-2 pt-4">
-            {project.scope.map((s) => (
-              <span
-                key={s}
-                className="text-xs font-mono px-3 py-1.5 rounded bg-white/5 border border-brand-neutral/15 text-brand-neutral/80"
-              >
-                {s}
+            <p className="text-xl sm:text-2xl text-brand-neutral/85 font-normal leading-relaxed pt-2">
+              {project.summary}
+            </p>
+          </div>
+
+          {/* 3. Large Visual (Hero) */}
+          <div className="relative w-full h-[380px] sm:h-[540px] rounded-3xl overflow-hidden bg-brand-navy/90 border border-white/15 shadow-2xl flex items-center justify-center p-8 sm:p-14">
+            <div
+              className="absolute inset-0"
+              style={{
+                background:
+                  "radial-gradient(circle at 40% 40%, rgba(48, 198, 130, 0.18) 0%, rgba(4, 38, 47, 0.95) 70%)",
+              }}
+            />
+            <div className="relative z-10 text-center space-y-3 max-w-md">
+              <span className="text-xs font-mono text-brand-green block">
+                Primary visual narrative
               </span>
-            ))}
+              <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-brand-neutral">
+                {project.theCreativeDirection.split(".")[0]}.
+              </h2>
+            </div>
           </div>
-        </div>
 
-        {/* SECTION 1: THE BUSINESS & THE CHALLENGE */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* The Business */}
-          <div className="p-8 sm:p-10 rounded-2xl bg-brand-navy/90 border border-brand-neutral/15 space-y-4 shadow-xl">
-            <span className="text-xs font-mono uppercase tracking-widest text-brand-green font-bold block">
-              01 // THE BUSINESS
+          {/* 4. The Challenge */}
+          <div className="space-y-5 max-w-3xl pt-8 border-t border-white/10">
+            <span className="text-xs font-mono text-brand-green font-semibold block">
+              01 // The challenge
             </span>
-            <h2 className="text-2xl sm:text-3xl font-extrabold uppercase text-brand-neutral">
-              THE OPERATIONAL REALITY
-            </h2>
-            <p className="text-base text-brand-neutral/80 leading-relaxed">
+            <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-brand-neutral">
+              The gap between capability and perception.
+            </h3>
+            <p className="text-base sm:text-lg text-brand-neutral/80 leading-relaxed font-normal">
+              {project.theChallenge}
+            </p>
+            <p className="text-base sm:text-lg text-brand-neutral/80 leading-relaxed font-normal pt-2">
               {project.theBusiness}
             </p>
           </div>
 
-          {/* The Challenge */}
-          <div className="p-8 sm:p-10 rounded-2xl bg-black/40 border border-brand-neutral/15 space-y-4 shadow-xl">
-            <span className="text-xs font-mono uppercase tracking-widest text-red-400 font-bold block">
-              02 // THE CHALLENGE
+          {/* 5. What We Did */}
+          <div className="space-y-5 max-w-3xl pt-8 border-t border-white/10">
+            <span className="text-xs font-mono text-brand-green font-semibold block">
+              02 // What we did
             </span>
-            <h2 className="text-2xl sm:text-3xl font-extrabold uppercase text-brand-neutral">
-              THE PERCEPTION IMPASSE
-            </h2>
-            <p className="text-base text-brand-neutral/80 leading-relaxed">
-              {project.theChallenge}
-            </p>
-          </div>
-        </div>
-
-        {/* SECTION 2: THE THINKING & THE CREATIVE DIRECTION */}
-        <div className="p-8 sm:p-12 rounded-2xl bg-brand-navy border border-brand-neutral/20 space-y-10 shadow-2xl">
-          <div className="space-y-4 max-w-3xl">
-            <span className="text-xs font-mono uppercase tracking-widest text-brand-green font-bold">
-              03 // THE THINKING
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-black uppercase text-brand-neutral">
-              THE STRATEGIC HYPOTHESIS
-            </h2>
-            <p className="text-base sm:text-lg text-brand-neutral/85 leading-relaxed">
+            <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-brand-neutral">
+              The strategic &amp; creative intervention.
+            </h3>
+            <p className="text-base sm:text-lg text-brand-neutral/80 leading-relaxed font-normal">
               {project.theThinking}
             </p>
-          </div>
-
-          <div className="pt-8 border-t border-brand-neutral/10 space-y-4 max-w-3xl">
-            <span className="text-xs font-mono uppercase tracking-widest text-brand-gray font-bold">
-              04 // THE CREATIVE DIRECTION
-            </span>
-            <h3 className="text-2xl sm:text-3xl font-bold uppercase text-brand-neutral">
-              AESTHETIC GRAMMAR &amp; SENSORY TONALITY
-            </h3>
-            <p className="text-base text-brand-neutral/80 leading-relaxed">
-              {project.theCreativeDirection}
-            </p>
-          </div>
-        </div>
-
-        {/* SECTION 3: THE WORK & DELIVERABLES */}
-        <div className="p-8 sm:p-12 rounded-2xl bg-brand-navy border border-brand-green/30 space-y-8 bg-gradient-to-br from-brand-navy to-brand-green/5 shadow-2xl">
-          <div className="space-y-3 max-w-3xl">
-            <span className="text-xs font-mono uppercase tracking-widest text-brand-green font-bold">
-              05 // THE WORK
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-black uppercase text-brand-neutral">
-              {project.theWork.headline}
-            </h2>
-            <p className="text-base text-brand-neutral/80 leading-relaxed">
+            <p className="text-base sm:text-lg text-brand-neutral/80 leading-relaxed font-normal pt-2">
               {project.theWork.details}
             </p>
           </div>
 
-          <div className="space-y-3 pt-4 border-t border-brand-neutral/10">
-            <span className="text-xs font-mono uppercase tracking-widest text-brand-gray font-bold block">
-              SYSTEM DELIVERABLES PRODUCED:
+          {/* 6. Selected Work */}
+          <div className="space-y-6 pt-8 border-t border-white/10">
+            <span className="text-xs font-mono text-brand-green font-semibold block">
+              03 // Selected work
             </span>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-              {project.theWork.deliverablesList.map((deliv, idx) => (
+            <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-brand-neutral">
+              Deliverables &amp; craft artifacts.
+            </h3>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 pt-2">
+              {project.theWork.deliverablesList.map((item) => (
                 <div
-                  key={deliv}
-                  className="p-4 rounded-xl bg-black/30 border border-brand-neutral/10 text-xs sm:text-sm text-brand-neutral flex items-start gap-3"
+                  key={item}
+                  className="p-5 rounded-2xl bg-black/40 border border-white/10 text-sm font-medium text-brand-neutral/90"
                 >
-                  <span className="text-brand-green font-mono font-bold">0{idx + 1}</span>
-                  <span>{deliv}</span>
+                  <span className="text-xs font-mono text-brand-green block mb-1.5">•</span>
+                  {item}
                 </div>
               ))}
             </div>
           </div>
-        </div>
 
-        {/* SECTION 4: THE OUTCOME */}
-        <div className="p-8 sm:p-12 rounded-2xl bg-brand-navy border border-brand-neutral/20 space-y-8 shadow-2xl">
-          <div className="space-y-3 max-w-3xl">
-            <span className="text-xs font-mono uppercase tracking-widest text-brand-green font-bold">
-              06 // THE OUTCOME
+          {/* 7. Outcome / Learning */}
+          <div className="space-y-6 max-w-3xl pt-8 border-t border-white/10">
+            <span className="text-xs font-mono text-brand-green font-semibold block">
+              04 // Outcome &amp; learning
             </span>
-            <h2 className="text-3xl sm:text-4xl font-black uppercase text-brand-neutral">
-              COMMERCIAL REALIGNMENT
-            </h2>
-            <p className="text-base sm:text-lg text-brand-neutral/90 leading-relaxed">
+            <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-brand-neutral">
+              Commercial impact &amp; verified transformation.
+            </h3>
+            <p className="text-base sm:text-lg text-brand-neutral/90 leading-relaxed font-normal">
               {project.theOutcome.qualitativeSummary}
             </p>
-          </div>
 
-          <div className="space-y-3 pt-4 border-t border-brand-neutral/10">
-            <span className="text-xs font-mono uppercase tracking-widest text-brand-gray block">
-              STRUCTURAL SHIFTS ACHIEVED:
-            </span>
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <div className="space-y-3 pt-2">
               {project.theOutcome.transformationPoints.map((pt) => (
-                <li
-                  key={pt}
-                  className="p-4 rounded-xl bg-white/[0.02] border border-brand-neutral/10 text-xs sm:text-sm text-brand-neutral flex items-start gap-2.5"
-                >
-                  <CheckCircle2 className="w-4 h-4 text-brand-green shrink-0 mt-0.5" />
+                <div key={pt} className="flex items-start gap-3 text-sm sm:text-base text-brand-neutral/80">
+                  <span className="text-brand-green font-bold">•</span>
                   <span>{pt}</span>
-                </li>
+                </div>
               ))}
-            </ul>
+            </div>
+
+            <div className="pt-4 text-xs font-mono text-brand-neutral/60">
+              Note: {project.theOutcome.metricNote}
+            </div>
           </div>
 
-          {/* Metric Protocol Note */}
-          <div className="p-4 rounded-lg bg-black/40 border border-brand-neutral/15 text-xs font-mono text-brand-gray flex items-center gap-2">
-            <ShieldCheck className="w-4 h-4 text-brand-green shrink-0" />
-            <span>{project.theOutcome.metricNote}</span>
+          {/* 8. Final Visual */}
+          <div className="relative w-full h-[320px] sm:h-[420px] rounded-3xl overflow-hidden bg-black/60 border border-white/10 flex items-center justify-center p-8 text-center shadow-xl">
+            <div
+              className="absolute inset-0"
+              style={{
+                background:
+                  "linear-gradient(135deg, rgba(6, 47, 58, 0.4) 0%, rgba(2, 20, 25, 0.8) 100%)",
+              }}
+            />
+            <div className="relative z-10 space-y-2">
+              <span className="text-xs font-mono text-brand-green">Panknox Systems Archive</span>
+              <p className="text-xl sm:text-2xl font-semibold text-brand-neutral max-w-md">
+                Systems built around the reality of your business.
+              </p>
+            </div>
           </div>
-        </div>
 
-        {/* NEXT PROJECT NAVIGATION */}
-        <div className="p-8 sm:p-12 rounded-2xl bg-white/[0.02] border border-brand-neutral/15 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-          <div className="space-y-2 max-w-xl">
-            <span className="text-xs font-mono uppercase tracking-widest text-brand-gray block">
-              NEXT CASE STUDY // 0{nextProject.number}
-            </span>
-            <h3 className="text-2xl sm:text-3xl font-extrabold uppercase text-brand-neutral hover:text-brand-green transition-colors">
-              <Link href={`/work/${nextProject.slug}`}>
+          {/* Next Case Study Link */}
+          <div className="pt-10 border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+            <div>
+              <span className="text-xs font-mono text-brand-neutral/60 block mb-1">
+                Next case study
+              </span>
+              <p className="text-xl sm:text-2xl font-bold text-brand-neutral">
                 {nextProject.title}
-              </Link>
-            </h3>
-            <p className="text-xs font-mono text-brand-green">
-              {nextProject.industry} • {nextProject.categoryTag}
-            </p>
-          </div>
+              </p>
+            </div>
 
-          <Link
-            href={`/work/${nextProject.slug}`}
-            className="inline-flex items-center gap-3 px-8 py-4 rounded bg-brand-green text-brand-navy font-bold text-sm tracking-wider uppercase hover:bg-brand-green/90 transition-all shrink-0"
-          >
-            <span>ADVANCE TO PROJECT {nextProject.number}</span>
-            <ArrowRight className="w-4 h-4" />
-          </Link>
+            <Link
+              href={`/work/${nextProject.slug}`}
+              className="inline-flex items-center gap-2 px-7 py-3 rounded-full bg-brand-green text-brand-navy font-semibold text-xs sm:text-sm hover:bg-brand-green/90 transition-all shrink-0 self-start sm:self-auto"
+            >
+              <span>View next project</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
         </div>
-      </div>
+      </AtmosphericBackground>
     </article>
   );
 }

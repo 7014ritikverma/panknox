@@ -48,11 +48,11 @@ export const faqsData: FAQItem[] = [
     keyTakeaway: "Capped partner roster ensuring uncompromising focus and craft quality.",
   },
   {
-    id: "production-jaipur",
+    id: "production-locations",
     category: "Operations",
-    question: "Where is Panknox based and how do you handle on-site shoots?",
+    question: "Where are your offices and how do you handle on-site shoots?",
     answer:
-      "Our creative studio is based in Jaipur, Rajasthan, India. For manufacturing plants, healthcare facilities, boutique estates, and architectural spaces, our production and cinematography team deploys directly on-site with cinema equipment, lighting, and sound gear to capture authentic operational reality.",
-    keyTakeaway: "Jaipur studio HQ with on-site deployment across India for high-caliber production.",
+      "Our main office is in Mandrella, Jhunjhunu, with our second location in Chitrakoot, Vaishali Nagar, Jaipur, Rajasthan. For manufacturing plants, healthcare facilities, boutique estates, and architectural spaces, our production and cinematography team deploys directly on-site across India with cinema equipment, lighting, and sound gear to capture authentic operational reality.",
+    keyTakeaway: "Offices in Mandrella & Jaipur with on-site deployment across India for high-caliber production.",
   },
 ];

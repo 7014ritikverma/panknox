@@ -19,17 +19,17 @@ export const metadata: Metadata = {
     template: "%s | Panknox Media",
   },
   description:
-    "Panknox builds the strategy, creative, content and digital systems that help ambitious businesses get noticed, understood and trusted. Based in Jaipur, Rajasthan, India.",
+    "Panknox builds the strategy, creative, content and digital systems that help ambitious businesses get noticed, understood and trusted. Offices in Mandrella, Jhunjhunu and Chitrakoot, Vaishali Nagar, Jaipur, Rajasthan.",
   keywords: [
-    "creative marketing Jaipur",
-    "performance marketing partner Jaipur",
-    "social media management Jaipur",
-    "digital marketing Jaipur",
-    "content strategy Rajasthan",
-    "Meta ads Jaipur",
+    "creative marketing partner",
+    "performance marketing partner",
+    "social media management",
+    "digital marketing strategy",
+    "content strategy",
+    "Meta ads",
     "manufacturing marketing",
     "healthcare marketing agency India",
-    "real estate marketing Jaipur",
+    "real estate marketing",
     "interiors furniture marketing",
     "hospitality digital marketing",
     "brand positioning India",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     siteName: "Panknox Media",
     title: "Panknox Media | Creative & Performance Marketing Partner",
     description:
-      "We work in the gap between what your business is and how your market perceives it. Creative & Performance Marketing Partner in Jaipur, India.",
+      "We work in the gap between what your business is and how your market perceives it. Creative & Performance Marketing Partner.",
   },
   twitter: {
     card: "summary_large_image",
@@ -81,21 +81,29 @@ export default function RootLayout({
     name: "Panknox Media Pvt. Ltd.",
     alternateName: "Panknox",
     url: "https://panknox.com",
-    logo: "https://panknox.com/logo.png",
+    logo: "https://panknox.com/panknox-logo-dark.png",
     description:
-      "Creative & Performance Marketing Partner in Jaipur, Rajasthan, India. We build marketing systems around businesses to turn attention into growth.",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Jaipur",
-      addressRegion: "Rajasthan",
-      addressCountry: "IN",
-      postalCode: "302001",
-    },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: "26.9124",
-      longitude: "75.7873",
-    },
+      "Creative & Performance Marketing Partner. We build marketing systems around businesses to turn attention into growth.",
+    address: [
+      {
+        "@type": "PostalAddress",
+        name: "Main Office",
+        streetAddress: "Mandrella",
+        addressLocality: "Jhunjhunu",
+        addressRegion: "Rajasthan",
+        addressCountry: "IN",
+        postalCode: "333025",
+      },
+      {
+        "@type": "PostalAddress",
+        name: "Second Location",
+        streetAddress: "Chitrakoot, Vaishali Nagar",
+        addressLocality: "Jaipur",
+        addressRegion: "Rajasthan",
+        addressCountry: "IN",
+        postalCode: "302021",
+      },
+    ],
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
