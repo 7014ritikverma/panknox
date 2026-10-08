@@ -53,10 +53,10 @@ const SYSTEM_STAGES: SystemStage[] = [
   {
     step: "04",
     name: "Build",
-    action: "Cinema-standard asset engineering and conversion platforms.",
+    action: "Precision asset engineering and conversion platforms.",
     stateLabel: "Creative system active",
     description:
-      "4K cinematography, typographical discipline, Next.js web platforms, and pre-qualified inquiry funnels.",
+      "Video & motion production, typographical discipline, Next.js web platforms, and pre-qualified inquiry funnels.",
     icon: BuildIcon,
   },
   {
@@ -95,7 +95,7 @@ export default function PanknoxSystemSignature() {
 
   return (
     <section id="panknox-system" className="relative overflow-hidden">
-      <AtmosphericBackground className="py-28 sm:py-36">
+      <AtmosphericBackground className="py-20 sm:py-24 lg:py-28">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10 space-y-20">
           {/* Section Header */}
           <div className="space-y-5 max-w-4xl">

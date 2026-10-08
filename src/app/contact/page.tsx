@@ -7,7 +7,7 @@ import { brandData } from "@/data/brand";
 export const metadata: Metadata = {
   title: "Contact | Start a Conversation",
   description:
-    "Direct conversational qualification briefing with Panknox Media Pvt. Ltd. Offices in Mandrella, Jhunjhunu and Chitrakoot, Vaishali Nagar, Jaipur, Rajasthan.",
+    "Direct conversational qualification briefing with Panknox Media Pvt. Ltd. Offices in Chitrakoot, Vaishali Nagar, Jaipur and Mandrella, Jhunjhunu, Rajasthan.",
 };
 
 export default function ContactPage() {
@@ -27,8 +27,8 @@ export default function ContactPage() {
             </h1>
 
             <p className="text-lg sm:text-xl text-brand-neutral/80 leading-relaxed font-normal pt-1">
-              We work with ambitious founders, manufacturing directors, healthcare leaders,
-              and enterprise builders ready to construct an enduring marketing system.
+              We work with ambitious founders, manufacturing directors, enterprise builders,
+              and clean-energy pioneers ready to construct an enduring marketing system.
             </p>
           </div>
 
@@ -38,8 +38,8 @@ export default function ContactPage() {
               <MapPin className="w-4 h-4 text-brand-green shrink-0 mt-0.5" />
               <div className="space-y-1">
                 <span className="text-brand-neutral/60 font-medium block">Official locations:</span>
-                <p className="text-brand-neutral font-medium">Main: Mandrella, Jhunjhunu</p>
-                <p className="text-brand-neutral font-medium">Second: Chitrakoot, Vaishali Nagar, Jaipur</p>
+                <p className="text-brand-neutral font-medium">Chitrakoot, Vaishali Nagar, Jaipur</p>
+                <p className="text-brand-neutral font-medium">Mandrella, Jhunjhunu, Rajasthan</p>
               </div>
             </div>
 

@@ -9,9 +9,9 @@ export default function TheGapSection() {
   return (
     <section
       id="the-gap-section"
-      className="py-36 sm:py-48 bg-brand-white text-brand-navy relative overflow-hidden"
+      className="py-20 sm:py-24 lg:py-28 bg-brand-white text-brand-navy relative overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10 space-y-28">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10 space-y-16">
         {/* Calibrated Editorial Typography with Generous Whitespace */}
         <div className="space-y-6 max-w-4xl">
           <div className="inline-flex items-center gap-3 text-xs font-mono text-brand-gray">
@@ -148,7 +148,7 @@ export default function TheGapSection() {
                 }`}
               >
                 {alignmentLevel === 1
-                  ? "Transformed through Panknox into unavoidable market authority, bespoke cinematography, and high-intent conversion."
+                  ? "Transformed through Panknox into unavoidable market authority, bespoke visual storytelling, and high-intent conversion."
                   : "Diluted by generic templates, sporadic social posts, and outdated communication that force commodity price wars."}
               </p>
 

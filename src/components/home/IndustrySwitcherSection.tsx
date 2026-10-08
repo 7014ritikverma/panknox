@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Link from "next/link";
 import { ArrowUpRight, ArrowRight } from "lucide-react";
-import AtmosphericBackground from "@/components/common/AtmosphericBackground";
 import {
   ManufacturingIcon,
   HealthcareIcon,
@@ -33,7 +32,7 @@ const INDUSTRIES: IndustryItem[] = [
     journey: ["Product", "Understanding", "Trust", "Enquiry"],
     slug: "manufacturing",
     problem: "High engineering reality hidden behind dated PDFs and commodity vendor pricing.",
-    solution: "4K macro plant cinematography, tolerance documentation, and technical RFQ funnels.",
+    solution: "Macro process video, tolerance verification, and technical RFQ funnels.",
     icon: ManufacturingIcon,
   },
   {
@@ -66,7 +65,7 @@ const INDUSTRIES: IndustryItem[] = [
     journey: ["Inspiration", "Desire", "Trust", "Enquiry"],
     slug: "interiors-furniture",
     problem: "Artisanal joinery looking indistinguishable from flat-pack brands on generic feeds.",
-    solution: "Tactile timber cinema, joinery durability tests, and architect specification portals.",
+    solution: "Tactile material video, joinery durability tests, and architect specification portals.",
     icon: InteriorsIcon,
   },
   {
@@ -77,7 +76,7 @@ const INDUSTRIES: IndustryItem[] = [
     journey: ["Experience", "Desire", "Trust", "Booking"],
     slug: "hospitality",
     problem: "OTA aggregators taking 20%+ commissions while stripping the estate of its soul.",
-    solution: "Sensory dusk cinematography, culinary heritage vignettes, and direct reservation platforms.",
+    solution: "Sensory dusk video vignettes, culinary heritage documentation, and direct reservation platforms.",
     icon: HospitalityIcon,
   },
 ];
@@ -88,24 +87,23 @@ export default function IndustrySwitcherSection() {
   const ActiveIcon = activeInd.icon;
 
   return (
-    <section id="industry-switcher" className="relative overflow-hidden">
-      <AtmosphericBackground className="py-28 sm:py-36">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10 space-y-20">
-          {/* Section Header */}
-          <div className="space-y-5 max-w-4xl">
-            <div className="inline-flex items-center gap-3 text-xs font-mono text-brand-green/90">
-              <span className="w-2 h-2 rounded-full bg-brand-green animate-pulse" />
-              <span>04 // Sector operating environments</span>
-            </div>
-
-            <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-[68px] font-bold tracking-tight text-brand-neutral leading-[1.08]">
-              Industries.
-            </h2>
-
-            <p className="text-lg sm:text-xl text-brand-neutral/80 font-normal max-w-2xl leading-relaxed pt-1">
-              One visual environment changes as the selected sector changes.
-            </p>
+    <section id="industry-switcher" className="py-20 sm:py-24 lg:py-28 bg-[#F8FAF9] text-brand-navy relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10 space-y-16">
+        {/* Section Header */}
+        <div className="space-y-4 max-w-4xl">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-brand-green/10 border border-brand-green/30 text-brand-navy text-xs font-mono">
+            <span className="w-2 h-2 rounded-full bg-brand-green" />
+            <span>04 // Sector operating environments</span>
           </div>
+
+          <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-[68px] font-bold tracking-tight text-brand-navy leading-[1.08]">
+            Industries.
+          </h2>
+
+          <p className="text-lg sm:text-xl text-brand-gray font-normal max-w-2xl leading-relaxed pt-1">
+            One visual environment changes as the selected sector changes.
+          </p>
+        </div>
 
           {/* Morphing Industry Experience */}
           <div className="p-7 sm:p-12 rounded-3xl bg-black/50 border border-white/10 space-y-10 shadow-2xl">
@@ -197,10 +195,9 @@ export default function IndustrySwitcherSection() {
                   <p className="text-brand-neutral">{activeInd.solution}</p>
                 </div>
               </div>
-            </div>
           </div>
         </div>
-      </AtmosphericBackground>
+      </div>
     </section>
   );
 }

@@ -26,7 +26,7 @@ export const teamData: OperatingUnit = {
   coreStatement: "Built by people. Powered by systems.",
   philosophy:
     "We don't operate as a bloated hierarchy with endless account managers playing telephone between clients and creatives. Panknox deploys a specialized, tightly integrated creative operating unit directly linked to your business objectives.",
-  locationDetails: "Offices in Mandrella & Jaipur, Rajasthan. Operating across global commercial standards.",
+  locationDetails: "Offices in Jaipur & Mandrella, Rajasthan. Operating across global commercial standards.",
   disciplines: [
     {
       code: "U-01",
@@ -54,11 +54,11 @@ export const teamData: OperatingUnit = {
     },
     {
       code: "U-04",
-      name: "Cinematography & Motion",
+      name: "Video & Motion Design",
       role: "Visual Production & Dynamic Media",
-      focus: "Capturing factory machines, clinical procedures, and architectural spaces with cinema-grade craft.",
-      systemRole: "Sensory Capture Unit",
-      deliverableFocus: "4K Process Films, Short-Form Vertical Video, 2D/3D Motion Graphics",
+      focus: "Capturing manufacturing facilities, operational processes, and spaces with intentional visual craft.",
+      systemRole: "Visual Media Unit",
+      deliverableFocus: "Process Films, Short-Form Vertical Video, 2D/3D Motion Graphics",
     },
     {
       code: "U-05",

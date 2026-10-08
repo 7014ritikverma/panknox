@@ -20,7 +20,7 @@ const CLIENT_STEPS = [
     num: "03",
     title: "Create",
     time: "Days 15 – 28",
-    desc: "On-site 4K plant & facility cinematography, typography, motion design, and conversion copy.",
+    desc: "On-site plant & facility video documentation, typography, motion design, and conversion copy.",
   },
   {
     num: "04",
@@ -46,7 +46,7 @@ export default function PanknoxMethodSection() {
   return (
     <section
       id="how-we-work-section"
-      className="py-28 sm:py-36 bg-[#FFFFFF] text-[#04262F] border-t border-brand-neutral-border relative overflow-hidden"
+      className="py-20 sm:py-24 lg:py-28 bg-[#FFFFFF] text-[#04262F] border-t border-brand-neutral-border relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10 space-y-20">
         {/* Section Header — Explicit High Contrast & Prominent Visibility */}

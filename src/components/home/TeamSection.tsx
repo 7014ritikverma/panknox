@@ -9,9 +9,9 @@ export default function TeamSection() {
   return (
     <section
       id="the-team"
-      className="py-36 sm:py-48 bg-brand-white text-brand-navy relative overflow-hidden"
+      className="py-20 sm:py-24 lg:py-28 bg-brand-white text-brand-navy relative overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10 space-y-28">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10 space-y-16">
         {/* Section Header */}
         <div className="space-y-5 max-w-4xl">
           <div className="inline-flex items-center gap-3 text-xs font-mono text-brand-gray">
@@ -75,7 +75,7 @@ export default function TeamSection() {
 
         {/* Studio Provenance Footnote */}
         <div className="pt-2 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs font-mono text-brand-gray">
-          <span>Offices: Mandrella, Jhunjhunu • Chitrakoot, Vaishali Nagar, Jaipur</span>
+          <span>Offices: Chitrakoot, Vaishali Nagar, Jaipur • Mandrella, Jhunjhunu</span>
           <span>Creative &amp; Performance Marketing Partner</span>
         </div>
       </div>

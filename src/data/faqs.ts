@@ -12,7 +12,7 @@ export const faqsData: FAQItem[] = [
     category: "Positioning",
     question: "How does Panknox differ from a standard digital marketing agency?",
     answer:
-      "A traditional agency acts as an outsourced task vendor: you tell them to post 15 times a month, they churn out generic Canva graphics, post them to zero engagement, and bill you a monthly retainer. Panknox operates as a Creative & Performance Marketing Partner. We dissect your business model, discover where your perception lags behind your actual quality, engineer a proprietary narrative system, produce cinema-standard assets, and run precision distribution to turn attention into tangible commercial growth.",
+      "A traditional agency acts as an outsourced task vendor: you tell them to post 15 times a month, they churn out generic Canva graphics, post them to zero engagement, and bill you a monthly retainer. Panknox operates as a Creative & Performance Marketing Partner. We dissect your business model, discover where your perception lags behind your actual quality, engineer a proprietary narrative system, produce high-fidelity creative assets, and run precision distribution to turn attention into tangible commercial growth.",
     keyTakeaway: "Strategic diagnosis and unified systems instead of outsourced commodity tasks.",
   },
   {
@@ -26,9 +26,9 @@ export const faqsData: FAQItem[] = [
   {
     id: "specialized-industries",
     category: "Expertise",
-    question: "How do you handle technical sectors like manufacturing or healthcare?",
+    question: "How do you handle technical sectors like manufacturing or clean energy?",
     answer:
-      "We do not pretend to know more about CNC tolerances than a plant director or more about surgery than a doctor. Our role is diagnostic extraction. We know how to interview your engineers, examine your processes, ask the penetrating questions non-technical buyers have, and translate your technical superiority into visual proof and emotional credibility.",
+      "We do not pretend to know more about CNC tolerances than a plant director or more about battery cell chemistry than a battery engineer. Our role is diagnostic extraction. We know how to interview your engineers, examine your processes, ask the penetrating questions non-technical buyers have, and translate your technical superiority into visual proof and commercial clarity.",
     keyTakeaway: "We extract your internal domain truth and translate it into market-commanding clarity.",
   },
   {
@@ -50,9 +50,9 @@ export const faqsData: FAQItem[] = [
   {
     id: "production-locations",
     category: "Operations",
-    question: "Where are your offices and how do you handle on-site shoots?",
+    question: "Where are your offices and how do you handle on-site production?",
     answer:
-      "Our main office is in Mandrella, Jhunjhunu, with our second location in Chitrakoot, Vaishali Nagar, Jaipur, Rajasthan. For manufacturing plants, healthcare facilities, boutique estates, and architectural spaces, our production and cinematography team deploys directly on-site across India with cinema equipment, lighting, and sound gear to capture authentic operational reality.",
-    keyTakeaway: "Offices in Mandrella & Jaipur with on-site deployment across India for high-caliber production.",
+      "We operate from two primary locations: Chitrakoot, Vaishali Nagar, Jaipur, Rajasthan and Mandrella, Jhunjhunu, Rajasthan. For manufacturing plants, facilities, and architectural spaces, our creative and media production team deploys directly on-site across India to capture authentic operational reality.",
+    keyTakeaway: "Offices in Jaipur & Jhunjhunu with on-site deployment across India for high-caliber production.",
   },
 ];

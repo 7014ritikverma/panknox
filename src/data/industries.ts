@@ -53,7 +53,7 @@ export const industriesData: IndustryData[] = [
         focus: "Discovering technical equipment or industrial component capability",
         frictionPoint: "Lack of clarity on precise engineering specifications and capabilities",
         panknoxIntervention:
-          "Macro cinematography, exploded schematics, and clear application-led positioning",
+          "Macro process video, exploded schematics, and clear application-led positioning",
       },
       {
         step: "02",
@@ -81,7 +81,7 @@ export const industriesData: IndustryData[] = [
       },
     ],
     relevantCapabilities: [
-      "Plant & Machinery Cinematography",
+      "Plant & Machinery Video Production",
       "B2B LinkedIn Executive Presence",
       "High-Intent Technical RFQ Pages",
       "Process & Tolerances Motion Graphics",
@@ -93,10 +93,10 @@ export const industriesData: IndustryData[] = [
         "Showing 0.02mm CNC tolerance verification on video with an engineer explaining why it cuts client downtime by 30%.",
     },
     sampleWorkReference: {
-      title: "Precision Engineering & Industrial Systems",
+      title: "Cygni Energy",
       description:
-        "Rebuilding the digital perception for high-precision component manufacturing.",
-      slug: "precision-engineering",
+        "Extended creative partnership supporting clean energy storage and EV battery communication.",
+      slug: "cygni-energy",
     },
   },
   {
@@ -161,10 +161,10 @@ export const industriesData: IndustryData[] = [
         "A senior surgeon calmly drawing on a tablet explaining why conservative therapy is tried before surgery.",
     },
     sampleWorkReference: {
-      title: "Advanced Mobility & Prosthetic Care",
+      title: "Selected Healthcare & Clinical Systems",
       description:
-        "Building clinical education and authentic patient recovery narratives for assistive technology.",
-      slug: "prosthetic-care",
+        "Calm, ethical communication frameworks designed for specialized clinical practices.",
+      slug: "work",
     },
   },
   {
@@ -189,7 +189,7 @@ export const industriesData: IndustryData[] = [
         focus: "Discovering a new development amid dozens of competing launches",
         frictionPoint: "Ad blindness caused by hundreds of identical render-based banners",
         panknoxIntervention:
-          "Architectural POV cinematography, drone site framing, and provocative spatial hooks",
+          "Architectural video, drone perspective framing, and provocative spatial hooks",
       },
       {
         step: "02",
@@ -229,10 +229,10 @@ export const industriesData: IndustryData[] = [
         "Detailed 3-minute architectural deep-dive targeting high-net-worth investors with strict qualification questions.",
     },
     sampleWorkReference: {
-      title: "Boutique Residential Living Architecture",
+      title: "Selected Architecture & Property Partnerships",
       description:
-        "Crafting narrative-led project launches that command premium price per square foot.",
-      slug: "residential-architecture",
+        "Spatial storytelling, lead filtration architectures, and launch systems for luxury developments.",
+      slug: "work",
     },
   },
   {
@@ -297,10 +297,10 @@ export const industriesData: IndustryData[] = [
         "A 45-second macro film showing hand-chiseling a mortise-and-tenon joint in seasoned Burma teak.",
     },
     sampleWorkReference: {
-      title: "Bespoke Living & Teak Craft Atelier",
+      title: "Premium Interior Manufacturing Brand",
       description:
-        "Building digital desire and architect-level authority for custom furniture makers.",
-      slug: "bespoke-living",
+        "Long-term creative partnership managing product catalogues, launch campaigns, and dealer networks.",
+      slug: "premium-interior-manufacturing",
     },
   },
   {
@@ -325,7 +325,7 @@ export const industriesData: IndustryData[] = [
         focus: "Traveler dreaming of their upcoming getaway, vacation, or celebration",
         frictionPoint: "Boring room listings that feel transactional and uninspiring",
         panknoxIntervention:
-          "Cinematic sensory vignettes capturing light, sound, culinary craft, and atmosphere",
+          "Sensory video vignettes capturing light, sound, culinary craft, and atmosphere",
       },
       {
         step: "02",
@@ -353,7 +353,7 @@ export const industriesData: IndustryData[] = [
       },
     ],
     relevantCapabilities: [
-      "Sensory Heritage & Resort Cinematography",
+      "Sensory Heritage & Resort Video Production",
       "Direct Booking Conversion Optimization",
       "Culinary & Mixology Visual Storytelling",
       "Seasonal & Experiential Meta Ad Campaigns",
@@ -365,10 +365,10 @@ export const industriesData: IndustryData[] = [
         "Sensory film of dusk settling over candlelit stone arches with live folk flute and culinary steam rising.",
     },
     sampleWorkReference: {
-      title: "Heritage Haveli & Boutique Luxury Stay",
+      title: "Naqsh & Stella Maris",
       description:
-        "Transitioning a historic property from OTA dependence to high-margin direct reservations.",
-      slug: "heritage-luxury-stay",
+        "Destination storytelling, video campaigns, and seasonal performance marketing for experiential hospitality.",
+      slug: "naqsh-stella-maris",
     },
   },
 ];

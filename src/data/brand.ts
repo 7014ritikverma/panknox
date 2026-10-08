@@ -1,9 +1,8 @@
 export interface BrandLocation {
-  name: string;
-  address: string;
   city: string;
+  address: string;
   state: string;
-  pin: string;
+  area: string;
 }
 
 export interface BrandInfo {
@@ -12,8 +11,8 @@ export interface BrandInfo {
   positioning: string;
   tagline: string;
   locations: {
-    main: BrandLocation;
-    secondary: BrandLocation;
+    jaipur: BrandLocation;
+    jhunjhunu: BrandLocation;
   };
   contact: {
     email: string;
@@ -34,19 +33,17 @@ export const brandData: BrandInfo = {
   positioning: "Creative & Performance Marketing Partner",
   tagline: "Your business is already doing something. We make sure the world notices.",
   locations: {
-    main: {
-      name: "Main Office",
-      address: "Mandrella, Jhunjhunu, Rajasthan",
-      city: "Mandrella",
-      state: "Rajasthan",
-      pin: "333025",
-    },
-    secondary: {
-      name: "Second Location",
-      address: "Chitrakoot, Vaishali Nagar, Jaipur, Rajasthan",
+    jaipur: {
       city: "Jaipur",
+      address: "Chitrakoot, Vaishali Nagar, Jaipur, Rajasthan",
       state: "Rajasthan",
-      pin: "302021",
+      area: "Chitrakoot, Vaishali Nagar",
+    },
+    jhunjhunu: {
+      city: "Jhunjhunu",
+      address: "Mandrella, Jhunjhunu, Rajasthan",
+      state: "Rajasthan",
+      area: "Mandrella",
     },
   },
   contact: {

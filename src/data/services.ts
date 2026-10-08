@@ -138,7 +138,7 @@ export const capabilitySystems: CapabilitySystem[] = [
       {
         name: "Reels & Short-Form Video",
         description:
-          "Cinematic vertical video engineered with tight pacing, purposeful narrative arcs, and contextual hooks.",
+          "High-engagement vertical video engineered with tight pacing, purposeful narrative arcs, and contextual hooks.",
         deliverables: [
           "Concept & Scriptwriting",
           "On-Site Production / Direction",
@@ -168,10 +168,10 @@ export const capabilitySystems: CapabilitySystem[] = [
       {
         name: "Product & Facility Content",
         description:
-          "Industrial photography and cinematography capturing manufacturing lines, medical facilities, or architectural details.",
+          "Industrial photography and video production capturing manufacturing lines, facilities, or architectural details.",
         deliverables: [
           "Industrial Plant Visuals",
-          "Product Detail Cine-Stills",
+          "Product Detail Visual Stills",
           "Process Walkthrough Footage",
         ],
       },
@@ -227,7 +227,7 @@ export const capabilitySystems: CapabilitySystem[] = [
       {
         name: "LinkedIn",
         description:
-          "Positioning B2B companies, industrial manufacturers, and healthcare leaders to win peer and enterprise credibility.",
+          "Positioning B2B companies, industrial manufacturers, and enterprise technology leaders to win peer and commercial credibility.",
         deliverables: [
           "Company Page Optimisation",
           "Executive Ghost-Writing",

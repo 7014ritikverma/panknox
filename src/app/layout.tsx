@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     template: "%s | Panknox Media",
   },
   description:
-    "Panknox builds the strategy, creative, content and digital systems that help ambitious businesses get noticed, understood and trusted. Offices in Mandrella, Jhunjhunu and Chitrakoot, Vaishali Nagar, Jaipur, Rajasthan.",
+    "Panknox builds the strategy, creative, content and digital systems that help ambitious businesses get noticed, understood and trusted. Offices in Chitrakoot, Vaishali Nagar, Jaipur and Mandrella, Jhunjhunu, Rajasthan.",
   keywords: [
     "creative marketing partner",
     "performance marketing partner",
@@ -28,9 +28,9 @@ export const metadata: Metadata = {
     "content strategy",
     "Meta ads",
     "manufacturing marketing",
-    "healthcare marketing agency India",
-    "real estate marketing",
     "interiors furniture marketing",
+    "clean energy EV marketing",
+    "architectural hardware marketing",
     "hospitality digital marketing",
     "brand positioning India",
   ],
@@ -87,21 +87,19 @@ export default function RootLayout({
     address: [
       {
         "@type": "PostalAddress",
-        name: "Main Office",
-        streetAddress: "Mandrella",
-        addressLocality: "Jhunjhunu",
-        addressRegion: "Rajasthan",
-        addressCountry: "IN",
-        postalCode: "333025",
-      },
-      {
-        "@type": "PostalAddress",
-        name: "Second Location",
         streetAddress: "Chitrakoot, Vaishali Nagar",
         addressLocality: "Jaipur",
         addressRegion: "Rajasthan",
         addressCountry: "IN",
         postalCode: "302021",
+      },
+      {
+        "@type": "PostalAddress",
+        streetAddress: "Mandrella",
+        addressLocality: "Jhunjhunu",
+        addressRegion: "Rajasthan",
+        addressCountry: "IN",
+        postalCode: "333025",
       },
     ],
     openingHoursSpecification: [

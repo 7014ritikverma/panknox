@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, CheckCircle2 } from "lucide-react";
 import AtmosphericBackground from "@/components/common/AtmosphericBackground";
+import CtaIsland from "@/components/common/CtaIsland";
 import { teamData } from "@/data/team";
 
 export const metadata: Metadata = {
@@ -19,7 +20,7 @@ const EVOLUTION_STAGES = [
   {
     step: "02",
     title: "Content",
-    desc: "On-site 4K cinematography, founder perspective, and editorial narrative.",
+    desc: "On-site video production, founder perspective, and editorial narrative.",
   },
   {
     step: "03",
@@ -152,27 +153,26 @@ export default function AboutPage() {
           </div>
 
           {/* 5. Company Offices */}
-          <div className="p-8 sm:p-10 rounded-2xl bg-black/40 border border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-            <div className="space-y-2">
-              <span className="text-xs font-mono text-brand-green font-semibold block">
-                Official locations
-              </span>
-              <p className="text-sm font-semibold text-brand-neutral">
-                Main office: Mandrella, Jhunjhunu, Rajasthan
-              </p>
-              <p className="text-sm text-brand-neutral/80">
-                Second location: Chitrakoot, Vaishali Nagar, Jaipur, Rajasthan
-              </p>
+          <div className="p-8 sm:p-10 rounded-2xl bg-black/40 border border-white/10 space-y-4">
+            <span className="text-xs font-mono text-brand-green font-semibold block">
+              Official locations
+            </span>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-xs sm:text-sm font-mono text-brand-neutral/80">
+              <div className="space-y-1">
+                <span className="text-brand-green font-semibold block">Jaipur</span>
+                <p className="text-brand-neutral">Chitrakoot, Vaishali Nagar</p>
+                <p className="text-brand-neutral/60">Rajasthan</p>
+              </div>
+              <div className="space-y-1">
+                <span className="text-brand-green font-semibold block">Jhunjhunu</span>
+                <p className="text-brand-neutral">Mandrella</p>
+                <p className="text-brand-neutral/60">Rajasthan</p>
+              </div>
             </div>
-
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 px-7 py-3 rounded-full bg-brand-green text-brand-navy font-semibold text-xs sm:text-sm hover:bg-brand-green/90 transition-all shadow-sm shrink-0"
-            >
-              <span>Start a conversation</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
           </div>
+
+          {/* 6. Signature CtaIsland */}
+          <CtaIsland variant="about" className="pt-4" />
         </div>
       </AtmosphericBackground>
     </div>

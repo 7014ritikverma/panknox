@@ -15,7 +15,7 @@ export default function Footer() {
 
   return (
     <footer className="relative text-brand-neutral overflow-hidden border-t border-white/8">
-      <AtmosphericBackground className="pt-24 pb-16 sm:pt-32 sm:pb-20">
+      <AtmosphericBackground className="pt-16 pb-12 sm:pt-20 sm:pb-16">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-20 relative z-10">
           {/* 1. Large Memorable Statement — The Final Visual Chapter */}
           <div className="space-y-6 max-w-4xl">
@@ -131,12 +131,14 @@ export default function Footer() {
               </span>
               <div className="space-y-3 text-xs sm:text-[13px] text-brand-neutral/80 font-mono leading-relaxed">
                 <div>
-                  <span className="text-brand-green block font-semibold">Main Office</span>
-                  <p>Mandrella, Jhunjhunu, Rajasthan</p>
+                  <span className="text-brand-green block font-semibold">Jaipur</span>
+                  <p>Chitrakoot, Vaishali Nagar</p>
+                  <p className="text-brand-neutral/60">Rajasthan</p>
                 </div>
                 <div>
-                  <span className="text-brand-green block font-semibold">Second Location</span>
-                  <p>Chitrakoot, Vaishali Nagar, Jaipur, Rajasthan</p>
+                  <span className="text-brand-green block font-semibold">Jhunjhunu</span>
+                  <p>Mandrella</p>
+                  <p className="text-brand-neutral/60">Rajasthan</p>
                 </div>
               </div>
             </div>
@@ -144,10 +146,18 @@ export default function Footer() {
 
           {/* 4. Bottom Legal & Fading Signal */}
           <div className="pt-8 border-t border-white/8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-brand-neutral/50">
-            <p>© {currentYear} Panknox Media Pvt. Ltd. All rights reserved.</p>
+            <div className="flex flex-wrap items-center gap-4 sm:gap-6">
+              <p>© {currentYear} Panknox Media Pvt. Ltd. All rights reserved.</p>
+              <Link href="/privacy-policy" className="hover:text-brand-green transition-colors">
+                Privacy policy
+              </Link>
+              <Link href="/terms-and-conditions" className="hover:text-brand-green transition-colors">
+                Terms &amp; conditions
+              </Link>
+            </div>
             <div className="flex items-center gap-2 text-brand-green/80">
               <span className="w-1.5 h-1.5 rounded-full bg-brand-green animate-pulse" />
-              <span>Signal // Dissolving into the atmosphere</span>
+              <span>Signal // Active</span>
             </div>
           </div>
         </div>

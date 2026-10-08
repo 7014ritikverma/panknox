@@ -9,6 +9,7 @@ import {
   InteriorsIcon,
   HospitalityIcon,
 } from "@/components/common/PanknoxIcons";
+import CtaIsland from "@/components/common/CtaIsland";
 
 export const metadata: Metadata = {
   title: "Focus Industries | Tailored Commercial Architectures",
@@ -116,28 +117,8 @@ export default function IndustriesOverviewPage() {
           })}
         </div>
 
-        {/* Global Bottom Banner */}
-        <div className="p-8 sm:p-12 rounded-2xl bg-white/[0.02] border border-brand-neutral/15 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-          <div className="space-y-2 max-w-2xl">
-            <span className="text-xs font-mono tracking-wider text-brand-green font-bold">
-              Unlisted verticals
-            </span>
-            <h3 className="text-2xl font-bold text-brand-neutral">
-              Operating in another high-stakes sector?
-            </h3>
-            <p className="text-sm text-brand-neutral/70">
-              Our diagnostic framework applies to any business where trust, operational complexity, and buyer deliberation are high.
-            </p>
-          </div>
-
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-3 px-8 py-4 rounded bg-brand-green text-brand-navy font-bold text-sm tracking-wide hover:bg-brand-green/90 transition-all shrink-0"
-          >
-            <span>Discuss your sector</span>
-            <ArrowRight className="w-4 h-4" />
-          </Link>
-        </div>
+        {/* Signature End-of-Page CTA Island */}
+        <CtaIsland variant="industries" className="pt-4" />
       </div>
     </div>
   );

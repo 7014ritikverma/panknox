@@ -2,17 +2,18 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Lock } from "lucide-react";
 import AtmosphericBackground from "@/components/common/AtmosphericBackground";
 import { projectsData } from "@/data/projects";
+import CtaIsland from "@/components/common/CtaIsland";
 
 const FILTER_CATEGORIES = [
   "All",
   "Manufacturing",
-  "Healthcare",
-  "Real estate",
-  "Interiors & furniture",
+  "Interiors",
+  "Energy",
   "Hospitality",
+  "Technology",
 ];
 
 export default function WorkClient() {
@@ -25,13 +26,13 @@ export default function WorkClient() {
 
   return (
     <div className="relative min-h-screen text-brand-neutral overflow-hidden">
-      <AtmosphericBackground className="pt-32 pb-24 sm:pt-40 sm:pb-32">
-        <div className="max-w-6xl mx-auto px-6 sm:px-8 relative z-10 space-y-20">
-          {/* 1. Hero: Our work. + Short supporting sentence */}
-          <div className="space-y-5 max-w-3xl">
-            <div className="inline-flex items-center gap-3 text-xs font-mono text-brand-green/90">
+      <AtmosphericBackground className="pt-32 pb-16 sm:pt-40 sm:pb-24">
+        <div className="max-w-6xl mx-auto px-6 sm:px-8 relative z-10 space-y-16 sm:space-y-20">
+          {/* 1. Hero: Editorial Specification */}
+          <div className="space-y-4 max-w-3xl">
+            <div className="inline-flex items-center gap-2.5 text-xs font-mono text-brand-green">
               <span className="w-2 h-2 rounded-full bg-brand-green animate-pulse" />
-              <span>Panknox // Archive</span>
+              <span>Verified client systems · Portfolio archive</span>
             </div>
 
             <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-brand-neutral leading-[1.08]">
@@ -39,12 +40,12 @@ export default function WorkClient() {
             </h1>
 
             <p className="text-lg sm:text-xl text-brand-neutral/80 font-normal leading-relaxed pt-1">
-              Real businesses. Realigned perception. Systems built to endure.
+              A selection of partnerships, campaigns and creative systems we&apos;ve built across industries.
             </p>
           </div>
 
           {/* 2. Secondary Minimal Category Filter */}
-          <div className="flex flex-wrap gap-2.5 sm:gap-3 border-b border-white/10 pb-6">
+          <div className="flex flex-wrap gap-2.5 sm:gap-3 border-b border-white/10 pb-5">
             {FILTER_CATEGORIES.map((cat) => (
               <button
                 key={cat}
@@ -61,20 +62,20 @@ export default function WorkClient() {
             ))}
           </div>
 
-          {/* 3. Large Editorial Projects Stream (One Dominating Each Viewport) */}
-          <div className="space-y-28 sm:space-y-40">
+          {/* 3. Large Editorial Projects Stream (Visuals Dominate) */}
+          <div className="space-y-20 sm:space-y-28">
             {filteredProjects.map((project, idx) => (
               <article
                 key={project.id}
-                className="group space-y-8 border-b border-white/10 pb-20 sm:pb-28"
+                className="group space-y-6 border-b border-white/10 pb-16 sm:pb-24"
               >
-                {/* Large Hero Visual */}
+                {/* Large Hero Visual Canvas */}
                 <Link
                   href={`/work/${project.slug}`}
-                  className="block relative w-full h-[360px] sm:h-[520px] lg:h-[600px] rounded-3xl overflow-hidden bg-brand-navy/90 border border-white/12 group-hover:border-brand-green/40 transition-all duration-500 shadow-2xl"
+                  className="block relative w-full h-[320px] sm:h-[460px] lg:h-[540px] rounded-3xl overflow-hidden bg-brand-navy/95 border border-white/12 group-hover:border-brand-green/40 transition-all duration-500 shadow-2xl"
                 >
                   <div
-                    className="absolute inset-0 transition-transform duration-700 ease-out group-hover:scale-102 flex flex-col justify-between p-8 sm:p-14"
+                    className="absolute inset-0 transition-transform duration-700 ease-out group-hover:scale-[1.01] flex flex-col justify-between p-7 sm:p-12"
                     style={{
                       background:
                         idx % 2 === 0
@@ -83,55 +84,72 @@ export default function WorkClient() {
                     }}
                   >
                     <div className="flex items-center justify-between text-xs font-mono text-brand-neutral/60">
-                      <span className="text-brand-green font-semibold">0{idx + 1}</span>
-                      <span>{project.industry}</span>
+                      <div className="flex items-center gap-2">
+                        <span className="text-brand-green font-bold">0{idx + 1}</span>
+                        <span>•</span>
+                        <span className="text-brand-neutral/80">{project.industry}</span>
+                      </div>
+                      {project.nda ? (
+                        <div className="flex items-center gap-1.5 px-2.5 py-1 rounded bg-black/40 border border-white/10 text-[11px] text-amber-300">
+                          <Lock className="w-3 h-3" />
+                          <span>NDA protected</span>
+                        </div>
+                      ) : (
+                        <span className="text-brand-neutral/60">{project.partnership}</span>
+                      )}
                     </div>
 
-                    <div className="space-y-3 max-w-2xl">
-                      <span className="text-xs font-mono text-brand-green font-semibold">
-                        {project.clientDescriptor}
+                    <div className="space-y-2.5 max-w-3xl">
+                      <span className="text-xs font-mono text-brand-green font-semibold block">
+                        {project.client}
                       </span>
-                      <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold text-brand-neutral tracking-tight leading-[1.05]">
+                      <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-brand-neutral tracking-tight leading-[1.08]">
                         {project.title}
                       </h2>
                     </div>
 
                     <div className="flex items-center justify-between text-xs font-mono text-brand-neutral/60 border-t border-white/10 pt-4">
-                      <span>Panknox Archive // {project.year}</span>
+                      <span>{project.clientDescriptor}</span>
                       <span className="inline-flex items-center gap-1.5 text-brand-green font-semibold group-hover:translate-x-1 transition-transform">
-                        View case study →
+                        <span>View case study</span>
+                        <ArrowRight className="w-3.5 h-3.5" />
                       </span>
                     </div>
                   </div>
                 </Link>
 
                 {/* Editorial Information Block */}
-                <div className="space-y-4 max-w-3xl">
-                  <span className="text-xs font-mono text-brand-green font-semibold">
-                    {project.clientDescriptor} • {project.industry}
-                  </span>
+                <div className="space-y-3.5 max-w-3xl">
+                  <div className="flex items-center gap-3 text-xs font-mono text-brand-green font-semibold">
+                    <span>{project.client}</span>
+                    <span className="text-white/20">•</span>
+                    <span className="text-brand-neutral/60">{project.industry}</span>
+                  </div>
 
-                  <h3 className="text-2xl sm:text-4xl font-bold tracking-tight text-brand-neutral group-hover:text-brand-green transition-colors">
+                  <h3 className="text-xl sm:text-3xl font-bold tracking-tight text-brand-neutral group-hover:text-brand-green transition-colors">
                     <Link href={`/work/${project.slug}`}>{project.title}</Link>
                   </h3>
 
-                  <p className="text-base sm:text-lg text-brand-neutral/80 font-normal leading-relaxed">
+                  <p className="text-sm sm:text-base text-brand-neutral/80 font-normal leading-relaxed">
                     {project.summary}
                   </p>
 
                   <div className="pt-2">
                     <Link
                       href={`/work/${project.slug}`}
-                      className="inline-flex items-center gap-2 text-sm font-semibold text-brand-neutral hover:text-brand-green transition-colors"
+                      className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-brand-green hover:underline"
                     >
                       <span>View case study</span>
-                      <ArrowRight className="w-4 h-4 text-brand-green group-hover:translate-x-1.5 transition-transform" />
+                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </Link>
                   </div>
                 </div>
               </article>
             ))}
           </div>
+
+          {/* Signature End-of-Page CTA Island */}
+          <CtaIsland variant="work" className="pt-8" />
         </div>
       </AtmosphericBackground>
     </div>

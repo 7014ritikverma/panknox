@@ -54,7 +54,7 @@ export const aiEraData: AiEraSection = {
     },
     {
       discipline: "Cultural & Sector Context",
-      whyAiFailsHere: "Understanding the nuance of Indian B2B procurement, regional healthcare trust, or boutique heritage luxury.",
+      whyAiFailsHere: "Understanding the nuance of Indian B2B procurement, specialized engineering trust, or boutique heritage luxury.",
     },
     {
       discipline: "Accountability & Execution",

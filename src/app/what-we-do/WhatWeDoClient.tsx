@@ -10,6 +10,7 @@ import {
   PresenceIcon,
   GrowthIcon,
 } from "@/components/common/PanknoxIcons";
+import CtaIsland from "@/components/common/CtaIsland";
 
 interface AreaConfig {
   id: string;
@@ -45,7 +46,7 @@ const PRIMARY_AREAS: AreaConfig[] = [
     metaphorTitle: "Elements assembling into a composition",
     icon: CreativeIcon,
     capabilities: [
-      "Cinema production",
+      "Video production",
       "Typography systems",
       "Motion design",
       "Editorial content",
@@ -236,19 +237,8 @@ export default function WhatWeDoClient() {
             })}
           </div>
 
-          {/* 3. Streamlined Bottom CTA */}
-          <div className="pt-8 text-center space-y-6 max-w-xl mx-auto border-t border-white/10">
-            <h3 className="text-2xl sm:text-3xl font-bold text-brand-neutral tracking-tight">
-              Ready to build a coherent system?
-            </h3>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-brand-green text-brand-navy font-semibold text-sm hover:bg-brand-green/90 transition-all shadow-[0_0_25px_rgba(48,198,130,0.3)]"
-            >
-              <span>Start a conversation</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
+          {/* 3. Signature CtaIsland */}
+          <CtaIsland variant="what-we-do" className="pt-4" />
         </div>
       </AtmosphericBackground>
     </div>

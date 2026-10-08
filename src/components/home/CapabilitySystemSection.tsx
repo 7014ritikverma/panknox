@@ -39,9 +39,9 @@ const CAPABILITY_ROWS: CapabilityRow[] = [
     title: "Creative & content",
     subtitle: "Visual grammar & sensory craft",
     visualMetaphor: "Elements assembling into composition",
-    visualLabel: "Idea → Design → Cinema → Content",
+    visualLabel: "Idea → Design → Motion → Content",
     details:
-      "Cinema-grade 4K industrial plant documentation, typography, and motion design that commands market respect.",
+      "High-fidelity industrial documentation, typography, and motion design that commands market respect.",
     icon: CreativeIcon,
   },
   {
@@ -74,7 +74,7 @@ export default function CapabilitySystemSection() {
   return (
     <section
       id="capability-systems"
-      className="py-28 sm:py-36 bg-brand-white text-brand-navy relative overflow-hidden"
+      className="py-20 sm:py-24 lg:py-28 bg-brand-white text-brand-navy relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10 space-y-20">
         {/* Section Header */}

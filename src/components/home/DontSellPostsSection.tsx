@@ -16,8 +16,8 @@ export default function DontSellPostsSection() {
 
   return (
     <section className="relative overflow-hidden">
-      <AtmosphericBackground className="py-28 sm:py-36">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10 space-y-20">
+      <AtmosphericBackground className="py-20 sm:py-24 lg:py-28">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10 space-y-16">
           {/* Calibrated Editorial Headline */}
           <div className="space-y-5 max-w-4xl">
             <div className="inline-flex items-center gap-3 text-xs font-mono text-brand-green/90">

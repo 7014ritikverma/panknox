@@ -6,7 +6,7 @@ import { industriesData } from "@/data/industries";
 export const metadata: Metadata = {
   title: "Hospitality & Boutique Luxury Marketing Partner",
   description:
-    "Sensory cinematography, culinary storytelling, and direct reservation platforms for heritage havelis, boutique resorts, and experiential retreats.",
+    "Sensory video production, culinary storytelling, and direct reservation platforms for heritage havelis, boutique resorts, and experiential retreats.",
 };
 
 export default function HospitalityPage() {

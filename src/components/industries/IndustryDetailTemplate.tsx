@@ -8,6 +8,7 @@ import {
   InteriorsIcon,
   HospitalityIcon,
 } from "@/components/common/PanknoxIcons";
+import CtaIsland from "@/components/common/CtaIsland";
 
 interface Props {
   industry: IndustryData;
@@ -211,24 +212,8 @@ export default function IndustryDetailTemplate({ industry }: Props) {
           </Link>
         </div>
 
-        {/* Sector Briefing CTA */}
-        <div className="text-center pt-8 space-y-4">
-          <h3 className="text-3xl font-bold text-brand-neutral">
-            Discuss your {industry.name.toLowerCase()} enterprise
-          </h3>
-          <p className="text-sm text-brand-neutral/70 max-w-xl mx-auto">
-            Schedule a diagnostic briefing with our strategy and creative team.
-          </p>
-          <div className="pt-2">
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-3 px-8 py-4 rounded bg-brand-green text-brand-navy font-bold text-sm tracking-wide hover:bg-brand-green/90 transition-all"
-            >
-              <span>Start a conversation</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </div>
+        {/* Sector Briefing Signature CTA Island */}
+        <CtaIsland variant="industries" className="pt-4" />
       </div>
     </div>
   );

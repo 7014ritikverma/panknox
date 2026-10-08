@@ -146,7 +146,7 @@ export default function Navigation() {
           <div className="space-y-1 text-xs font-mono text-brand-gray text-center">
             <p>Panknox Media Pvt. Ltd.</p>
             <p className="text-[11px] text-brand-gray/80">
-              Mandrella, Jhunjhunu • Chitrakoot, Vaishali Nagar, Jaipur
+              Chitrakoot, Vaishali Nagar, Jaipur • Mandrella, Jhunjhunu
             </p>
           </div>
         </div>

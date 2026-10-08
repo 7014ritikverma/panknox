@@ -11,6 +11,7 @@ import {
   LearnIcon,
   EvolveIcon,
 } from "@/components/common/PanknoxIcons";
+import CtaIsland from "@/components/common/CtaIsland";
 
 export const metadata: Metadata = {
   title: "How We Work | The Continuous Loop",
@@ -153,28 +154,8 @@ export default function HowWeWorkPage() {
           </div>
         </div>
 
-        {/* CTA */}
-        <div className="p-8 sm:p-12 rounded-2xl bg-brand-green/10 border border-brand-green/40 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-          <div className="space-y-2 max-w-2xl">
-            <span className="text-xs font-mono tracking-wider text-brand-green font-bold">
-              Cycle commencement
-            </span>
-            <h3 className="text-2xl sm:text-3xl font-bold text-brand-neutral">
-              Start sprint 01 with Panknox.
-            </h3>
-            <p className="text-sm text-brand-neutral/80">
-              Initialize step 01 (Understand) for your business today.
-            </p>
-          </div>
-
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-3 px-8 py-4 rounded bg-brand-green text-brand-navy font-bold text-sm tracking-wide hover:bg-brand-green/90 transition-all shrink-0"
-          >
-            <span>Start a conversation</span>
-            <ArrowRight className="w-4 h-4" />
-          </Link>
-        </div>
+        {/* Signature End-of-Page CTA Island */}
+        <CtaIsland variant="home" className="pt-4" />
       </div>
     </div>
   );

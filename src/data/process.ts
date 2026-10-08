@@ -70,7 +70,7 @@ export const processData: ContinuousMethod = {
       subtitle: "Creative & Technological Engineering",
       question: "How do we make the business impossible to ignore?",
       description:
-        "We produce the assets: high-fidelity cinematography, editorial design, motion graphics, technical copywriting, conversion-focused websites, and qualification funnels. Every asset is built to reflect the high caliber of the company.",
+        "We produce the assets: high-fidelity video production, motion design, editorial layout, technical copywriting, conversion-focused websites, and qualification funnels. Every asset is built to reflect the high caliber of the company.",
       systemAction: "Production of creative systems, digital infrastructure, and content assets.",
       output: "Complete Multi-Asset Production & Digital Touchpoints",
       signalTag: "Node 04 // Production",

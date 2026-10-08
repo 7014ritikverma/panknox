@@ -54,7 +54,7 @@ export default function NotFound() {
         </div>
 
         <div className="pt-8 border-t border-brand-neutral/10 text-xs font-mono text-brand-gray">
-          <span>Offices: Mandrella, Jhunjhunu · Chitrakoot, Vaishali Nagar, Jaipur</span>
+          <span>Offices: Chitrakoot, Vaishali Nagar, Jaipur · Mandrella, Jhunjhunu</span>
         </div>
       </div>
     </div>

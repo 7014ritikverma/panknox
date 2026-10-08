@@ -9,14 +9,14 @@ export default function AiEraSection() {
 
   const selectedDecisions = [
     { title: "The message", desc: "A singular provable market wedge" },
-    { title: "The idea", desc: "Unforgettable cinematic metaphor" },
+    { title: "The idea", desc: "Unforgettable visual metaphor" },
     { title: "The creative", desc: "Restrained, prestigious visual direction" },
     { title: "The campaign", desc: "Precision algorithmic distribution" },
   ];
 
   return (
     <section id="the-ai-era" className="relative overflow-hidden">
-      <AtmosphericBackground className="py-28 sm:py-36">
+      <AtmosphericBackground className="py-20 sm:py-24 lg:py-28">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10 space-y-20">
           {/* Section Header */}
           <div className="space-y-5 max-w-4xl">
