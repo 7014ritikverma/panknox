@@ -1,13 +1,15 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-sans: var(--font-inter), sans-serif;
+  --font-mono: var(--font-inter), sans-serif;
 
   /* Panknox Brand Colors */
   --color-brand-green: #30C682;
   --color-brand-navy: #04262F;
   --color-brand-gray: #727272;
   --color-brand-neutral: #DFE5E2;
+  --color-brand-white: #FFFFFF;
 
   /* Extended Navy Shades (Tuned to #04262F) */
   --color-navy-950: #021419;
@@ -17,15 +19,16 @@
   --color-navy-700: #0f4c5c;
   --color-navy-600: #176174;
 
-  /* Extended Signal Green Shades (Tuned to #30C682) */
+  /* Extended Signal Green Shades */
   --color-signal-glow: rgba(48, 198, 130, 0.25);
   --color-signal-subtle: rgba(48, 198, 130, 0.12);
   --color-signal-border: rgba(48, 198, 130, 0.35);
 
-  /* Neutrals (Tuned to #DFE5E2) */
+  /* Light/Editorial Neutral Shades */
   --color-neutral-light: #DFE5E2;
-  --color-neutral-dim: #A9B5B0;
-  --color-neutral-dark: #1E373E;
+  --color-neutral-surface: #F4F7F6;
+  --color-neutral-border: #D1DCD7;
+  --color-neutral-dim: #727272;
 }
 
 :root {
@@ -33,13 +36,18 @@
   --text-primary: #DFE5E2;
   --text-secondary: #727272;
   --signal-green: #30C682;
+  --bg-light: #FFFFFF;
+}
+
+* {
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
 }
 
 html {
   background-color: #04262F;
   color: #DFE5E2;
   font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  font-size: 18px; /* Base body size: 18px as required */
+  font-size: 18px; /* Base body size: 18px */
   line-height: 1.6;
   scroll-behavior: smooth;
   text-rendering: optimizeLegibility;
@@ -48,8 +56,6 @@ html {
 }
 
 body {
-  background-color: #04262F;
-  color: #DFE5E2;
   overflow-x: hidden;
   min-height: 100vh;
 }
@@ -82,11 +88,11 @@ body {
   outline-offset: 3px;
 }
 
-/* Technical grid and subtle system lines */
+/* Dark Background Patterns */
 .bg-grid-pattern {
   background-image: 
-    linear-gradient(to right, rgba(223, 229, 226, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(223, 229, 226, 0.04) 1px, transparent 1px);
+    linear-gradient(to right, rgba(223, 229, 226, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(223, 229, 226, 0.05) 1px, transparent 1px);
   background-size: 48px 48px;
 }
 
@@ -95,7 +101,20 @@ body {
   background-size: 24px 24px;
 }
 
-/* Signal glow utilities */
+/* Light Background Patterns for Editorial White Sections */
+.bg-light-grid {
+  background-image: 
+    linear-gradient(to right, rgba(4, 38, 47, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(4, 38, 47, 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.bg-light-dots {
+  background-image: radial-gradient(rgba(4, 38, 47, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Signal Glow Utilities */
 .signal-glow {
   box-shadow: 0 0 24px rgba(48, 198, 130, 0.35);
 }
@@ -106,6 +125,42 @@ body {
 
 .signal-text-glow {
   text-shadow: 0 0 16px rgba(48, 198, 130, 0.45);
+}
+
+/* Animated Travelling Signal Pulse */
+@keyframes signalTravelHorizontal {
+  0% {
+    left: -15%;
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    left: 115%;
+    opacity: 0;
+  }
+}
+
+.animate-signal-travel {
+  position: absolute;
+  top: 0;
+  height: 2px;
+  width: 120px;
+  background: linear-gradient(90deg, transparent, #30C682, transparent);
+  animation: signalTravelHorizontal 3.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* Section Chapter Transition Line Component */
+.section-transition-line {
+  position: relative;
+  width: 100%;
+  height: 1px;
+  background: rgba(114, 114, 114, 0.2);
+  overflow: hidden;
 }
 
 /* Animations */
@@ -122,17 +177,4 @@ body {
 
 .animate-signal-pulse {
   animation: pulseSignal 3s ease-in-out infinite;
-}
-
-@keyframes signalScan {
-  0% {
-    transform: translateY(-100%);
-  }
-  100% {
-    transform: translateY(1000%);
-  }
-}
-
-.animate-signal-scan {
-  animation: signalScan 8s linear infinite;
 }

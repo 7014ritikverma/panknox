@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ArrowUpRight, ArrowRight, ShieldCheck, Filter } from "lucide-react";
-import { projectsData, ProjectCaseStudy } from "@/data/projects";
+import { ArrowUpRight, ArrowRight, ShieldCheck, Filter, Sparkles } from "lucide-react";
+import { projectsData } from "@/data/projects";
 
 const CATEGORIES = ["ALL", "MANUFACTURING", "HEALTHCARE", "HOSPITALITY", "JEWELLERY", "INTERIORS"];
 
@@ -21,35 +21,37 @@ export default function WorkArchiveSection() {
   });
 
   return (
-    <section id="work-archive" className="py-24 sm:py-32 bg-brand-navy border-t border-brand-neutral/10 relative overflow-hidden text-brand-neutral">
-      <div className="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none" />
+    <section
+      id="work-archive"
+      className="py-28 sm:py-36 bg-brand-white text-brand-navy relative overflow-hidden"
+    >
+      {/* Background Light Pattern */}
+      <div className="absolute inset-0 bg-light-grid opacity-30 pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-16">
-        {/* Section Header & Editorial Filter */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 pb-8 border-b border-brand-neutral/10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-20">
+        {/* Section Header */}
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 border-b border-brand-navy/10 pb-8">
           <div className="space-y-4 max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-brand-green/10 border border-brand-green/30 text-brand-green text-xs font-mono uppercase tracking-widest">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded bg-brand-neutral-surface border border-brand-neutral-border text-brand-navy text-xs font-mono uppercase tracking-widest font-semibold">
               <span className="w-2 h-2 rounded-full bg-brand-green" />
-              <span>06 // EDITORIAL WORK ARCHIVE</span>
+              <span>05 // EDITORIAL WORK ARCHIVE</span>
             </div>
 
-            <h2 className="text-4xl sm:text-6xl md:text-7xl font-black uppercase tracking-tight text-brand-neutral leading-tight">
-              PROVEN <br />
-              <span className="text-brand-green">SYSTEMS.</span>
+            <h2 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight text-brand-navy leading-[0.95]">
+              WORK.
             </h2>
 
-            <p className="text-lg sm:text-xl text-brand-neutral/80 leading-relaxed">
-              We do not display superficial mockups. Each project represents an end-to-end
-              realignment between business truth, creative perception, and market distribution.
+            <p className="text-lg sm:text-xl text-brand-gray leading-relaxed max-w-2xl font-normal">
+              An editorial archive of commercial and creative systems.
+              We do not display generic mockups; each case study demonstrates a realigned market perception.
             </p>
           </div>
 
-          {/* Category Filter Pills */}
-          <div className="space-y-2">
-            <div className="flex items-center gap-2 text-xs font-mono text-brand-gray">
-              <Filter className="w-3.5 h-3.5 text-brand-green" />
-              <span>FILTER DISCIPLINE</span>
-            </div>
+          {/* Discipline Filters */}
+          <div className="space-y-2 self-start lg:self-end">
+            <span className="text-xs font-mono text-brand-gray uppercase font-semibold block">
+              FILTER ARCHIVE:
+            </span>
             <div className="flex flex-wrap gap-2">
               {CATEGORIES.map((cat) => (
                 <button
@@ -57,10 +59,10 @@ export default function WorkArchiveSection() {
                   type="button"
                   onClick={() => setSelectedCategory(cat)}
                   data-cursor="FILTER"
-                  className={`px-3 py-1.5 rounded text-xs font-mono tracking-wider transition-all ${
+                  className={`px-3.5 py-1.5 rounded-lg text-xs font-mono tracking-wider transition-all ${
                     selectedCategory === cat
-                      ? "bg-brand-green text-brand-navy font-bold shadow-[0_0_12px_rgba(48,198,130,0.3)]"
-                      : "bg-brand-navy/60 border border-brand-neutral/15 text-brand-neutral/70 hover:border-brand-neutral/40"
+                      ? "bg-brand-navy text-white font-bold shadow-md"
+                      : "bg-brand-neutral-surface border border-brand-neutral-border text-brand-navy/70 hover:border-brand-navy"
                   }`}
                 >
                   {cat}
@@ -70,124 +72,109 @@ export default function WorkArchiveSection() {
           </div>
         </div>
 
-        {/* Asymmetric Editorial Project Stream */}
-        <div className="space-y-12">
-          {filteredProjects.map((project, idx) => {
-            const isAlternate = idx % 2 === 1;
-            return (
-              <article
-                key={project.id}
-                className={`p-6 sm:p-10 lg:p-12 rounded-2xl border border-brand-neutral/15 bg-brand-navy/90 hover:border-brand-green/40 transition-all duration-300 relative group overflow-hidden shadow-2xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center ${
-                  isAlternate ? "lg:flex-row-reverse" : ""
-                }`}
-              >
-                {/* Background Giant Project Number Watermark */}
-                <span className="absolute -top-10 -right-4 text-9xl sm:text-[14rem] font-black text-brand-neutral/[0.03] select-none pointer-events-none font-mono">
+        {/* Large Editorial Magazine Style Project Stream on White */}
+        <div className="space-y-24">
+          {filteredProjects.map((project, idx) => (
+            <article
+              key={project.id}
+              className="group border-b border-brand-navy/15 pb-20 space-y-8 relative"
+            >
+              {/* Top Meta Line with Huge Project Number */}
+              <div className="flex items-baseline justify-between">
+                <div className="flex items-center gap-3">
+                  <span className="text-xs font-mono px-2.5 py-1 rounded bg-brand-neutral-surface border border-brand-neutral-border text-brand-navy font-bold">
+                    ARCHIVE // {project.number}
+                  </span>
+                  <span className="text-xs font-mono uppercase text-brand-green font-bold">
+                    {project.categoryTag}
+                  </span>
+                </div>
+
+                <span className="text-6xl sm:text-8xl font-black font-mono text-brand-navy/10 group-hover:text-brand-green/30 transition-colors select-none">
                   {project.number}
                 </span>
+              </div>
 
-                {/* Left/Main Column: Number, Title, Scope & Narrative */}
-                <div className="lg:col-span-7 space-y-6 relative z-10">
-                  <div className="flex items-center gap-4 text-xs font-mono text-brand-gray">
-                    <span className="text-brand-green font-bold text-sm tracking-widest">
-                      PROJECT // {project.number}
-                    </span>
-                    <span>•</span>
-                    <span className="uppercase text-brand-neutral/60">{project.industry}</span>
-                    <span>•</span>
-                    <span>{project.year}</span>
-                  </div>
-
-                  <h3 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase text-brand-neutral tracking-tight group-hover:text-brand-green transition-colors">
-                    {project.title}
+              {/* Main Headline & Description */}
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <div className="lg:col-span-8 space-y-4">
+                  <h3 className="text-3xl sm:text-5xl lg:text-6xl font-black uppercase text-brand-navy tracking-tight group-hover:text-brand-green transition-colors">
+                    <Link href={`/work/${project.slug}`} data-cursor="VIEW PROJECT">
+                      {project.title}
+                    </Link>
                   </h3>
 
-                  <p className="text-sm font-mono text-brand-green font-medium">
-                    {project.clientDescriptor}
+                  <p className="text-sm font-mono text-brand-gray uppercase font-semibold">
+                    {project.clientDescriptor} • {project.location}
                   </p>
 
-                  <p className="text-base text-brand-neutral/80 leading-relaxed max-w-2xl">
+                  <p className="text-base sm:text-lg text-brand-gray leading-relaxed max-w-3xl">
                     {project.summary}
                   </p>
+                </div>
 
-                  {/* Scope badges */}
-                  <div className="flex flex-wrap gap-2 pt-2">
-                    {project.scope.map((s) => (
-                      <span
-                        key={s}
-                        className="text-xs font-mono px-2.5 py-1 rounded bg-white/5 border border-brand-neutral/10 text-brand-neutral/70"
-                      >
-                        {s}
-                      </span>
-                    ))}
+                <div className="lg:col-span-4 flex flex-col justify-between space-y-6 lg:border-l border-brand-navy/10 lg:pl-8">
+                  <div className="space-y-2">
+                    <span className="text-xs font-mono uppercase tracking-widest text-brand-gray font-bold block">
+                      SYSTEM INTERVENTION:
+                    </span>
+                    <p className="text-sm font-bold text-brand-navy leading-snug">
+                      {project.theThinking}
+                    </p>
                   </div>
 
-                  {/* CTA link */}
-                  <div className="pt-4">
-                    <Link
-                      href={`/work/${project.slug}`}
-                      data-cursor="CASE STUDY"
-                      className="inline-flex items-center gap-2 px-6 py-3 rounded bg-brand-green text-brand-navy font-bold text-xs uppercase tracking-wider hover:bg-brand-green/90 transition-all shadow-[0_0_15px_rgba(48,198,130,0.2)]"
+                  <Link
+                    href={`/work/${project.slug}`}
+                    data-cursor="VIEW PROJECT"
+                    className="inline-flex items-center gap-2 text-xs font-mono font-bold text-brand-navy hover:text-brand-green uppercase tracking-wider group-hover:translate-x-1 transition-all"
+                  >
+                    <span>VIEW CASE ARCHIVE</span>
+                    <ArrowUpRight className="w-4 h-4 text-brand-green" />
+                  </Link>
+                </div>
+              </div>
+
+              {/* Visual Composition Banner */}
+              <div className="w-full bg-brand-neutral-surface border border-brand-neutral-border rounded-2xl p-6 sm:p-10 relative overflow-hidden group-hover:border-brand-green/50 transition-colors shadow-sm">
+                <div className="flex flex-wrap items-center justify-between gap-4 border-b border-brand-navy/10 pb-4 mb-6 text-xs font-mono">
+                  <span className="text-brand-navy font-bold uppercase">
+                    DELIVERABLE SYSTEM SPECIFICATION
+                  </span>
+                  <span className="text-brand-green font-bold">VERIFIED REORGANIZATION</span>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                  {project.scope.map((s, i) => (
+                    <div
+                      key={s}
+                      className="p-4 rounded-xl bg-white border border-brand-navy/10 space-y-1 shadow-sm"
                     >
-                      <span>INSPECT COMPLETE CASE STUDY</span>
-                      <ArrowUpRight className="w-4 h-4" />
-                    </Link>
-                  </div>
+                      <span className="text-[10px] font-mono text-brand-green font-bold block">
+                        MOD 0{i + 1}
+                      </span>
+                      <p className="text-xs font-bold uppercase text-brand-navy truncate">{s}</p>
+                    </div>
+                  ))}
                 </div>
 
-                {/* Right Column: Editorial Blueprint Panel */}
-                <div className="lg:col-span-5 bg-black/40 border border-brand-neutral/15 rounded-xl p-6 sm:p-7 space-y-5 relative z-10">
-                  <div className="flex items-center justify-between border-b border-brand-neutral/10 pb-3 text-xs font-mono">
-                    <span className="text-brand-gray uppercase">THE ARCHITECTURE</span>
-                    <span className="text-brand-green">VERIFIED WORKFLOW</span>
-                  </div>
-
-                  <div className="space-y-3 text-xs">
-                    <div>
-                      <span className="font-mono uppercase text-brand-gray block text-[10px]">
-                        THE CORE CHALLENGE:
-                      </span>
-                      <p className="text-brand-neutral/80 line-clamp-2">{project.theChallenge}</p>
-                    </div>
-
-                    <div className="pt-2 border-t border-brand-neutral/10">
-                      <span className="font-mono uppercase text-brand-green block text-[10px] font-bold">
-                        THE STRATEGIC HYPOTHESIS:
-                      </span>
-                      <p className="text-brand-neutral font-medium line-clamp-2">
-                        {project.theThinking}
-                      </p>
-                    </div>
-
-                    <div className="pt-2 border-t border-brand-neutral/10">
-                      <span className="font-mono uppercase text-brand-gray block text-[10px]">
-                        AUTHENTIC OUTCOME:
-                      </span>
-                      <p className="text-brand-neutral/90 line-clamp-2">
-                        {project.theOutcome.qualitativeSummary}
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="pt-2 border-t border-brand-neutral/10 flex items-center gap-2 text-[11px] font-mono text-brand-gray">
-                    <ShieldCheck className="w-3.5 h-3.5 text-brand-green" />
-                    <span>HONEST ARCHIVE // ZERO FABRICATED METRICS</span>
-                  </div>
+                <div className="pt-6 mt-6 border-t border-brand-navy/10 flex flex-wrap items-center justify-between gap-4 text-xs font-mono text-brand-gray">
+                  <span>OUTCOME: {project.theOutcome.qualitativeSummary}</span>
+                  <span className="text-brand-navy font-semibold">YEAR // {project.year}</span>
                 </div>
-              </article>
-            );
-          })}
+              </div>
+            </article>
+          ))}
         </div>
 
-        {/* View All Work Link */}
+        {/* Bottom Archive Link */}
         <div className="pt-8 text-center">
           <Link
             href="/work"
             data-cursor="ALL WORK"
-            className="inline-flex items-center gap-3 px-8 py-4 rounded border border-brand-green text-brand-green hover:bg-brand-green hover:text-brand-navy font-bold text-sm tracking-wider uppercase transition-all"
+            className="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-brand-navy text-white hover:bg-brand-navy/90 font-bold text-sm tracking-wider uppercase transition-all shadow-md"
           >
-            <span>ENTER FULL EDITORIAL ARCHIVE ({projectsData.length} PROJECTS)</span>
-            <ArrowRight className="w-4 h-4" />
+            <span>EXPLORE FULL CASE REPOSITORY ({projectsData.length} PROJECTS)</span>
+            <ArrowRight className="w-4 h-4 text-brand-green" />
           </Link>
         </div>
       </div>
