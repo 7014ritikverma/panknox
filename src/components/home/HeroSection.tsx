@@ -4,16 +4,32 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 
-interface WordBlock {
+interface WordSegment {
   text: string;
+  step: number;
   highlight?: boolean;
 }
 
-const HEADLINE_LINES: WordBlock[][] = [
-  [{ text: "Make your" }],
-  [{ text: "business" }],
-  [{ text: "impossible" }],
-  [{ text: "to ignore.", highlight: true }],
+interface HeadlineLine {
+  id: number;
+  segments: WordSegment[];
+}
+
+const HEADLINE_STRUCTURE: HeadlineLine[] = [
+  {
+    id: 1,
+    segments: [
+      { text: "Make your ", step: 0 },
+      { text: "business", step: 1 },
+    ],
+  },
+  {
+    id: 2,
+    segments: [
+      { text: "impossible ", step: 2 },
+      { text: "to ignore.", highlight: true, step: 3 },
+    ],
+  },
 ];
 
 export default function HeroSection() {
@@ -23,7 +39,7 @@ export default function HeroSection() {
   useEffect(() => {
     const timer = setInterval(() => {
       setActiveStep((prev) => (prev >= 4 ? 4 : prev + 1));
-    }, 900);
+    }, 850);
 
     return () => clearInterval(timer);
   }, []);
@@ -92,39 +108,45 @@ export default function HeroSection() {
             />
           </div>
 
-          <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-[96px] font-bold tracking-tight leading-[1.03] select-none">
-            {HEADLINE_LINES.map((line, lineIdx) => {
-              const isRevealed = activeStep >= lineIdx;
-              const isCurrent = activeStep === lineIdx;
+          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[76px] xl:text-[84px] font-bold tracking-tight leading-[1.08] sm:leading-[1.06] select-none max-w-5xl mx-auto">
+            {HEADLINE_STRUCTURE.map((line) => {
+              const isLineStarted = activeStep >= line.segments[0].step;
 
               return (
                 <span
-                  key={lineIdx}
-                  className="block transition-all duration-700 ease-out"
+                  key={line.id}
+                  className="block sm:whitespace-nowrap transition-all duration-700 ease-out"
                   style={{
-                    transform: isRevealed
+                    transform: isLineStarted
                       ? "translateY(0) scale(1)"
                       : "translateY(12px) scale(0.98)",
-                    opacity: isRevealed ? 1 : 0.22,
-                    filter: isRevealed ? "blur(0px)" : "blur(3px)",
+                    opacity: isLineStarted ? 1 : 0.22,
+                    filter: isLineStarted ? "blur(0px)" : "blur(2.5px)",
                   }}
                 >
-                  {line.map((item, itemIdx) => (
-                    <span
-                      key={itemIdx}
-                      className={`inline-block transition-colors duration-500 ${
-                        item.highlight
-                          ? isRevealed
-                            ? "text-brand-green drop-shadow-[0_0_35px_rgba(48,198,130,0.35)]"
+                  {line.segments.map((item, itemIdx) => {
+                    const isRevealed = activeStep >= item.step;
+                    const isCurrent = activeStep === item.step;
+
+                    return (
+                      <span
+                        key={itemIdx}
+                        className={`inline-block transition-colors duration-500 ${
+                          item.highlight
+                            ? isRevealed
+                              ? "text-brand-green drop-shadow-[0_0_35px_rgba(48,198,130,0.35)]"
+                              : "text-brand-neutral/30"
+                            : isCurrent
+                            ? "text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.4)]"
+                            : isRevealed
+                            ? "text-brand-neutral"
                             : "text-brand-neutral/30"
-                          : isCurrent
-                          ? "text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.4)]"
-                          : "text-brand-neutral"
-                      }`}
-                    >
-                      {item.text}
-                    </span>
-                  ))}
+                        }`}
+                      >
+                        {item.text}
+                      </span>
+                    );
+                  })}
                 </span>
               );
             })}

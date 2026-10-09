@@ -47,7 +47,7 @@ export const brandData: BrandInfo = {
     },
   },
   contact: {
-    email: "contact@panknox.com",
+    email: "info@panknox.com",
     phonePlaceholder: "+91 91168 83100",
     whatsappText: "Discussing our marketing system with Panknox",
   },

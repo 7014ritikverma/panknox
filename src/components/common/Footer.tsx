@@ -87,10 +87,10 @@ export default function Footer() {
                 </li>
                 <li>
                   <a
-                    href="mailto:contact@panknox.com"
+                    href="mailto:info@panknox.com"
                     className="hover:text-brand-green transition-colors break-all"
                   >
-                    contact@panknox.com
+                    info@panknox.com
                   </a>
                 </li>
               </ul>

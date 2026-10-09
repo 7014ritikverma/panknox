@@ -72,7 +72,7 @@ function FacebookIcon({ className = "w-4 h-4" }: { className?: string }) {
 const SOCIAL_NETWORKS: SocialLink[] = [
   {
     name: "Pinterest",
-    href: "https://pinterest.com/panknox",
+    href: "https://in.pinterest.com/panknoxmedia/",
     label: "Follow Panknox on Pinterest",
     icon: PinterestIcon,
   },
