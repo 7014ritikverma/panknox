@@ -8,13 +8,19 @@ import IndustrySwitcherSection from "@/components/home/IndustrySwitcherSection";
 import PanknoxMethodSection from "@/components/home/PanknoxMethodSection";
 import AiEraSection from "@/components/home/AiEraSection";
 import TeamSection from "@/components/home/TeamSection";
-import CtaIsland from "@/components/common/CtaIsland";
+import PanknoxCTAIsland from "@/components/common/PanknoxCTAIsland";
 
 export default function HomePage() {
   return (
     <div className="w-full flex flex-col bg-white">
-      {/* 01 / HERO (PRIMARY WHITE EXPERIENCE) */}
+      {/* 01 / HERO (DARK ATMOSPHERIC CENTERED EXPERIENCE) */}
       <HeroSection />
+
+      {/* TRANSITION: DARK HERO -> WHITE CONTENT */}
+      <SectionTransition
+        theme="dark-to-light"
+        label="Chapter 01 · The perception gap"
+      />
 
       {/* 02 / THE GAP (WHITE: #FFFFFF) */}
       <TheGapSection />
@@ -64,10 +70,8 @@ export default function HomePage() {
       {/* 09 / THE TEAM (WHITE: #FFFFFF) */}
       <TeamSection />
 
-      {/* 10 / SIGNATURE CTA ISLAND: "LET'S MAKE SOMETHING WORTH NOTICING" */}
-      <section className="bg-brand-navy relative overflow-hidden">
-        <CtaIsland variant="home" />
-      </section>
+      {/* 10 / SIGNATURE DYNAMIC ISLAND CTA (WHITE BACKGROUND #FFFFFF) */}
+      <PanknoxCTAIsland variant="home" />
     </div>
   );
 }
