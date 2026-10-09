@@ -19,14 +19,14 @@ const HEADLINE_STRUCTURE: HeadlineLine[] = [
   {
     id: 1,
     segments: [
-      { text: "Make your ", step: 0 },
+      { text: "Make your", step: 0 },
       { text: "business", step: 1 },
     ],
   },
   {
     id: 2,
     segments: [
-      { text: "impossible ", step: 2 },
+      { text: "impossible", step: 2 },
       { text: "to ignore.", highlight: true, step: 3 },
     ],
   },
@@ -127,11 +127,14 @@ export default function HeroSection() {
                   {line.segments.map((item, itemIdx) => {
                     const isRevealed = activeStep >= item.step;
                     const isCurrent = activeStep === item.step;
+                    const isNotLast = itemIdx < line.segments.length - 1;
 
                     return (
                       <span
                         key={itemIdx}
-                        className={`inline-block transition-colors duration-500 ${
+                        className={`inline-block ${
+                          isNotLast ? "mr-[0.28em]" : ""
+                        } transition-colors duration-500 ${
                           item.highlight
                             ? isRevealed
                               ? "text-brand-green drop-shadow-[0_0_35px_rgba(48,198,130,0.35)]"
