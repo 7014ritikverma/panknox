@@ -122,7 +122,7 @@ export default function PanknoxCTAIsland({
             </Link>
 
             <div className="flex items-center gap-2 text-xs font-mono text-brand-gray/80">
-              <Diya size="sm" withAura={true} className="scale-75 -my-1" label="Diwali Light" />
+              <Diya size="sm" withAura={true} className="scale-75 -my-1" />
               <span>Chitrakoot, Jaipur • Mandrella, Jhunjhunu</span>
             </div>
           </div>

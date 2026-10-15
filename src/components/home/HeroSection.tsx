@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import FestiveAmbient from "@/components/festive/FestiveAmbient";
 import Diya from "@/components/festive/Diya";
+import MarigoldToran from "@/components/festive/MarigoldGarland";
 
 interface WordSegment {
   text: string;
@@ -51,6 +52,9 @@ export default function HeroSection() {
       aria-label="Hero Introduction"
       className="relative min-h-[92vh] lg:min-h-screen bg-[#04262F] text-brand-neutral flex flex-col items-center justify-center pt-28 sm:pt-36 pb-16 sm:pb-20 overflow-hidden"
     >
+      {/* Traditional Marigold Toran / Garlands along Upper Edges */}
+      <MarigoldToran />
+
       {/* ========================================================
           BACKGROUND MOTION LAYERS (Slow, Organic & Multi-Layered)
           ======================================================== */}
@@ -95,19 +99,15 @@ export default function HeroSection() {
           CENTER-ALIGNED EXPERIENTIAL CONTENT
           ======================================================== */}
       <div className="max-w-5xl mx-auto px-6 sm:px-8 w-full relative z-10 flex flex-col items-center text-center space-y-8 sm:space-y-10 my-auto">
-        {/* 1. Panknox Signal Indicator with Elevated Deepawali Greeting */}
-        <div className="inline-flex items-center gap-2.5 sm:gap-3 px-4 py-1.5 rounded-full bg-white/[0.04] border border-amber-500/25 text-xs font-mono text-brand-neutral/85 shadow-[0_2px_18px_rgba(245,158,11,0.08)] backdrop-blur-sm transition-all hover:border-amber-500/40">
+        {/* 1. Small Panknox Signal Indicator */}
+        <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/[0.04] border border-white/10 text-xs font-mono text-brand-neutral/80 shadow-sm backdrop-blur-sm">
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-green opacity-75" />
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-green shadow-[0_0_8px_#30C682]" />
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-green" />
           </span>
           <span className="text-brand-green font-semibold">Panknox Signal</span>
-          <span className="text-amber-400/60">•</span>
-          <span className="text-amber-200/90 font-medium">Deepawali</span>
-          <span className="hidden sm:inline text-brand-neutral/30">|</span>
-          <span className="hidden sm:inline text-brand-neutral/80 font-sans italic font-normal">
-            A little more light. A lot more possibility.
-          </span>
+          <span className="text-brand-neutral/40">•</span>
+          <span className="text-brand-neutral/70">System 01 // Unified attention</span>
         </div>
 
         {/* 2. Dynamic Headline Container with Traveling Signal Interaction */}
@@ -221,32 +221,26 @@ export default function HeroSection() {
         </div>
 
         {/* Mobile-Only Subtle Diya Accent */}
-        <div className="sm:hidden pt-2 flex items-center justify-center pointer-events-none">
-          <Diya size="sm" withAura={true} label="Deepawali Light" />
+        <div className="sm:hidden pt-3 flex items-center justify-center pointer-events-none" aria-hidden="true">
+          <Diya size="sm" withAura={true} />
         </div>
       </div>
 
       {/* ========================================================
-          TASTEFUL BOTTOM CORNER DIYAS (Desktop Framed Horizon)
+          TRADITIONAL CLAY DIYAS (Desktop Framed Horizon)
           ======================================================== */}
       <div
-        className="hidden sm:flex absolute bottom-6 lg:bottom-9 left-6 sm:left-10 lg:left-14 z-20 flex-col items-center gap-1.5 opacity-85 pointer-events-none transition-all duration-700"
+        className="hidden sm:flex absolute bottom-6 lg:bottom-9 left-6 sm:left-10 lg:left-14 z-20 flex-col items-center opacity-90 pointer-events-none transition-all duration-700"
         aria-hidden="true"
       >
-        <Diya size="sm" withAura={true} withReflection={true} label="Deepawali Light" />
-        <span className="font-mono text-[10px] text-amber-200/40 uppercase tracking-widest">
-          Light
-        </span>
+        <Diya size="sm" withAura={true} withReflection={true} />
       </div>
 
       <div
-        className="hidden sm:flex absolute bottom-6 lg:bottom-9 right-6 sm:right-10 lg:right-14 z-20 flex-col items-center gap-1.5 opacity-85 pointer-events-none transition-all duration-700"
+        className="hidden sm:flex absolute bottom-6 lg:bottom-9 right-6 sm:right-10 lg:right-14 z-20 flex-col items-center opacity-90 pointer-events-none transition-all duration-700"
         aria-hidden="true"
       >
-        <Diya size="sm" withAura={true} withReflection={true} label="Deepawali Possibility" />
-        <span className="font-mono text-[10px] text-amber-200/40 uppercase tracking-widest">
-          Possibility
-        </span>
+        <Diya size="sm" withAura={true} withReflection={true} />
       </div>
     </section>
   );

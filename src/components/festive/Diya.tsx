@@ -35,8 +35,7 @@ export default function Diya({
   return (
     <div
       className={`relative inline-flex flex-col items-center select-none pointer-events-none ${className}`}
-      aria-label={label}
-      role="img"
+      aria-hidden="true"
     >
       {/* 1. Warm Ambient Aura Behind the Diya */}
       {withAura && (

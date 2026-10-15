@@ -133,11 +133,9 @@ export default function Footer() {
               </Link>
             </div>
             <div className="flex items-center gap-3 text-brand-green/80">
-              <span className="w-1.5 h-1.5 rounded-full bg-brand-green animate-pulse shadow-[0_0_6px_#30C682]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-brand-green animate-pulse" />
               <span>Signal // Active</span>
-              <span className="text-amber-400/50">•</span>
-              <span className="text-amber-200/80">Deepawali</span>
-              <Diya size="sm" withAura={true} className="scale-75 -my-1.5" label="Diwali Light" />
+              <Diya size="sm" withAura={true} className="scale-75 -my-1" />
             </div>
           </div>
         </div>

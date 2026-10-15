@@ -312,6 +312,32 @@ body {
   box-shadow: 0 0 12px rgba(245, 158, 11, 0.18);
 }
 
+@keyframes toranSwayLeft {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(0.85deg);
+  }
+}
+
+@keyframes toranSwayRight {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-0.85deg);
+  }
+}
+
+.animate-toran-sway-left {
+  animation: toranSwayLeft 9s ease-in-out infinite;
+}
+
+.animate-toran-sway-right {
+  animation: toranSwayRight 10s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   ::before,
