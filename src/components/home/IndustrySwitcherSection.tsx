@@ -33,7 +33,7 @@ const INDUSTRIES: IndustryItem[] = [
     slug: "manufacturing",
     problem: "High engineering reality hidden behind dated PDFs and commodity vendor pricing.",
     solution: "Macro process video, tolerance verification, and technical RFQ funnels.",
-    icon: ManufacturingIcon,
+    icon: ManufacturingIcon   ,
   },
   {
     id: "healthcare",
@@ -66,7 +66,7 @@ const INDUSTRIES: IndustryItem[] = [
     slug: "interiors-furniture",
     problem: "Artisanal joinery looking indistinguishable from flat-pack brands on generic feeds.",
     solution: "Tactile material video, joinery durability tests, and architect specification portals.",
-    icon: InteriorsIcon,
+    icon: InteriorsIcon ,
   },
   {
     id: "hospitality",
@@ -106,7 +106,7 @@ export default function IndustrySwitcherSection() {
         </div>
 
           {/* Morphing Industry Experience */}
-          <div className="p-7 sm:p-12 rounded-3xl bg-black/50 border border-white/10 space-y-10 shadow-2xl">
+          <div className="p-7 sm:p-12 rounded-3xl bg-[#08171b] border border-[#dfe5e2] space-y-10 shadow-2xl">
             {/* Horizontal Selector Pills */}
             <div className="flex flex-wrap gap-2.5 sm:gap-3 border-b border-white/10 pb-5">
               {INDUSTRIES.map((ind) => {
@@ -123,7 +123,7 @@ export default function IndustrySwitcherSection() {
                         : "bg-white/5 text-brand-neutral/70 hover:text-brand-neutral hover:bg-white/10"
                     }`}
                   >
-                    <IndIcon active={isSelected} size={16} />
+                    <IndIcon active={isSelected}  size={16} />
                     <span>{ind.name}</span>
                   </button>
                 );

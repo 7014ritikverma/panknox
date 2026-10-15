@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
+import FestiveAmbient from "@/components/festive/FestiveAmbient";
+import Diya from "@/components/festive/Diya";
 
 interface WordSegment {
   text: string;
@@ -61,6 +63,12 @@ export default function HeroSection() {
         aria-hidden="true"
       />
 
+      {/* Layer 2b: Festive Warm Amber Radiance (Complements Emerald organically) */}
+      <div
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[720px] sm:w-[920px] h-[480px] sm:h-[580px] bg-gradient-to-r from-[#F59E0B]/08 via-transparent to-[#30C682]/10 rounded-full blur-[140px] pointer-events-none animate-pulse [animation-duration:16s]"
+        aria-hidden="true"
+      />
+
       {/* Layer 3: Organic Moving Secondary Light Orbit */}
       <div
         className="absolute top-1/3 left-1/4 w-[380px] h-[380px] bg-[#30C682]/8 rounded-full blur-[120px] pointer-events-none transition-all duration-1000"
@@ -80,27 +88,40 @@ export default function HeroSection() {
         aria-hidden="true"
       />
 
+      {/* Layer 5: Festive Floating Particles & Cinematic Amber Bokeh */}
+      <FestiveAmbient intensity="medium" particlesCount={14} showBokeh={true} />
+
       {/* ========================================================
           CENTER-ALIGNED EXPERIENTIAL CONTENT
           ======================================================== */}
       <div className="max-w-5xl mx-auto px-6 sm:px-8 w-full relative z-10 flex flex-col items-center text-center space-y-8 sm:space-y-10 my-auto">
-        {/* 1. Small Panknox Signal Indicator */}
-        <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/[0.04] border border-white/10 text-xs font-mono text-brand-neutral/80 shadow-sm backdrop-blur-sm">
+        {/* 1. Panknox Signal Indicator with Elevated Deepawali Greeting */}
+        <div className="inline-flex items-center gap-2.5 sm:gap-3 px-4 py-1.5 rounded-full bg-white/[0.04] border border-amber-500/25 text-xs font-mono text-brand-neutral/85 shadow-[0_2px_18px_rgba(245,158,11,0.08)] backdrop-blur-sm transition-all hover:border-amber-500/40">
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-green opacity-75" />
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-green" />
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-green shadow-[0_0_8px_#30C682]" />
           </span>
           <span className="text-brand-green font-semibold">Panknox Signal</span>
-          <span className="text-brand-neutral/40">•</span>
-          <span className="text-brand-neutral/70">System 01 // Unified attention</span>
+          <span className="text-amber-400/60">•</span>
+          <span className="text-amber-200/90 font-medium">Deepawali</span>
+          <span className="hidden sm:inline text-brand-neutral/30">|</span>
+          <span className="hidden sm:inline text-brand-neutral/80 font-sans italic font-normal">
+            A little more light. A lot more possibility.
+          </span>
         </div>
 
         {/* 2. Dynamic Headline Container with Traveling Signal Interaction */}
         <div className="relative py-2 sm:py-4 w-full flex flex-col items-center">
-          {/* Traveling Signal Track Across Typography */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent pointer-events-none">
+          {/* Subtle Warm Amber Ambient Glow Behind Typography (Enhances Contrast) */}
+          <div
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl h-[260px] bg-gradient-to-r from-[#F59E0B]/10 via-[#FBBF24]/06 to-[#30C682]/08 rounded-full blur-[90px] pointer-events-none"
+            aria-hidden="true"
+          />
+
+          {/* Traveling Signal Track Across Typography with Golden Shimmer */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl h-[1px] bg-gradient-to-r from-transparent via-amber-400/20 to-transparent pointer-events-none">
             <div
-              className={`absolute top-0 h-[2px] w-32 bg-gradient-to-r from-transparent via-[#30C682] to-transparent shadow-[0_0_15px_#30C682] transition-all duration-700 ${
+              className={`absolute top-0 h-[2px] w-36 bg-gradient-to-r from-transparent via-[#30C682] via-[#FBBF24] to-transparent shadow-[0_0_15px_rgba(245,158,11,0.6)] transition-all duration-700 ${
                 activeStep >= 4
                   ? "animate-signal-travel [animation-duration:5s]"
                   : "left-[15%] w-24"
@@ -198,6 +219,34 @@ export default function HeroSection() {
           <span className="text-brand-green">•</span>
           <span>Mandrella, Jhunjhunu</span>
         </div>
+
+        {/* Mobile-Only Subtle Diya Accent */}
+        <div className="sm:hidden pt-2 flex items-center justify-center pointer-events-none">
+          <Diya size="sm" withAura={true} label="Deepawali Light" />
+        </div>
+      </div>
+
+      {/* ========================================================
+          TASTEFUL BOTTOM CORNER DIYAS (Desktop Framed Horizon)
+          ======================================================== */}
+      <div
+        className="hidden sm:flex absolute bottom-6 lg:bottom-9 left-6 sm:left-10 lg:left-14 z-20 flex-col items-center gap-1.5 opacity-85 pointer-events-none transition-all duration-700"
+        aria-hidden="true"
+      >
+        <Diya size="sm" withAura={true} withReflection={true} label="Deepawali Light" />
+        <span className="font-mono text-[10px] text-amber-200/40 uppercase tracking-widest">
+          Light
+        </span>
+      </div>
+
+      <div
+        className="hidden sm:flex absolute bottom-6 lg:bottom-9 right-6 sm:right-10 lg:right-14 z-20 flex-col items-center gap-1.5 opacity-85 pointer-events-none transition-all duration-700"
+        aria-hidden="true"
+      >
+        <Diya size="sm" withAura={true} withReflection={true} label="Deepawali Possibility" />
+        <span className="font-mono text-[10px] text-amber-200/40 uppercase tracking-widest">
+          Possibility
+        </span>
       </div>
     </section>
   );

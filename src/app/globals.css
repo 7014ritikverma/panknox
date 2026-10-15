@@ -1,4 +1,7 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap'); */
+
 @import "tailwindcss";
+
 
 @theme {
   --font-sans: var(--font-inter), sans-serif;
@@ -29,6 +32,12 @@
   --color-neutral-surface: #F4F7F6;
   --color-neutral-border: #D1DCD7;
   --color-neutral-dim: #727272;
+
+  /* Festive Diwali Gold & Amber Accents */
+  --color-festive-gold: #F59E0B;
+  --color-festive-amber: #D97706;
+  --color-festive-light: #FDE68A;
+  --color-festive-glow: rgba(245, 158, 11, 0.22);
 }
 
 :root {
@@ -58,6 +67,7 @@ html {
 body {
   overflow-x: hidden;
   min-height: 100vh;
+
 }
 
 /* Custom Scrollbar */
@@ -213,6 +223,93 @@ body {
 
 .animate-ambientGlow3 {
   animation: ambientGlow3 28s ease-in-out infinite;
+}
+
+/* ========================================================
+   FESTIVE DIWALI KEYFRAMES & UTILITIES (Refined & Organic)
+   ======================================================== */
+
+@keyframes diyaFlameFlicker {
+  0%, 100% {
+    transform: scaleY(1) scaleX(1) rotate(0deg);
+    filter: drop-shadow(0 0 12px rgba(245, 158, 11, 0.75)) drop-shadow(0 0 24px rgba(234, 88, 12, 0.4));
+  }
+  25% {
+    transform: scaleY(1.05) scaleX(0.96) rotate(-1.2deg);
+    filter: drop-shadow(0 0 15px rgba(251, 191, 36, 0.85)) drop-shadow(0 0 30px rgba(245, 158, 11, 0.5));
+  }
+  50% {
+    transform: scaleY(0.97) scaleX(1.02) rotate(1deg);
+    filter: drop-shadow(0 0 11px rgba(245, 158, 11, 0.7)) drop-shadow(0 0 22px rgba(234, 88, 12, 0.35));
+  }
+  75% {
+    transform: scaleY(1.03) scaleX(0.98) rotate(-0.5deg);
+    filter: drop-shadow(0 0 16px rgba(251, 191, 36, 0.8)) drop-shadow(0 0 28px rgba(245, 158, 11, 0.45));
+  }
+}
+
+@keyframes diyaAuraBreath {
+  0%, 100% {
+    opacity: 0.65;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.88;
+    transform: scale(1.12);
+  }
+}
+
+@keyframes festiveFloat {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  20% {
+    opacity: var(--p-opacity, 0.65);
+  }
+  80% {
+    opacity: var(--p-opacity, 0.65);
+  }
+  100% {
+    transform: translateY(-110px) translateX(var(--drift-x, 15px));
+    opacity: 0;
+  }
+}
+
+@keyframes goldenShimmer {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(200%);
+    opacity: 0;
+  }
+}
+
+.animate-diya-flame {
+  animation: diyaFlameFlicker 3.2s ease-in-out infinite;
+  transform-origin: 50% 90%;
+}
+
+.animate-diya-aura {
+  animation: diyaAuraBreath 4.5s ease-in-out infinite;
+  transform-origin: 50% 50%;
+}
+
+.animate-golden-shimmer {
+  animation: goldenShimmer 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.festive-gold-glow {
+  box-shadow: 0 0 24px rgba(245, 158, 11, 0.28);
+}
+
+.festive-gold-glow-sm {
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.18);
 }
 
 @media (prefers-reduced-motion: reduce) {

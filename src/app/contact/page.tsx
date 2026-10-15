@@ -18,8 +18,10 @@ export default function ContactPage() {
           {/* Top Header */}
           <div className="space-y-4 max-w-3xl">
             <div className="inline-flex items-center gap-3 text-xs font-mono text-brand-green/90">
-              <span className="w-2 h-2 rounded-full bg-brand-green animate-pulse" />
+              <span className="w-2 h-2 rounded-full bg-brand-green animate-pulse shadow-[0_0_8px_#30C682]" />
               <span>Panknox // Direct channel</span>
+              <span className="text-amber-400/50">•</span>
+              <span className="text-amber-200/80">Deepawali</span>
             </div>
 
             <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-brand-neutral leading-[1.08]">

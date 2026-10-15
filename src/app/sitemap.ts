@@ -2,6 +2,8 @@ import { MetadataRoute } from "next";
 import { projectsData } from "@/data/projects";
 import { industriesData } from "@/data/industries";
 
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://panknox.com";
   const currentDate = new Date();

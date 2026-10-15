@@ -51,6 +51,16 @@ export default function AtmosphericBackground({
         }}
       />
 
+      {/* 2b. Festive Warm Golden Radiance (Subtle Amber glow complementing Emerald) */}
+      <div
+        className="absolute bottom-[10%] right-[15%] w-[55vw] h-[55vw] max-w-[700px] max-h-[700px] rounded-full pointer-events-none mix-blend-screen opacity-20 blur-[140px] animate-ambientGlow2"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(245, 158, 11, 0.15) 0%, rgba(217, 119, 6, 0.08) 50%, transparent 75%)",
+          animationDuration: "36s",
+        }}
+      />
+
       {/* 3. Fine Film Grain Overlay (SVG noise filter, 3.8% opacity) */}
       <svg
         className="absolute inset-0 w-full h-full pointer-events-none opacity-[0.038] mix-blend-overlay"

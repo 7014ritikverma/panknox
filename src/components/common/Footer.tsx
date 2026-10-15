@@ -5,6 +5,8 @@ import Link from "next/link";
 import PanknoxLogo from "./PanknoxLogo";
 import AtmosphericBackground from "./AtmosphericBackground";
 import SocialIconLinks from "./SocialIconLinks";
+import Diya from "@/components/festive/Diya";
+import FestiveAmbient from "@/components/festive/FestiveAmbient";
 
 export default function Footer() {
   const [currentYear, setCurrentYear] = useState("2026");
@@ -16,11 +18,14 @@ export default function Footer() {
   return (
     <footer className="relative text-brand-neutral overflow-hidden border-t border-white/8">
       <AtmosphericBackground className="pt-14 pb-12 sm:pt-16 sm:pb-14">
+        {/* Subtle Background Golden Embers */}
+        <FestiveAmbient particlesCount={6} showBokeh={false} intensity="subtle" />
+
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-12 relative z-10">
-          {/* 1. Subtle Boundary Signal Line */}
+          {/* 1. Subtle Boundary Signal Line with Dual Emerald-Gold Shimmer */}
           <div className="relative w-full h-[1px] bg-white/10 overflow-hidden">
             <div
-              className="absolute top-0 h-[2px] w-56 bg-gradient-to-r from-transparent via-[#30C682] to-transparent animate-signal-travel opacity-80 shadow-[0_0_12px_#30C682]"
+              className="absolute top-0 h-[2px] w-64 bg-gradient-to-r from-transparent via-[#30C682] via-[#FBBF24] to-transparent animate-signal-travel opacity-85 shadow-[0_0_14px_rgba(245,158,11,0.5)]"
               style={{ animationDuration: "8s" }}
             />
           </div>
@@ -127,9 +132,12 @@ export default function Footer() {
                 Terms &amp; conditions
               </Link>
             </div>
-            <div className="flex items-center gap-2 text-brand-green/80">
-              <span className="w-1.5 h-1.5 rounded-full bg-brand-green animate-pulse" />
+            <div className="flex items-center gap-3 text-brand-green/80">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand-green animate-pulse shadow-[0_0_6px_#30C682]" />
               <span>Signal // Active</span>
+              <span className="text-amber-400/50">•</span>
+              <span className="text-amber-200/80">Deepawali</span>
+              <Diya size="sm" withAura={true} className="scale-75 -my-1.5" label="Diwali Light" />
             </div>
           </div>
         </div>

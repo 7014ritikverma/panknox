@@ -32,8 +32,10 @@ export default function IndustriesClient() {
       {/* 1. White Editorial Header */}
       <section className="pt-32 pb-16 sm:pt-40 sm:pb-20 max-w-6xl mx-auto px-6 sm:px-8 space-y-6">
         <div className="inline-flex items-center gap-2.5 px-3 py-1 rounded-full bg-brand-green/10 border border-brand-green/30 text-brand-navy text-xs font-mono font-medium">
-          <span className="w-2 h-2 rounded-full bg-brand-green" />
+          <span className="w-2 h-2 rounded-full bg-brand-green shadow-[0_0_6px_#30C682]" />
           <span>Sectors // 5 dedicated commercial architectures</span>
+          <span className="text-amber-500/60">•</span>
+          <span className="text-amber-700/80 font-medium">Deepawali</span>
         </div>
 
         <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-brand-navy leading-[1.08]">
@@ -103,6 +105,7 @@ export default function IndustriesClient() {
               <span>Explore {activeInd.name} architecture</span>
               <ArrowUpRight className="w-4 h-4" />
             </Link>
+            
           </div>
 
           {/* Sector Decision Pipeline */}

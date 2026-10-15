@@ -15,15 +15,16 @@ export default function SectionTransition({
         isDarkToLight ? "bg-brand-navy" : "bg-white"
       }`}
     >
-      {/* 1px Divider Line with Traveling Green Signal */}
+      {/* 1px Divider Line with Traveling Green Signal & Restrained Golden Shimmer */}
       <div className="relative w-full h-[1px] bg-brand-gray/25 overflow-hidden">
         <div className="animate-signal-travel" />
+        <div className="animate-golden-shimmer absolute top-0 h-[1px] w-44 bg-gradient-to-r from-transparent via-[#FBBF24]/40 to-transparent pointer-events-none" />
       </div>
 
       {/* Floating Center or Right Chapter Indicator */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between pt-2">
         <div className="flex items-center gap-2">
-          <span className="w-1.5 h-1.5 rounded-full bg-brand-green" />
+          <span className="w-1.5 h-1.5 rounded-full bg-brand-green shadow-[0_0_6px_#30C682]" />
           <span
             className={`text-[11px] font-mono tracking-wider ${
               isDarkToLight ? "text-brand-gray" : "text-brand-navy/60"

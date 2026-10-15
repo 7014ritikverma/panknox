@@ -96,8 +96,10 @@ export default function WhatWeDoClient() {
       {/* 1. White Editorial Header */}
       <section className="pt-32 pb-16 sm:pt-40 sm:pb-20 max-w-6xl mx-auto px-6 sm:px-8 space-y-6">
         <div className="inline-flex items-center gap-2.5 px-3 py-1 rounded-full bg-brand-green/10 border border-brand-green/30 text-brand-navy text-xs font-mono font-medium">
-          <span className="w-2 h-2 rounded-full bg-brand-green" />
+          <span className="w-2 h-2 rounded-full bg-brand-green shadow-[0_0_6px_#30C682]" />
           <span>Capabilities // Four primary areas</span>
+          <span className="text-amber-500/60">•</span>
+          <span className="text-amber-700/80 font-medium">Deepawali</span>
         </div>
 
         <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-brand-navy leading-[1.08]">
@@ -118,7 +120,7 @@ export default function WhatWeDoClient() {
           return (
             <div
               key={area.id}
-              className="p-8 sm:p-12 rounded-3xl bg-[#F8FAF9] border border-brand-navy/10 hover:border-brand-green/40 transition-all duration-300 space-y-6 shadow-sm hover:shadow-md"
+              className="p-8 sm:p-12 rounded-3xl bg-[#F8FAF9] border border-brand-navy/10 hover:border-amber-400/35 hover:shadow-[0_12px_36px_rgba(245,158,11,0.06)] transition-all duration-300 space-y-6 shadow-sm"
             >
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 {/* Left: Icon, Number, Title & Sentence */}
