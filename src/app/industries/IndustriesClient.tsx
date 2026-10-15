@@ -103,7 +103,6 @@ export default function IndustriesClient() {
               <span>Explore {activeInd.name} architecture</span>
               <ArrowUpRight className="w-4 h-4" />
             </Link>
-            
           </div>
 
           {/* Sector Decision Pipeline */}

@@ -35,17 +35,12 @@ export default function Navigation() {
       {/* Floating Dynamic Island Container */}
       <header className="fixed top-4 sm:top-5 left-0 right-0 z-50 flex justify-center pointer-events-none px-4 transition-all duration-500">
         <div
-          className={`pointer-events-auto relative inline-flex items-center justify-between rounded-full bg-[#04262F]/92 backdrop-blur-md border border-white/12 shadow-[0_12px_36px_rgba(0,0,0,0.35)] transition-all duration-300 ease-out hover:border-amber-400/25 hover:shadow-[0_16px_44px_rgba(0,0,0,0.45),0_0_28px_rgba(245,158,11,0.07)] overflow-hidden ${
+          className={`pointer-events-auto inline-flex items-center justify-between rounded-full bg-[#04262F]/90 backdrop-blur-md border border-white/12 shadow-[0_12px_36px_rgba(0,0,0,0.35)] transition-all duration-300 ease-out hover:border-white/20 hover:shadow-[0_16px_44px_rgba(0,0,0,0.45)] ${
             isScrolled
               ? "py-2 px-4 sm:px-5 gap-4 sm:gap-6 max-w-[860px]"
               : "py-2.5 sm:py-3 px-5 sm:px-6 gap-6 sm:gap-8 max-w-[920px]"
           }`}
         >
-          {/* Subtle Golden Top Reflection (Festive Diwali Warmth) */}
-          <div
-            className="absolute top-0 left-[18%] right-[18%] h-[1px] bg-gradient-to-r from-transparent via-amber-400/30 to-transparent pointer-events-none"
-            aria-hidden="true"
-          />
           {/* Official Panknox Brand Logo */}
           <Link
             href="/"

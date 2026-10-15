@@ -300,7 +300,7 @@ export function EvolveIcon({ className = "w-6 h-6", active = false, size = 24 }:
 
 // Manufacturing: Product → understanding → trust → enquiry
 export function ManufacturingIcon({ className = "w-6 h-6", active = false, size = 24 }: IconProps) {
-  const strokeColor = active ? "#ffffff" : "currentColor";
+  const strokeColor = active ? "#30C682" : "currentColor";
   return (
     <svg
       width={size}
@@ -322,7 +322,7 @@ export function ManufacturingIcon({ className = "w-6 h-6", active = false, size 
 
 // Healthcare: Education → trust → confidence → appointment
 export function HealthcareIcon({ className = "w-6 h-6", active = false, size = 24 }: IconProps) {
-  const strokeColor = active ? "#ffffff" : "currentColor";
+  const strokeColor = active ? "#30C682" : "currentColor";
   return (
     <svg
       width={size}
@@ -354,7 +354,7 @@ export function HealthcareIcon({ className = "w-6 h-6", active = false, size = 2
 
 // Real estate: Attention → interest → site visit → enquiry
 export function RealEstateIcon({ className = "w-6 h-6", active = false, size = 24 }: IconProps) {
-  const strokeColor = active ? "#ffffff" : "currentColor";
+  const strokeColor = active ? "#30C682" : "currentColor";
   return (
     <svg
       width={size}
@@ -379,7 +379,7 @@ export function RealEstateIcon({ className = "w-6 h-6", active = false, size = 2
 
 // Interiors & furniture: Inspiration → desire → trust → enquiry
 export function InteriorsIcon({ className = "w-6 h-6", active = false, size = 24 }: IconProps) {
-  const strokeColor = active ? "#ffffff" : "currentColor";
+  const strokeColor = active ? "#30C682" : "currentColor";
   return (
     <svg
       width={size}
@@ -404,7 +404,7 @@ export function InteriorsIcon({ className = "w-6 h-6", active = false, size = 24
 
 // Hospitality: Experience → desire → trust → booking
 export function HospitalityIcon({ className = "w-6 h-6", active = false, size = 24 }: IconProps) {
-  const strokeColor = active ? "#ffffff" : "currentColor";
+  const strokeColor = active ? "#30C682" : "currentColor";
   return (
     <svg
       width={size}

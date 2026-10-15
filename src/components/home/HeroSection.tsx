@@ -3,9 +3,6 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
-import FestiveAmbient from "@/components/festive/FestiveAmbient";
-import Diya from "@/components/festive/Diya";
-import MarigoldToran from "@/components/festive/MarigoldGarland";
 
 interface WordSegment {
   text: string;
@@ -52,9 +49,6 @@ export default function HeroSection() {
       aria-label="Hero Introduction"
       className="relative min-h-[92vh] lg:min-h-screen bg-[#04262F] text-brand-neutral flex flex-col items-center justify-center pt-28 sm:pt-36 pb-16 sm:pb-20 overflow-hidden"
     >
-      {/* Traditional Marigold Toran / Garlands along Upper Edges */}
-      <MarigoldToran />
-
       {/* ========================================================
           BACKGROUND MOTION LAYERS (Slow, Organic & Multi-Layered)
           ======================================================== */}
@@ -64,12 +58,6 @@ export default function HeroSection() {
       {/* Layer 2: Soft Emerald Light Field (Organic Breath, 24s Cycle) */}
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] sm:w-[850px] h-[450px] sm:h-[550px] bg-[#30C682]/12 rounded-full blur-[140px] pointer-events-none animate-pulse [animation-duration:12s]"
-        aria-hidden="true"
-      />
-
-      {/* Layer 2b: Festive Warm Amber Radiance (Complements Emerald organically) */}
-      <div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[720px] sm:w-[920px] h-[480px] sm:h-[580px] bg-gradient-to-r from-[#F59E0B]/08 via-transparent to-[#30C682]/10 rounded-full blur-[140px] pointer-events-none animate-pulse [animation-duration:16s]"
         aria-hidden="true"
       />
 
@@ -92,9 +80,6 @@ export default function HeroSection() {
         aria-hidden="true"
       />
 
-      {/* Layer 5: Festive Floating Particles & Cinematic Amber Bokeh */}
-      <FestiveAmbient intensity="medium" particlesCount={14} showBokeh={true} />
-
       {/* ========================================================
           CENTER-ALIGNED EXPERIENTIAL CONTENT
           ======================================================== */}
@@ -112,16 +97,10 @@ export default function HeroSection() {
 
         {/* 2. Dynamic Headline Container with Traveling Signal Interaction */}
         <div className="relative py-2 sm:py-4 w-full flex flex-col items-center">
-          {/* Subtle Warm Amber Ambient Glow Behind Typography (Enhances Contrast) */}
-          <div
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl h-[260px] bg-gradient-to-r from-[#F59E0B]/10 via-[#FBBF24]/06 to-[#30C682]/08 rounded-full blur-[90px] pointer-events-none"
-            aria-hidden="true"
-          />
-
-          {/* Traveling Signal Track Across Typography with Golden Shimmer */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl h-[1px] bg-gradient-to-r from-transparent via-amber-400/20 to-transparent pointer-events-none">
+          {/* Traveling Signal Track Across Typography */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent pointer-events-none">
             <div
-              className={`absolute top-0 h-[2px] w-36 bg-gradient-to-r from-transparent via-[#30C682] via-[#FBBF24] to-transparent shadow-[0_0_15px_rgba(245,158,11,0.6)] transition-all duration-700 ${
+              className={`absolute top-0 h-[2px] w-32 bg-gradient-to-r from-transparent via-[#30C682] to-transparent shadow-[0_0_15px_#30C682] transition-all duration-700 ${
                 activeStep >= 4
                   ? "animate-signal-travel [animation-duration:5s]"
                   : "left-[15%] w-24"
@@ -219,28 +198,6 @@ export default function HeroSection() {
           <span className="text-brand-green">•</span>
           <span>Mandrella, Jhunjhunu</span>
         </div>
-
-        {/* Mobile-Only Subtle Diya Accent */}
-        <div className="sm:hidden pt-3 flex items-center justify-center pointer-events-none" aria-hidden="true">
-          <Diya size="sm" withAura={true} />
-        </div>
-      </div>
-
-      {/* ========================================================
-          TRADITIONAL CLAY DIYAS (Desktop Framed Horizon)
-          ======================================================== */}
-      <div
-        className="hidden sm:flex absolute bottom-6 lg:bottom-9 left-6 sm:left-10 lg:left-14 z-20 flex-col items-center opacity-90 pointer-events-none transition-all duration-700"
-        aria-hidden="true"
-      >
-        <Diya size="sm" withAura={true} withReflection={true} />
-      </div>
-
-      <div
-        className="hidden sm:flex absolute bottom-6 lg:bottom-9 right-6 sm:right-10 lg:right-14 z-20 flex-col items-center opacity-90 pointer-events-none transition-all duration-700"
-        aria-hidden="true"
-      >
-        <Diya size="sm" withAura={true} withReflection={true} />
       </div>
     </section>
   );

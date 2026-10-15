@@ -118,7 +118,7 @@ export default function WhatWeDoClient() {
           return (
             <div
               key={area.id}
-              className="p-8 sm:p-12 rounded-3xl bg-[#F8FAF9] border border-brand-navy/10 hover:border-amber-400/35 hover:shadow-[0_12px_36px_rgba(245,158,11,0.06)] transition-all duration-300 space-y-6 shadow-sm"
+              className="p-8 sm:p-12 rounded-3xl bg-[#F8FAF9] border border-brand-navy/10 hover:border-brand-green/40 transition-all duration-300 space-y-6 shadow-sm hover:shadow-md"
             >
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 {/* Left: Icon, Number, Title & Sentence */}
